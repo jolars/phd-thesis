@@ -1,0 +1,215 @@
+\PassOptionsToPackage{unicode,pdfusetitle}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+
+% Non-breakable hyphen. Use for things like "(re-)print". 
+\newcommand\nobrkhyph{\mbox{-}}
+
+% Small caps serif font, for Paper numbers, ISBN, etc
+\newcommand{\I}{\textrm{\scshape i}\xspace}
+\newcommand{\II}{\textrm{\scshape ii}\xspace}
+\newcommand{\III}{\textrm{\scshape iii}\xspace}
+\newcommand{\IV}{\textrm{\scshape iv}\xspace}
+\newcommand{\V}{\textrm{\scshape v}\xspace}
+\newcommand{\VI}{\textrm{\scshape vi}\xspace}
+\newcommand{\VII}{\textrm{\scshape vii}\xspace}
+\newcommand{\VIII}{\textrm{\scshape viii}\xspace}
+\newcommand{\IX}{\textrm{\scshape ix}\xspace}
+\newcommand{\X}{\textrm{\scshape x}\xspace}
+\newcommand{\ISBN}{\textrm{\scshape isbn}\xspace}
+\newcommand{\ISSN}{\textrm{\scshape issn}\xspace}
+
+% Must come in the beginning. To calculate the total number of pages
+\usepackage{pageslts}
+
+% Font settings
+% \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage{ebgaramond}
+
+\usepackage[T1]{fontenc} % best for Western European languages
+\usepackage[varqu,varl]{inconsolata}% a typewriter font for \mathtt
+\usepackage[ebgaramond,textscale=0,semibold,vvarbb,subscriptcorrection,amsthm]{newtx}
+
+\usepackage{microtype}
+
+% Support for greek (non-math non-italic) text, e.g. for units like mircometer: \textmu m 
+\usepackage{textgreek}
+
+% Additional font sizes \HUGE and \ssmall, needed for figure captions
+\usepackage{moresize}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% figure captions in bold (i.e. "Figure 1" in bold), sans serif, smaller font size, hanging label, always starting on the left side
+\usepackage{subfig}
+% \usepackage{subcaption}
+% \DeclareCaptionFont{ssmall}{\ssmall}
+% \DeclareCaptionFont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
+% \captionsetup{font={ssmall,sf},labelfont={bf},format=hang,singlelinecheck=false}
+\captionsetup{labelfont={bf}}
+%
+% % figures centred, smaller font in tables, captions on top for tables
+\usepackage{floatrow}
+\floatsetup[table]{position=top}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For tables spanning the full text width
+\usepackage{tabularx}
+
+% For URLs use \url{<URL>}
+\usepackage{url}
+
+% Chapters should have numbers - a typical thesis consists of two chapters:
+% One to introduce and summarize the research ("kappa"), and one for
+% reproductions of the papers and manuscripts. No need to number them by default.
+% If you need chapter numbers back, comment the following line.
+\renewcommand{\thesection}{\arabic{section}}
+
+% Sections and subsections have numbers, subsubsections etc do not.
+\setcounter{secnumdepth}{2}
+
+% Only chapters and sections appear in the table of contents, not subsections etc
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+% Ensures that \cleardoublepage inserts empty pages without page number
+\usepackage{emptypage}
+
+% For text macros (e.g., small caps macros)
+\usepackage{xspace}
+
+% For "Lorem Ipsum" style place holders
+\usepackage{blindtext}
+
+% For \includegraphics
+\usepackage{graphicx}
+
+% Nice looking tables with correct spacings 
+\usepackage{booktabs}
+
+% Tables spanning more than one page
+\usepackage{longtable}
+
+% Math symbols
+% \usepackage{amsfonts,amsmath,amssymb}
+
+% University Colors
+\usepackage{xcolor}
+\definecolor{lublue}{RGB}{0,0,128}
+\definecolor{lubronze}{RGB}{156,97,20}
+
+% Cross-referencing
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  breaklinks = true,
+  linkcolor  = lublue,
+  filecolor  = lublue,
+  urlcolor   = lublue,
+  citecolor  = lubronze
+}
+\usepackage{cleveref}
+
+% To include the PDFs of the papers
+\usepackage{pdfpages}
+
+% For Natural Science students who use ADS. Save to have in any case.
+\usepackage{auxiliary_texfiles/aas_macros}
+
+% Hyphenation, support for different languages, last one is default
+% Make sure to install the hyphenation packages for all languages you need
+\usepackage[swedish,english]{babel}
+
+% Paper size. Typically this works also fine when printed on A4 (text size is
+% as print later, just the margins become wider to accommodate the too large
+% sheets).
+%% G5 format
+\usepackage[paperwidth=169mm,paperheight=239mm,total={13.3cm,19.6cm}, top=1.8cm, ignorehead, footskip=\footskip+4mm ]{geometry}
+
+
+% Figures can be kept in the same directory as the thesis, or in a Figure/
+% directory, without need to specifying which of the two it is
+\graphicspath{{Figures/}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define commands for chapters, sections, and subsections that do not
+% have a number, but are entered as candidates for the table of contents.
+\newcommand\chap[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}
+  \markboth{#1}{#1}
+}
+\newcommand\sect[1]{%
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}
+  \markright{#1}
+}
+\newcommand\subsect[1]{%
+  \subsection*{#1}%
+  \addcontentsline{toc}{subsection}{#1}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define nice headers and footers
+% To keep the thesis non-cluttered we only put the page number into the footer,
+% and avoid headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% \fancyheadoffset{0cm}
+% \pagestyle{plain}
+% %page number in the foot centre 
+% \cfoot{\fancyplain{\thepage}{}}
+%
+% % You want to use headers? Here is some things for your inspiration:
+% \renewcommand{\chaptermark}[1]%
+% {\markboth{#1}{#1}}
+% \renewcommand{\sectionmark}[1]%
+% {\markright{\thesection\ #1}}
+% \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{\thechapter\ #1}}
+% \lhead[\fancyplain{}{\thepage}]%
+% {\fancyplain{}{\textsl\rightmark}}
+% \rhead[\fancyplain{}{\textsl\leftmark}]%
+% {\fancyplain{}{\thepage}}
+% Contents and references should not print a uppercase header on their second pages
+%\usepackage{etoolbox}
+\patchcmd{\tableofcontents}{\MakeUppercase\contentsname}{\contentsname}{}{}
+\patchcmd{\tableofcontents}{\MakeUppercase\contentsname}{\contentsname}{}{}
+%\patchcmd{\bibsection}{\MakeUppercase{\bibname}}{\bibname}{}{}
+%\patchcmd{\bibsection}{\MakeUppercase{\bibname}}{\bibname}{}{}
+
+% References should be a section of the summary text, with number and all ...
+% \renewcommand\bibsection{\section{\bibname}\markright{\bibname}}
+
+% If you want to use a box to summarize your papers, try \begin{thesisbox}{title}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\newtcolorbox{thesisbox}[2][]{
+  oversize=-2.5cm,
+  enhanced,
+  attach boxed title to top left={yshift=-2ex,xshift=6ex},
+  before skip=1em,
+  after skip=1em,
+  colframe=black,
+  colback=white,
+  fonttitle=\bfseries,
+  colbacktitle=white,
+  coltitle=black,
+  boxed title style={
+      boxrule=0pt,
+      colframe=white,
+    },
+  title=#2,
+  #1}
+
+\usepackage{enumitem}
+
+% bibliography
+\makeatletter
+\def\blx@nowarnpolyglossia{}
+\makeatother
+\usepackage[citestyle=alphabetic,language=english,url=false]{biblatex}
+\addbibresource{phdthesis.bib}
