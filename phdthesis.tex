@@ -133,9 +133,9 @@
 
 \newpage
 
-\thispagestyle{plain}
-
 \chap{Acknowledgements}
+
+\thispagestyle{fancyplain}
 
 This template was created and shared as a private initiative and comes without
 support of any kind. If you are happy to have it, you are welcome to say thanks
@@ -145,9 +145,10 @@ and/or to send beers/goodies! :)
 
 \chap{Overview}
 
+\thispagestyle{fancyplain} % No page number on quote page
+
 \sect{List of Publications\label{sec:paperlist}}
 
-\thispagestyle{plain} % No page number on quote page
 
 This thesis is based on the following publications.
 
@@ -178,7 +179,7 @@ This thesis is based on the following publications.
 
 \newpage
 
-\thispagestyle{plain}
+\thispagestyle{fancyplain}
 
 \sect{Popular Summary in English}
 
@@ -188,7 +189,7 @@ system.
 
 \newpage
 
-\thispagestyle{plain}
+\thispagestyle{fancyplain}
 \selectlanguage{swedish}
 
 \sect{Populärvetenskaplig sammanfattning på svenska}
@@ -260,12 +261,6 @@ The concepts are summarized in Table~\ref{tab:comparison}.
 
 \blindtext
 
-\begin{thesisbox}{Paper \I}
-  \textbf{Brief headline summarizing its contents}
-  \\[0.3em]
-  \blindtext
-\end{thesisbox}
-
 \printbibliography
 
 \chap{Papers}
@@ -277,13 +272,13 @@ The concepts are summarized in Table~\ref{tab:comparison}.
 \thispagestyle{empty}
 
 \begin{tikzpicture}[remember picture, overlay]
-  \node[fill=black, text=white, font=\bfseries\fontsize{50}{70}, anchor=east, minimum height=1.5cm, minimum width=2cm] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
+  \node[fill=black, text=white, font=\bfseries\fontsize{50}{55}\selectfont, anchor=east, minimum height=1.5cm, minimum width=2.5cm, text width=1.5cm, align=left] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
 \end{tikzpicture}
 
 \cleardoublepage
 % Include the PDF. Comment this while writing the thesis, only add later. 
 % Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
-\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{plain}}]{paperI.pdf}
+\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{fancyplain}}]{paperI.pdf}
 % One additional option could be useful: To cut away the margins of the included PDFs use:
 % clip,viewport=<left> <bottom> <right> <top>
 % To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory. 
@@ -299,7 +294,7 @@ The concepts are summarized in Table~\ref{tab:comparison}.
 \cleardoublepage
 % Include the PDF. Comment this while writing the thesis, only add later. 
 % Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
-\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{plain}}]{paperI.pdf}
+\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{fancyplain}}]{paperI.pdf}
 % One additional option could be useful: To cut away the margins of the included PDFs use:
 % clip,viewport=<left> <bottom> <right> <top>
 % To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory. 
