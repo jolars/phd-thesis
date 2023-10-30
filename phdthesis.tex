@@ -1,10 +1,7 @@
-\documentclass[11pt]{book}
+\documentclass{book}
 
-% Hide all the usepackage commands and definitions in a preamble file.
-% Normally you should not need to edit it.
-\input{auxiliary_texfiles/preamble.tex}
+\input{tex/preamble.tex}
 
-% ********************************************************************
 % Re-usable information (title page, datasheet)
 \newcommand{\myName}{Johan Larsson}
 \newcommand{\myYear}{2024}
@@ -19,11 +16,9 @@
 \newcommand{\myDepartment}{Department of Statistics}
 \newcommand{\myAddress}{Box 7080\\SE--220 07 Lund\\Sweden} % Three lines maximum!
 
-% Only change once you are ready. Looks to scary otherwise.
-% This might be the degree you are obtaining: Thesis for the degree of Doctor of Philosophy
 \newcommand{\myDegree}{Thesis for the degree of Doctor of Philosophy}
 \newcommand{\myAdvisors}{Jonas Wallin and Małgorzata Bogdan}
-\newcommand{\myOpponent}{The Joker}
+\newcommand{\myOpponent}{TBA}
 
 \newcommand{\myDefenceAnnouncement}{%
   To be presented, with the permission of the
@@ -41,11 +36,6 @@
   {\bf Funding information:}
   The thesis work was financially supported by my rich uncle.}
 
-% Series number. Astronomy users:
-% Series: {\scshape lunfd6/(nfas}-1048)/1-\myPages/(\myYear)}
-% where you increment the number 1048 by one wrt to last thesis at the department
-% 
-% Your department maybe uses something else, probably an ISSN number? 
 \newcommand{\mySeries}{%
   \ISSN: $<$ISSN number$>$}
 
@@ -101,7 +91,10 @@
 %%%%%%%%%%%%% First pages with thesis title etc %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First six pages are contained in a separate file. Normally you should not
 % need to edit it.
-\input{auxiliary_texfiles/frontmatter.tex}
+
+\pagestyle{empty}
+
+\input{tex/frontmatter.tex}
 
 % ===============================================================
 % ===================== INSPIRATIONAL QUOTE:  ===================
@@ -115,6 +108,8 @@
 \end{flushright}
 
 \cleardoublepage
+
+\pagestyle{headings}
 
 % Table of Contents
 \setcounter{page}{1} % Page Roman 1 of the frontmatter
@@ -135,24 +130,21 @@
 
 \chap{Acknowledgements}
 
-\thispagestyle{fancyplain}
-
 This template was created and shared as a private initiative and comes without
 support of any kind. If you are happy to have it, you are welcome to say thanks
 and/or to send beers/goodies! :)
 
 \newpage
 
-\chap{Overview}
+\chap{Abstract}
 
-\thispagestyle{fancyplain} % No page number on quote page
+Need more languages? Go to preamble.tex and add them to the
+usepackage[\ldots]{babel} line. Install the corresponding packages on your
+system.
 
-\sect{List of Publications\label{sec:paperlist}}
-
+\chap{List of Publications\label{sec:paperlist}}
 
 This thesis is based on the following publications.
-
-% \vspace{2mm}
 
 \begin{description}[leftmargin=!,labelwidth=0.7cm]
   \item[\I]  \fullcite{larsson2020b}
@@ -174,34 +166,7 @@ This thesis is based on the following publications.
 %   %
 % } % End large font tables, continue with font size stated in preamble
 
-
 \noindent {\small All papers are reproduced with permission of their respective publishers.}
-
-\newpage
-
-\thispagestyle{fancyplain}
-
-\sect{Popular Summary in English}
-
-Need more languages? Go to preamble.tex and add them to the
-usepackage[\ldots]{babel} line. Install the corresponding packages on your
-system.
-
-\newpage
-
-\thispagestyle{fancyplain}
-\selectlanguage{swedish}
-
-\sect{Populärvetenskaplig sammanfattning på svenska}
-
-\blindtext
-
-% ===============================================================
-% ======================= SUMMARY    =====================
-% Back to English spelling
-\selectlanguage{english}
-% Need to add hyphenation corrections? Do like this:
-% \hyphenation{as-tro-me-try ana-lysis}
 
 % Page numbers arabic 
 \mainmatter
@@ -265,7 +230,6 @@ The concepts are summarized in Table~\ref{tab:comparison}.
 
 \chap{Papers}
 
-% First: Separating page
 \cleardoublepage
 \addcontentsline{toc}{section}{Paper~\I: {\PaperItitle}}
 
@@ -278,7 +242,7 @@ The concepts are summarized in Table~\ref{tab:comparison}.
 \cleardoublepage
 % Include the PDF. Comment this while writing the thesis, only add later. 
 % Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
-\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{fancyplain}}]{paperI.pdf}
+\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{headings}}]{paperI.pdf}
 % One additional option could be useful: To cut away the margins of the included PDFs use:
 % clip,viewport=<left> <bottom> <right> <top>
 % To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory. 
@@ -294,34 +258,34 @@ The concepts are summarized in Table~\ref{tab:comparison}.
 \cleardoublepage
 % Include the PDF. Comment this while writing the thesis, only add later. 
 % Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
-\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{fancyplain}}]{paperI.pdf}
+\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{headings}}]{paperI.pdf}
 % One additional option could be useful: To cut away the margins of the included PDFs use:
 % clip,viewport=<left> <bottom> <right> <top>
 % To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory. 
 
-
 \cleardoublepage
 
-\appendix
-\thispagestyle{empty}
+% \appendix
+% \thispagestyle{empty}
+
 % \vspace*{4cm} %increase by 2cm each time. %<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Important
 % \hfill{ %\fontspec{Frutiger}
 %   \fontsize{20}{30}\selectfont {\bf Appendix}}\marginpar{\rule[-4mm]{50mm}{14mm}}
 % \vfill
 
-\begin{tikzpicture}[remember picture, overlay]
-  \node[fill=black, text=white, font=\bfseries\HUGE, anchor=east, minimum height=1.5cm, minimum width=5cm] at ($(current page.north east) + (0,-0.8\paperheight)$) {Appendix};
-\end{tikzpicture}
+% \begin{tikzpicture}[remember picture, overlay]
+%   \node[fill=black, text=white, font=\bfseries\HUGE, anchor=east, minimum height=1.5cm, minimum width=5cm] at ($(current page.north east) + (0,-0.8\paperheight)$) {Appendix};
+% \end{tikzpicture}
 
-\appendix
-\chap{Appendix: Conference posters}
-\section*{Poster 1: \PaperItitle}
-Media-Tryck's suggestion to a poster layout, can be downloaded from \url{https://bildweb.srv.lu.se/login/}.
-Presented 2067 at the \emph{Symposium for time travel}
-in Berlin, Germany. For further details refer to Paper~\I and
-Sect.~\ref{sec:mainresults}.
-
-% include poster itself. Cropping works as described above for the papers.
-\includepdf[pages=-,width=\paperwidth-10mm]{posterMediaTryck.pdf} %smaller margin, works fine when printing (hopefully ;) Hallå, Jonas!)
+% \appendix
+% \chap{Appendix: Conference posters}
+% \section*{Poster 1: \PaperItitle}
+% Media-Tryck's suggestion to a poster layout, can be downloaded from \url{https://bildweb.srv.lu.se/login/}.
+% Presented 2067 at the \emph{Symposium for time travel}
+% in Berlin, Germany. For further details refer to Paper~\I and
+% Sect.~\ref{sec:mainresults}.
+%
+% % include poster itself. Cropping works as described above for the papers.
+% \includepdf[pages=-,width=\paperwidth-10mm]{posterMediaTryck.pdf} %smaller margin, works fine when printing (hopefully ;) Hallå, Jonas!)
 
 \end{document}

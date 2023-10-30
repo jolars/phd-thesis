@@ -28,7 +28,7 @@
   {\huge \mySubTitle}
 
   \vfill
-  {by \myName}
+  {\myName}
 
   \vfill
   % black and white (default):
@@ -48,11 +48,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page four: data sheet
-\newpage \thispagestyle{empty} % no page number
+\newpage
+
 %Either include datasheet texfile (will be filled in automatically), or a pdf
 %containing datasheet (text needs to be already in it, edit
 %sheetPDF_editable.pdf). Use one of the next two lines: 
-\input{auxiliary_texfiles/datasheet}
+\input{tex/datasheet}
 %\addtocounter{pages}{1} \includepdf[pages=1-1]{datasheetPDF_editable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,7 +69,7 @@
   {\huge \mySubTitle}
 
   \vfill
-  {by \myName}
+  {\myName}
 
   \vfill
   % black and white (default):

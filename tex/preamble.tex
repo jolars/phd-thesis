@@ -23,18 +23,12 @@
 \usepackage{pageslts}
 
 % Font settings
-% \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-% \usepackage{ebgaramond}
-
-\usepackage[T1]{fontenc} % best for Western European languages
-\usepackage[varqu,varl]{inconsolata}% a typewriter font for \mathtt
+\usepackage[T1]{fontenc}
+\usepackage[varqu,varl]{inconsolata}
 \usepackage[ebgaramond,textscale=0,semibold,vvarbb,subscriptcorrection,amsthm]{newtx}
 
 \usepackage{microtype}
-
-% Support for greek (non-math non-italic) text, e.g. for units like mircometer: \textmu m 
-\usepackage{textgreek}
 
 % Additional font sizes \HUGE and \ssmall, needed for figure captions
 \usepackage{moresize}
@@ -42,21 +36,8 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
-% figure captions in bold (i.e. "Figure 1" in bold), sans serif, smaller font size, hanging label, always starting on the left side
-\usepackage{subfig}
-% \usepackage{subcaption}
-% \DeclareCaptionFont{ssmall}{\ssmall}
-% \DeclareCaptionFont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
-% \captionsetup{font={ssmall,sf},labelfont={bf},format=hang,singlelinecheck=false}
-\captionsetup{labelfont={bf}}
-%
-% % figures centred, smaller font in tables, captions on top for tables
-\usepackage{floatrow}
-\floatsetup[table]{position=top}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% For tables spanning the full text width
-\usepackage{tabularx}
+\usepackage[labelfont=bf]{caption}
+\usepackage[labelfont=bf]{subcaption}
 
 % For URLs use \url{<URL>}
 \usepackage{url}
@@ -68,7 +49,7 @@
 \renewcommand{\thesection}{\arabic{section}}
 
 % Sections and subsections have numbers, subsubsections etc do not.
-\setcounter{secnumdepth}{2}
+% \setcounter{secnumdepth}{2}
 
 % Only chapters and sections appear in the table of contents, not subsections etc
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
@@ -89,7 +70,7 @@
 \usepackage{booktabs}
 
 % Tables spanning more than one page
-\usepackage{longtable}
+% \usepackage{longtable}
 
 % Math symbols
 % \usepackage{amsfonts,amsmath,amssymb}
@@ -117,7 +98,7 @@
 
 % Hyphenation, support for different languages, last one is default
 % Make sure to install the hyphenation packages for all languages you need
-\usepackage[swedish,english]{babel}
+\usepackage[english]{babel}
 
 % Paper size. Typically this works also fine when printed on A4 (text size is
 % as print later, just the margins become wider to accommodate the too large
@@ -127,12 +108,12 @@
 
 % Figures can be kept in the same directory as the thesis, or in a Figure/
 % directory, without need to specifying which of the two it is
-\graphicspath{{Figures/}}
-
+\graphicspath{{figures/}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define commands for chapters, sections, and subsections that do not
 % have a number, but are entered as candidates for the table of contents.
+
 \newcommand\chap[1]{%
   \chapter*{#1}%
   \addcontentsline{toc}{chapter}{#1}
@@ -148,30 +129,10 @@
   \addcontentsline{toc}{subsection}{#1}
 }
 
-% Force fancyplain style into chapter pages
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancyplain}}{}{}
-\makeatother
-
-\usepackage{fancyhdr}
-
-\fancypagestyle{fancyplain}{
-  \fancyfoot{}
-  \fancyhead{}
-  \fancyhead[RO]{\thepage}
-  \fancyhead[LE]{\thepage}
-  \renewcommand{\headrulewidth}{0pt}
-}
-
 % References should be a section of the summary text, with number and all ...
 % \renewcommand\bibsection{\section{\bibname}\markright{\bibname}}
 
 \usepackage{enumitem}
 
-% bibliography
-\makeatletter
-\def\blx@nowarnpolyglossia{}
-\makeatother
-\usepackage[citestyle=alphabetic,language=english,url=false,minbibnames=22,mincitenames=22,maxbibnames=22]{biblatex}
+\usepackage[style=alphabetic,language=english,url=false,minbibnames=22,mincitenames=22,maxbibnames=22]{biblatex}
 \addbibresource{phdthesis.bib}
