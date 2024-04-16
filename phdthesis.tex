@@ -1,6 +1,7 @@
 \documentclass{book}
 
 \input{tex/preamble.tex}
+\input{tex/macros.tex}
 
 % Re-usable information (title page, datasheet)
 \newcommand{\myName}{Johan Larsson}
@@ -170,21 +171,13 @@
 
 \chap{Acknowledgements}
 
-I owe my deepest gratitude to my supervisors, Jonas Wallin and Małgorzata Bogdan, who have been attentive and supportive throughout the ordeal.
-
-I also want to thank my colleagues, especially my fellow PhD students, for the camaraderie and the support.
-
-Most of all, I want to thank my family. My parents, my siblings, my partner, and my children. For raising and bearing with me though the work and the stress.
-
 \newpage
 
 \chap{Abstract}
 
-Need more languages? Go to preamble.tex and add them to the
-usepackage[\ldots]{babel} line. Install the corresponding packages on your
-system.
+\chap{Popular Science Summary}
 
-\chap{List of Publications\label{sec:paperlist}}
+\chap{List of Publications}\label{sec:paperlist}
 
 This thesis is based on the following publications.
 
@@ -228,20 +221,38 @@ This thesis is based on the following publications.
 
 \section{Background}
 
+% With modern advances in science and technology, statistical models and the data on which they are fit are becoming increasingly complex. In many disciplines, such as bioinformatics, it is common to measure observations across many more variables than was previously the case. And so data sets are growing in size and becoming ever more high-dimensional. In some fields, this growth in complexity has been paralleled with more effective methods with which to collect observations, as in, for instance, the field of crowd science. But in other areas this this is still a costly endeavor. In bioinformatics, for example, ethical concerns and rising requirements on the quality of data have only raised the costs of data collection. As a result, the data collected in these fields is becoming \emph{wider}: the ratio between the number of variables and the number of observations is increasing. This has challenged classical statistical methods such as classical linear regression, which break down in this setting. And even if there are indeed methods that can be used to model such data, without reducing the number of parameters, the resulting models are often not interpretable. This is the problem that sparse regression methods attempt to solve.
+%
+% Sparse regression methods select only a subset of the features\footnote{A feature is the values of a variable or transformations of a variable for all the observations in the data. It is synonymous with \emph{predictor} and \emph{regressor}.} in the data set, setting the regression coefficients of the remaining ones to zero. The validity of doing so hinges on the assumption that the true model is in fact sparse, and this is called the \emph{sparsity assumption}, which can be motivated by the \emph{bet-on-sparsity principle}: Assume that the underlying model is sparse and use a sparse method to model it. If the assumption is correct, then our method has a chance of doing well. But if the assumption is incorrect, then our method will not work---but no other method would.
+%
+% The success of neural networks and other methods that model high-dimensional data well but do not enforce sparsity might seem to defy the validity of this principle. But this is not the case: if the true model truly is sparse, then we will always do better with a sparse method.
+%
+% Sparse regression methods have a long-standing history in statistics, starting in the 60's with the advent of stepwise regression methods, which are defined by their use of iterative procedures in which features are added or removed from a candidate model in steps. Typically, these algorithms use hypothesis tests to determine whether to add or remove a feature.
+% The first popular stepwise method was invented by \textcite{efroymson1960}, which is a type of forward-stepwise algorithm. Efroymson's algorithm starts with an intercept-only model and then adds or removes features of the design matrix incrementally into the model. Later methods include backward-stepwise regression~\parencite{raiffa1968} and best-subset selection~\parencite{beale1967}, the latter considering all possible subsets of the features.
+%
+% Stepwise methods are now considered problematic for several reasons, such as yielding \(R^2\) values that are too high, \(p\)-values that are too small, and arbitrary variable selection when the variables are collinear\footnote{See \textcite[Chapter 4.3]{harrell2015} for a detailed discussion on this topic.}.
+%
+% Another important reason for why they are not used as much today is that they are computationally expensive since they need to consider all possible subsets of the features\footnote{\textcite{bertsimas2016} has recently shown that this might not be as much of a problem as previously thought. Apparently, the best-subset selection can be solved relatively efficiently using mixed-integer programming, which means that the problem is solvable in polynomial time.} This reason was part of the motivation for the development of regularized methods, which instead of solving standard regression problems on subsets of the features penalize the objective with a penalty that induces sparsity, and which can be fit using much more efficient methods. In this short report we will discuss these methods, the optimization algorithms underlying them, and their history. We will do so by focusing on two methods: the lasso and sorted \(\ell_1\) penalized estimation (SLOPE).
 
-With modern advances in science and technology, statistical models and the data on which they are fit are becoming increasingly complex. In many disciplines, such as bioinformatics, it is common to measure observations across many more variables than was previously the case. And so data sets are growing in size and becoming ever more high-dimensional. In some fields, this growth in complexity has been paralleled with more effective methods with which to collect observations, as in, for instance, the field of crowd science. But in other areas this this is still a costly endeavor. In bioinformatics, for example, ethical concerns and rising requirements on the quality of data have only raised the costs of data collection. As a result, the data collected in these fields is becoming \emph{wider}: the ratio between the number of variables and the number of observations is increasing. This has challenged classical statistical methods such as classical linear regression, which break down in this setting. And even if there are indeed methods that can be used to model such data, without reducing the number of parameters, the resulting models are often not interpretable. This is the problem that sparse regression methods attempt to solve.
+\section{Regularization}
 
-Sparse regression methods select only a subset of the features\footnote{A feature is the values of a variable or transformations of a variable for all the observations in the data. It is synonymous with \emph{predictor} and \emph{regressor}.} in the data set, setting the regression coefficients of the remaining ones to zero. The validity of doing so hinges on the assumption that the true model is in fact sparse, and this is called the \emph{sparsity assumption}, which can be motivated by the \emph{bet-on-sparsity principle}: Assume that the underlying model is sparse and use a sparse method to model it. If the assumption is correct, then our method has a chance of doing well. But if the assumption is incorrect, then our method will not work---but no other method would.
+For this thesis, we are in general interested in fitting regularized statistical models to tabular data consisting of a matrix of features (or predictors) \(\mat{X} \in \mathbb{R}^{n \times p}\) and a response vector \(\vec{y} \in \mathbb{R}^n\).
 
-The success of neural networks and other methods that model high-dimensional data well but do not enforce sparsity might seem to defy the validity of this principle. But this is not the case: if the true model truly is sparse, then we will always do better with a sparse method.
+The models that we are interested in fitting are of the form
 
-Sparse regression methods have a long-standing history in statistics, starting in the 60's with the advent of stepwise regression methods, which are defined by their use of iterative procedures in which features are added or removed from a candidate model in steps. Typically, these algorithms use hypothesis tests to determine whether to add or remove a feature.
-The first popular stepwise method was invented by \textcite{efroymson1960}, which is a type of forward-stepwise algorithm. Efroymson's algorithm starts with an intercept-only model and then adds or removes features of the design matrix incrementally into the model. Later methods include backward-stepwise regression~\parencite{raiffa1968} and best-subset selection~\parencite{beale1967}, the latter considering all possible subsets of the features.
+\begin{align*}
+  \text{minimize} & f(\vec{\beta}; \mat{X}, \vec{y}) = g(\vec{\beta}; \mat{X}, \vec{y}) + h(\vec{\beta})
+\end{align*}
+where \(f(\beta)\)
 
-Stepwise methods are now considered problematic for several reasons, such as yielding \(R^2\) values that are too high, \(p\)-values that are too small, and arbitrary variable selection when the variables are collinear\footnote{See \textcite[Chapter 4.3]{harrell2015} for a detailed discussion on this topic.}.
 
-Another important reason for why they are not used as much today is that they are computationally expensive since they need to consider all possible subsets of the features\footnote{\textcite{bertsimas2016} has recently shown that this might not be as much of a problem as previously thought. Apparently, the best-subset selection can be solved relatively efficiently using mixed-integer programming, which means that the problem is solvable in polynomial time.} This reason was part of the motivation for the development of regularized methods, which instead of solving standard regression problems on subsets of the features penalize the objective with a penalty that induces sparsity, and which can be fit using much more efficient methods. In this short report we will discuss these methods, the optimization algorithms underlying them, and their history. We will do so by focusing on two methods: the lasso and sorted \(\ell_1\) penalized estimation (SLOPE).
+\subsection{Lasso}
 
+\subsection{Elastic Net}
+
+\subsection{SLOPE}
+
+\section{Optimization}
 
 \section{Summary of the Papers}
 
@@ -275,10 +286,13 @@ In this paper, we explore the sensitivity of regularized methods, such as the la
 
 \chap{Papers}
 
-\clearpage
-\addcontentsline{toc}{section}{\protect\numberline{\I} {\PaperItitle}}
+\cleardoublepage
 
 \thispagestyle{empty}
+
+\phantomsection
+\addcontentsline{toc}{section}{\protect\numberline{\I} {\PaperItitle}}
+\markright{\I{}: \PaperItitle}
 
 % \begin{tikzpicture}[remember picture, overlay]
 %   \node[fill=black, text=white, font=\bfseries\fontsize{50}{55}\selectfont, anchor=east, minimum height=1.5cm, minimum width=2.5cm, text width=1.5cm, align=left] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
@@ -291,14 +305,14 @@ In this paper, we explore the sensitivity of regularized methods, such as the la
 % Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
 \includepdf[
   pages=-,
-  width=\textwidth,
+  width=0.9\textwidth,
   % scale=0.50,
   % noautoscale,
-  offset=-14.56723pt 0pt,
+  % offset=-14.56723pt 0pt,
   % frame=true,
   clip,
   viewport=107 50 506 743,
-  % pagecommand={\thispagestyle{headings}},
+  pagecommand={\thispagestyle{headings}},
 ]{papers/paper1.pdf}
 % One additional option could be useful: To cut away the margins of the included PDFs use:
 % clip,viewport=<left> <bottom> <right> <top>
