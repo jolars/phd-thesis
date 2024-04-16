@@ -2,9 +2,6 @@
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 
-% Non-breakable hyphen. Use for things like "(re-)print". 
-\newcommand\nobrkhyph{\mbox{-}}
-
 % Small caps serif font, for Paper numbers, ISBN, etc
 \newcommand{\I}{\textrm{\scshape i}\xspace}
 \newcommand{\II}{\textrm{\scshape ii}\xspace}
@@ -19,16 +16,22 @@
 \newcommand{\ISBN}{\textrm{\scshape isbn}\xspace}
 \newcommand{\ISSN}{\textrm{\scshape issn}\xspace}
 
-% Must come in the beginning. To calculate the total number of pages
 \usepackage{pageslts}
 
-% Font settings
-\usepackage[utf8]{inputenc}
+% G5 format
+\usepackage[
+  paperwidth=169mm,
+  paperheight=239mm,
+  nomarginpar,
+]{geometry}
+
 \usepackage[T1]{fontenc}
-\usepackage[varqu,varl]{inconsolata}
+\usepackage[varqu,varl,scale=0.9]{inconsolata}
 \usepackage[ebgaramond,textscale=0,semibold,vvarbb,subscriptcorrection,amsthm]{newtx}
 
+\usepackage{upquote} % straight quotes in verbatim environments
 \usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 
 % Additional font sizes \HUGE and \ssmall, needed for figure captions
 \usepackage{moresize}
@@ -39,8 +42,30 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage[labelfont=bf]{subcaption}
 
-% For URLs use \url{<URL>}
-\usepackage{url}
+\usepackage{epigraph}
+
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{bookmark}
+\usepackage{hyperref}
+
+\definecolor{lublue}{RGB}{0,0,128}
+\definecolor{lubronze}{RGB}{156,97,20}
+
+\hypersetup{
+  colorlinks = true,
+  % hidelinks,
+  breaklinks = true,
+  linkcolor  = black,
+  filecolor  = lublue,
+  urlcolor   = lublue,
+  citecolor  = lubronze
+}
+\usepackage{cleveref}
+
+% % algorithms
+% \usepackage[ruled,vlined]{algorithm2e}
+% \resetcounteronoverlays{algocf}
 
 % Chapters should have numbers - a typical thesis consists of two chapters:
 % One to introduce and summarize the research ("kappa"), and one for
@@ -75,36 +100,12 @@
 % Math symbols
 % \usepackage{amsfonts,amsmath,amssymb}
 
-% University Colors
-\usepackage{xcolor}
-\definecolor{lublue}{RGB}{0,0,128}
-\definecolor{lubronze}{RGB}{156,97,20}
-
-% Cross-referencing
-\usepackage{hyperref}
-\hypersetup{
-  % colorlinks = true,
-  hidelinks,
-  breaklinks = true,
-  linkcolor  = lublue,
-  filecolor  = lublue,
-  urlcolor   = lublue,
-  citecolor  = lubronze
-}
-\usepackage{cleveref}
-
 % To include the PDFs of the papers
-\usepackage{pdfpages}
+\usepackage[draft]{pdfpages}
 
 % Hyphenation, support for different languages, last one is default
 % Make sure to install the hyphenation packages for all languages you need
 \usepackage[english]{babel}
-
-% Paper size. Typically this works also fine when printed on A4 (text size is
-% as print later, just the margins become wider to accommodate the too large
-% sheets).
-%% G5 format
-\usepackage[paperwidth=169mm,paperheight=239mm,nomarginpar]{geometry}
 
 % Figures can be kept in the same directory as the thesis, or in a Figure/
 % directory, without need to specifying which of the two it is
@@ -134,5 +135,13 @@
 
 \usepackage{enumitem}
 
-\usepackage[style=alphabetic,language=english,url=false,minbibnames=22,mincitenames=22,maxbibnames=22]{biblatex}
+\usepackage[
+  style=alphabetic,
+  language=english,
+  url=false,
+  minbibnames=22,
+  mincitenames=22,
+  maxbibnames=22,
+  maxcitenames=25
+]{biblatex}
 \addbibresource{phdthesis.bib}

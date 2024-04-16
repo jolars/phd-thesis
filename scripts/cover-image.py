@@ -43,7 +43,8 @@ j = 0
 fig = plt.figure(figsize=(8, 3), layout="constrained")
 ax = fig.add_subplot(projection="3d")
 
-cm = mpl.colormaps["Spectral"]
+# cm = mpl.colormaps["Spectral"]
+cm = mpl.colormaps["BrBG"]
 
 ind = [1, 2, 3, 6, 8, 9]
 

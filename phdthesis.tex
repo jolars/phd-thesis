@@ -5,8 +5,8 @@
 % Re-usable information (title page, datasheet)
 \newcommand{\myName}{Johan Larsson}
 \newcommand{\myYear}{2024}
-\newcommand{\myMainTitle}{Title}
-\newcommand{\mySubTitle}{Subtitle}
+\newcommand{\myMainTitle}{Optimization and Algorithms in Sparse Regression}
+\newcommand{\mySubTitle}{Screening Rules, Coordinate Descent, and Normalization}
 
 % Compact combination of combining title and subtitle, used in datasheet and as
 % chapter title for the main part.
@@ -18,7 +18,7 @@
 
 \newcommand{\myDegree}{Thesis for the degree of Doctor of Philosophy}
 \newcommand{\myAdvisors}{Jonas Wallin and Małgorzata Bogdan}
-\newcommand{\myOpponent}{TBA}
+\newcommand{\myOpponent}{Professor Mário A. T. Figueiredo (Instituto Superior Técnico, Lisbon, Portugal)}
 
 \newcommand{\myDefenceAnnouncement}{%
   To be presented, with the permission of the
@@ -27,26 +27,24 @@
   on Sunday, the 34th of December \myYear\xspace at 24:00. }
 \newcommand{\myCoverFront}{%
   \noindent {\bf Cover illustration front:}
-  A really pretty thing that looks great on the front but has only a
-  remote connection to do with my research (Credits: The awesome person who made
-  this picture).}
+  The elastic net path for a data set of diabetes patients.
+}
 \newcommand{\myCoverBack}{%
   {\bf Cover illustration back:} Picture showing my research (Paper \V).}
 \newcommand{\myFundingInformation}{%
   {\bf Funding information:}
   The thesis work was financially supported by my rich uncle.}
 
-\newcommand{\mySeries}{%
-  \ISSN: $<$ISSN number$>$}
+% \newcommand{\mySeries}{\ISSN: $<$ISSN number$>$}
 
-\newcommand{\myISBNprint}{1234567890}
-\newcommand{\myISBNpdf}{0987654321}
+\newcommand{\myISBNprint}{978-91-8104-076-0}
+\newcommand{\myISBNpdf}{978-91-8104-077-7}
 \newcommand{\myFormSignDate}{1776-7-4}
 
 % total page number is computed automatically:
 \newcommand{\myPages}{\lastpageref{LastPages}}
 
-\newcommand{\myFormDefenceDate}{2015-12-24}
+\newcommand{\myFormDefenceDate}{2024-05-24}
 \newcommand{\myFormKeywords}{%
   power, victory, awesomeness}
 
@@ -73,12 +71,31 @@
 \newcommand{\PaperVref}{Journal for Superheroes, pp. 1--10}
 \newcommand{\PaperVIref}{Journal for Superheroes, pp. 1--10}
 
-\newcommand{\PaperItitle}{Spiderman vs Superman}
-\newcommand{\PaperIItitle}{On the matter of \ldots}
-\newcommand{\PaperIIItitle}{On the matter of \ldots}
-\newcommand{\PaperIVtitle}{On the matter of \ldots}
-\newcommand{\PaperVtitle}{On the matter of \ldots}
-\newcommand{\PaperVItitle}{On the matter of \ldots}
+\newcommand{\PaperItitle}{The Strong Screening Rule for SLOPE}
+\newcommand{\PaperIItitle}{Look-Ahead Screening Rules for the Lasso}
+\newcommand{\PaperIIItitle}{The Hessian Screening Rule}
+\newcommand{\PaperIVtitle}{Benchopt: Reproducible, Efficient and Collaborative Optimization Benchmarks}
+\newcommand{\PaperVtitle}{Coordinate Descent for SLOPE}
+\newcommand{\PaperVItitle}{Regularization and Scaling in Sparse Regression}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\scshape\romannumeral #1}
+\makeatother
+
+\newcommand{\PaperSeparator}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[
+      fill=black,
+      text=white,
+      font=\bfseries\fontsize{50}{55}\selectfont,
+      anchor=east,
+      minimum height=1.5cm,
+      minimum width=2.6cm,
+      text width=2.0cm,
+      align=left
+      ] at ($(current page.north east) + (0,-{#1*0.15}\paperheight + 0.75cm)$)  {\rom{#1}};
+  \end{tikzpicture}
+}
 
 % Not included papers, in case you want to list them
 %\newcommand{\PaperNotIncIauthor}{C. Coauthor, \textbf{X. Someone}}
@@ -96,16 +113,39 @@
 
 \input{tex/frontmatter.tex}
 
-% ===============================================================
-% ===================== INSPIRATIONAL QUOTE:  ===================
-% ===============================================================
+% Quote page
+
 \newpage
 \thispagestyle{empty} % No page number on quote page
-~
-\vspace{140pt}
-\begin{flushright}
-  \textit{Dedicated to my siblings\\Name -- Name -- Name}
-\end{flushright}
+
+\setlength\epigraphrule{0pt}
+\setlength\epigraphwidth{.5\textwidth}
+
+\null
+\vspace{20ex}
+
+% Nothing in life is as important as you think it is when you are thinking about it. ---Daniel Kahneman
+% Our comforting conviction that the world makes sense rests on a secure foundation: our almost unlimited ability to ignore our ignorance.
+% As you know from teaching introductory statistics, 30 is infinity. -- Andrew Gelman
+% You should inform your gut and then trust it ---Daniel Kahneman
+% The best thing about being a statistician is that you get to play in everyone's backyard. --- John Tukey
+
+% \epigraph{\itshape
+%   As you know from teaching introductory statistics, 30 is infinity.
+% }{
+%   ---Andrew Gelman
+% }
+
+\epigraph{\itshape
+  There’s a point when you go with what you’ve got. Or you don’t go.
+}{
+  ---Joan Didion
+}
+
+
+
+
+
 
 \cleardoublepage
 
@@ -130,9 +170,11 @@
 
 \chap{Acknowledgements}
 
-This template was created and shared as a private initiative and comes without
-support of any kind. If you are happy to have it, you are welcome to say thanks
-and/or to send beers/goodies! :)
+I owe my deepest gratitude to my supervisors, Jonas Wallin and Małgorzata Bogdan, who have been attentive and supportive throughout the ordeal.
+
+I also want to thank my colleagues, especially my fellow PhD students, for the camaraderie and the support.
+
+Most of all, I want to thank my family. My parents, my siblings, my partner, and my children. For raising and bearing with me though the work and the stress.
 
 \newpage
 
@@ -147,11 +189,13 @@ system.
 This thesis is based on the following publications.
 
 \begin{description}[leftmargin=!,labelwidth=0.7cm]
-  \item[\I]  \fullcite{larsson2020b}
+  \item[\I] \fullcite{larsson2020b}
   \item[\II] \fullcite{larsson2021}
   \item[\III] \fullcite{larsson2022b}
   \item[\IV] \fullcite{moreau2022a}
   \item[\V] \fullcite{larsson2023}
+  \item[\VI] PAPER ON THE WAY
+        % TODO: Add details for last paper
 \end{description}
 
 %   % Publications not included in this thesis:
@@ -175,103 +219,125 @@ This thesis is based on the following publications.
 % Rest page counters, this is where it all starts!
 \setcounter{page}{1}
 
-\chap{\myTitle}
+\chap{Introduction}
 % Fancy a quote?
-%\begin{flushright}
-%\textit{It's easy to be complicated\\but very difficult to be simple.}\\
-%{--- Debasish Mridha}
-%\\[1cm]
-%\textit{Everything should be made as simple as possible, but not simpler}\\
-%{--- Albert Einstein}
-%\end{flushright}
-\section{Introduction}
-\subsection{Foo bar}
+\begin{flushright}
+  \textit{Everything should be made as simple as possible, but not simpler.}\\
+  {---Albert Einstein}
+\end{flushright}
 
-\blindtext[3]
-
-\subsection{Baz Baf\label{sec:mainresults}}
-\begin{figure}
-  \includegraphics[width=0.6\textwidth]{natfak}
-  \caption{The Faculty of Science and the Astronomy tower. (Figure: Lund University)\label{fig:cool}}
-\end{figure}
-
-Explaining something cool (\Cref{fig:cool}), which can be seen in a fantastic reference
-\parencite{bogdan2015}. Figures and tables are placed automatically, such that they are
-close by but not necessarily on the same page\footnote{to optimize page space}.
+\section{Background}
 
 
-The concepts are summarized in Table~\ref{tab:comparison}.
+With modern advances in science and technology, statistical models and the data on which they are fit are becoming increasingly complex. In many disciplines, such as bioinformatics, it is common to measure observations across many more variables than was previously the case. And so data sets are growing in size and becoming ever more high-dimensional. In some fields, this growth in complexity has been paralleled with more effective methods with which to collect observations, as in, for instance, the field of crowd science. But in other areas this this is still a costly endeavor. In bioinformatics, for example, ethical concerns and rising requirements on the quality of data have only raised the costs of data collection. As a result, the data collected in these fields is becoming \emph{wider}: the ratio between the number of variables and the number of observations is increasing. This has challenged classical statistical methods such as classical linear regression, which break down in this setting. And even if there are indeed methods that can be used to model such data, without reducing the number of parameters, the resulting models are often not interpretable. This is the problem that sparse regression methods attempt to solve.
 
-\begin{table}[htb]
-  \caption{Table caption with a CAPS word, no small caps can be used in table and figure captions because sans serif fonts don't support it.\label{tab:comparison}}
-  \centering
-  \begin{tabular}{lcccc}
-    \toprule
-              & Superman    & Spiderman     \\
-    \midrule
-    Gender    & male        & male          \\
-    Species   & Homo Sapien & Human/spider  \\
-    Homeworld & Gotham City & Earth         \\
-    \midrule
-    Publisher & DC Comics   & Marvel Comics \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+Sparse regression methods select only a subset of the features\footnote{A feature is the values of a variable or transformations of a variable for all the observations in the data. It is synonymous with \emph{predictor} and \emph{regressor}.} in the data set, setting the regression coefficients of the remaining ones to zero. The validity of doing so hinges on the assumption that the true model is in fact sparse, and this is called the \emph{sparsity assumption}, which can be motivated by the \emph{bet-on-sparsity principle}: Assume that the underlying model is sparse and use a sparse method to model it. If the assumption is correct, then our method has a chance of doing well. But if the assumption is incorrect, then our method will not work---but no other method would.
 
-\section{Some more background}
+The success of neural networks and other methods that model high-dimensional data well but do not enforce sparsity might seem to defy the validity of this principle. But this is not the case: if the true model truly is sparse, then we will always do better with a sparse method.
 
-\blindtext[10]
+Sparse regression methods have a long-standing history in statistics, starting in the 60's with the advent of stepwise regression methods, which are defined by their use of iterative procedures in which features are added or removed from a candidate model in steps. Typically, these algorithms use hypothesis tests to determine whether to add or remove a feature.
+The first popular stepwise method was invented by \textcite{efroymson1960}, which is a type of forward-stepwise algorithm. Efroymson's algorithm starts with an intercept-only model and then adds or removes features of the design matrix incrementally into the model. Later methods include backward-stepwise regression~\parencite{raiffa1968} and best-subset selection~\parencite{beale1967}, the latter considering all possible subsets of the features.
 
-\section{Main results of the research papers}
+Stepwise methods are now considered problematic for several reasons, such as yielding \(R^2\) values that are too high, \(p\)-values that are too small, and arbitrary variable selection when the variables are collinear\footnote{See \textcite[Chapter 4.3]{harrell2015} for a detailed discussion on this topic.}.
 
-\blindtext
+Another important reason for why they are not used as much today is that they are computationally expensive since they need to consider all possible subsets of the features\footnote{\textcite{bertsimas2016} has recently shown that this might not be as much of a problem as previously thought. Apparently, the best-subset selection can be solved relatively efficiently using mixed-integer programming, which means that the problem is solvable in polynomial time.} This reason was part of the motivation for the development of regularized methods, which instead of solving standard regression problems on subsets of the features penalize the objective with a penalty that induces sparsity, and which can be fit using much more efficient methods. In this short report we will discuss these methods, the optimization algorithms underlying them, and their history. We will do so by focusing on two methods: the lasso and sorted \(\ell_1\) penalized estimation (SLOPE).
+
+
+\section{Summary of the Papers}
+
+\subsection{Paper \I}
+
+In this paper, we address the challenge of extracting relevant features from data sets where the number of observations, n, is significantly smaller than the number of predictors, p. We focus on the Sorted L-One Penalized Estimation (SLOPE)—a generalization of the lasso—as a promising method in this context. However, current numerical procedures for SLOPE lack the efficiency that lasso tools possess, especially when estimating a complete regularization path. A key component of lasso's efficiency is predictor screening rules, which allow predictors to be discarded before model estimation. This paper is the first to establish such a rule for SLOPE. We develop a SLOPE screening rule by examining its subdifferential and demonstrate that this rule is a generalization of the strong rule for the lasso. Although our rule is heuristic and may occasionally discard predictors erroneously, we show that such instances are rare and can be easily safeguarded against by a simple check of the optimality conditions. Our numerical experiments reveal that the rule performs well in practice, leading to significant improvements for data in the \(p \gg n\) domain, and incurs no additional computational overhead when \(n > p\). This paper, therefore, presents a significant advancement in the efficiency of SLOPE, particularly in high-dimensional settings.
+
+\subsection{Paper \II}
+
+In this paper, we focus on the lasso, a widely used method for inducing shrinkage and sparsity in the solution vector of regression problems, especially when the number of predictors outweighs the number of observations. Solving the lasso in such high-dimensional settings can be computationally challenging. However, this challenge can be mitigated through the use of screening rules that discard predictors before fitting the model, resulting in a reduced problem. We introduce a new screening strategy, termed look-ahead screening. This method employs safe screening rules to identify a range of penalty values for which a specific predictor cannot enter the model, thereby screening predictors along the remaining path. Our experiments demonstrate that these look-ahead screening rules outperform the active warm-start version of the Gap Safe rules, marking a significant advancement in the efficiency of solving high-dimensional lasso problems.
+
+\subsection{Paper \III}
+
+In this paper, we address the challenge of predictor screening rules in l1-regularized regression problems, such as the lasso. These rules, which eliminate predictors from the design matrix before fitting a model, have significantly improved the speed of solving such problems. However, current state-of-the-art screening rules struggle with highly-correlated predictors, often becoming overly conservative. To tackle this issue, we introduce a new screening rule: the Hessian Screening Rule. This rule leverages second-order information from the model to provide more accurate screening and higher-quality warm starts. Our proposed rule outperforms all other alternatives we studied on datasets with high correlation for both l1-regularized least-squares (the lasso) and logistic regression. It also delivers the best performance overall on the real datasets we examined. This paper, therefore, presents a significant advancement in dealing with highly-correlated predictors in l1-regularized regression problems.
+
+\subsection{Paper \IV}
+
+In this paper, we tackle the challenges posed by the rapid development of machine learning research, particularly in the area of numerical validation. Researchers often face a multitude of methods to compare, lack of transparency and consensus on best practices, and the tedious task of re-implementing work. This often results in partial validation, which can lead to incorrect conclusions and hinder research progress. To address these issues, we introduce Benchopt, a collaborative framework designed to automate, reproduce, and publish optimization benchmarks in machine learning across different programming languages and hardware architectures. Benchopt simplifies the benchmarking process by providing a ready-to-use tool for running, sharing, and extending experiments. We demonstrate its wide applicability through benchmarks on three standard learning tasks: $\ell_2$-regularized logistic regression, Lasso, and ResNet18 training for image classification. These benchmarks reveal key practical findings that provide a more nuanced view of the state-of-the-art for these problems, emphasizing that the details matter in practical evaluation. We believe that Benchopt will encourage collaborative work in the community and improve the reproducibility of research findings.
+
+\subsection{Paper \V}
+
+In this paper we delve into the Sorted L-One Penalized Estimation (SLOPE), an extension of the renowned lasso regression method. Despite the promising statistical properties of SLOPE, its adoption has been limited due to the inefficiency of existing algorithms in high-dimensional contexts. To overcome this challenge, we introduce a novel, faster algorithm that solves the SLOPE optimization problem.
+
+Our algorithm merges the techniques of proximal gradient descent and proximal coordinate descent, significantly enhancing the efficiency of the SLOPE method. We also shed new light on the directional derivative of the SLOPE penalty and its associated SLOPE thresholding operator, and provide assurances of convergence for our proposed solver. Through comprehensive benchmarks on both simulated and real data, we demonstrate that our method outperforms a host of competing algorithms. This paper is a significant contribution as it broadens the applicability of the SLOPE method in high-dimensional settings, potentially paving the way for its wider use in the field.
+
+\subsection{Paper \VI}
+
+In this paper, we explore the sensitivity of regularized methods, such as the lasso and ridge regression, to the scales of the features in the data. It's standard practice to normalize features to ensure they share the same scale. While standardization is common for continuous data, binary data, particularly when high-dimensional and sparse, is often not scaled at all. We demonstrate that this choice can significantly impact the estimated model when the binary features are imbalanced, and that these effects also depend on the type of regularization used. Specifically, we show that the size of a feature's corresponding coefficient in the lasso is directly related to its class imbalance, and this effect depends on the normalization used. We propose potential solutions to this issue and discuss the case when data is mixed, containing both continuous and binary features. This paper, therefore, provides valuable insights into the impact of feature scaling on regularized methods and offers practical solutions for handling mixed data.
 
 \printbibliography
 
 \chap{Papers}
 
-\cleardoublepage
-\addcontentsline{toc}{section}{Paper~\I: {\PaperItitle}}
+\clearpage
+\addcontentsline{toc}{section}{\protect\numberline{\I} {\PaperItitle}}
 
 \thispagestyle{empty}
 
-\begin{tikzpicture}[remember picture, overlay]
-  \node[fill=black, text=white, font=\bfseries\fontsize{50}{55}\selectfont, anchor=east, minimum height=1.5cm, minimum width=2.5cm, text width=1.5cm, align=left] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
-\end{tikzpicture}
+% \begin{tikzpicture}[remember picture, overlay]
+%   \node[fill=black, text=white, font=\bfseries\fontsize{50}{55}\selectfont, anchor=east, minimum height=1.5cm, minimum width=2.5cm, text width=1.5cm, align=left] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
+% \end{tikzpicture}
+
+\PaperSeparator{1}
 
 \cleardoublepage
-% Include the PDF. Comment this while writing the thesis, only add later. 
+% Include the PDF. Comment this while writing the thesis, only add later.
 % Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
-\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{headings}}]{paperI.pdf}
+\includepdf[
+  pages=-,
+  width=\textwidth,
+  % scale=0.50,
+  % noautoscale,
+  offset=-14.56723pt 0pt,
+  % frame=true,
+  clip,
+  viewport=107 50 506 743,
+  % pagecommand={\thispagestyle{headings}},
+]{papers/paper1.pdf}
 % One additional option could be useful: To cut away the margins of the included PDFs use:
 % clip,viewport=<left> <bottom> <right> <top>
-% To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory. 
+% To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory.
 
 \cleardoublepage
-\addcontentsline{toc}{section}{Paper~\II: {\PaperItitle}}
 
 \thispagestyle{empty}
-
-\begin{tikzpicture}[remember picture, overlay]
-  \node[fill=black, text=white, font=\bfseries\fontsize{50}{70}, anchor=east, minimum height=1.5cm, minimum width=2cm] at ($(current page.north east) + (0,-0.3\paperheight)$) {\II}; \end{tikzpicture}
+\PaperSeparator{2}
+\addcontentsline{toc}{section}{\protect\numberline{\II} {\PaperIItitle}}
 
 \cleardoublepage
-% Include the PDF. Comment this while writing the thesis, only add later. 
-% Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
-\includepdf[pages=-,width=1.00\textwidth,pagecommand={\thispagestyle{headings}}]{paperI.pdf}
-% One additional option could be useful: To cut away the margins of the included PDFs use:
-% clip,viewport=<left> <bottom> <right> <top>
-% To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory. 
+
+\thispagestyle{empty}
+\PaperSeparator{3}
+\addcontentsline{toc}{section}{\protect\numberline{\III} {\PaperIIItitle}}
+
+\cleardoublepage
+
+\thispagestyle{empty}
+\PaperSeparator{4}
+\addcontentsline{toc}{section}{\protect\numberline{\IV} {\PaperIVtitle}}
+
+\cleardoublepage
+
+\thispagestyle{empty}
+\PaperSeparator{5}
+\addcontentsline{toc}{section}{\protect\numberline{\V} {\PaperVtitle}}
+
+\cleardoublepage
+
+\thispagestyle{empty}
+\PaperSeparator{6}
+\addcontentsline{toc}{section}{\protect\numberline{\VI} {\PaperVItitle}}
 
 \cleardoublepage
 
 % \appendix
 % \thispagestyle{empty}
-
-% \vspace*{4cm} %increase by 2cm each time. %<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Important
-% \hfill{ %\fontspec{Frutiger}
-%   \fontsize{20}{30}\selectfont {\bf Appendix}}\marginpar{\rule[-4mm]{50mm}{14mm}}
-% \vfill
 
 % \begin{tikzpicture}[remember picture, overlay]
 %   \node[fill=black, text=white, font=\bfseries\HUGE, anchor=east, minimum height=1.5cm, minimum width=5cm] at ($(current page.north east) + (0,-0.8\paperheight)$) {Appendix};

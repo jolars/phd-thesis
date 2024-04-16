@@ -21,24 +21,40 @@
 \cleardoublepage
 \thispagestyle{empty} % no page number
 ~
-\vfill
+\vspace*{0.80cm}
 \begin{center}
-  {\HUGE \myMainTitle}
+  {\Huge \myMainTitle}
   \\[2mm]
-  {\huge \mySubTitle}
+  {\Large \mySubTitle}
 
-  \vfill
-  {\myName}
+  \vspace*{6ex}
 
-  \vfill
+  {\Large\myName}
+
+  \vspace*{6ex}
   % black and white (default):
   \includegraphics[width=0.25\textwidth]{LundUniversity_C2line_BLACK.eps}
 
-  \vspace{10mm}
-  {\large \myDegree}\\
-  {\large Thesis advisors: \myAdvisors}\\
-  {\large Faculty opponent: \myOpponent}\\
-  \vspace{1cm}
+  \vspace*{6ex}
+
+  {\large \myDegree}
+
+  \vspace*{6ex}
+
+  {%
+    {\small\scshape Thesis Advisors}\\
+    \large\myAdvisors
+  }
+
+  \bigskip
+
+  {%
+    {\small\scshape Faculty Opponent}\\
+    \large \myOpponent
+  }
+
+  \vspace*{5ex}
+
   {\footnotesize
     \myDefenceAnnouncement
   }
@@ -62,31 +78,19 @@
 \cleardoublepage
 \thispagestyle{empty} % no page number
 ~
-\vfill
+\vspace*{0.80cm}
 \begin{center}
-  {\HUGE \myMainTitle}
+  {\Huge \myMainTitle}
   \\[2mm]
-  {\huge \mySubTitle}
+  {\Large \mySubTitle}
 
-  \vfill
-  {\myName}
+  \vspace*{6ex}
 
-  \vfill
+  {\Large\myName}
+
+  \vspace*{6ex}
   % black and white (default):
   \includegraphics[width=0.25\textwidth]{LundUniversity_C2line_BLACK.eps}
-
-  % Colour text in white so that the spacing is the same as on page three, but with less clutter
-  \color{white}{
-  \vspace{10mm}
-  {\large \myDegree}\\
-  {\large Thesis advisors: \myAdvisors}\\
-  {\large Faculty opponent: \myOpponent}\\
-  \vspace{1cm}
-  {\footnotesize
-    \myDefenceAnnouncement
-  }
-  }
-  \\
 \end{center}
 \vfill
 
@@ -125,8 +129,8 @@ various stages (in press, submitted, or in draft).
   \\
   \\
   \ISBN: \myISBNprint~(print)\\ % ISBN av svenska ISBN centralen
-  \ISBN: \myISBNpdf~(pdf)\\ % ISBN av svenska ISBN centralen
-  \mySeries\\
+  \ISBN: \myISBNpdf~(electronic)\\ % ISBN av svenska ISBN centralen
+  % \mySeries\\
   \\
   Printed in Sweden by Media-Tryck, Lund~University, Lund~\myYear
 
