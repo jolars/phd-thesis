@@ -302,3 +302,4 @@ TSWLatexianTemp*
 indent.log
 
 *.bbl-SAVE-ERROR
+*.blg-SAVE-ERROR
