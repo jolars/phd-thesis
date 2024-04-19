@@ -25,7 +25,7 @@ def plot_lassoball(type="sparse"):
     ax.plot(t, t0 - np.abs(t), color=PAL[0])  # upper half of diamond
     ax.plot(t, np.abs(t) - t0, color=PAL[0])  # lower half of diamond
 
-    ax.spines[["right", "top"]].set_visible(False)
+    # ax.spines[["right", "top"]].set_visible(False)
 
     ax.set_xticks([-1, 0, 1])
     ax.set_yticks([-1, 0, 1])
@@ -57,6 +57,23 @@ def plot_lassoball(type="sparse"):
         verticalalignment=v,
         horizontalalignment=h,
     )
+
+    if type == "sparse":
+        ax.annotate(
+            "$t$",
+            xy=(-0.5, 1.13),
+            xycoords="data",
+            xytext=(-0.5, 1.4),
+            textcoords="data",
+            ha="center",
+            va="center",
+            arrowprops=dict(
+                arrowstyle="-[, widthB=1.4, lengthB=0.2",  # Bracket A is "{", Bracket B is "|-|"
+                lw=0.75,
+                shrinkA=4,
+                # shrinkB=0.5,
+            ),
+        )
 
 
 plot_lassoball("sparse")

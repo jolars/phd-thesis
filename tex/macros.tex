@@ -1,6 +1,6 @@
 % operators
-% \DeclareMathOperator*{\argmax}{arg\,max}
-% \DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\var}{Var}
 \DeclareMathOperator{\cov}{Cov}
@@ -10,7 +10,7 @@
 \DeclareMathOperator{\nullspace}{null}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\card}{card}
-% \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\st}{S}
 \DeclareMathOperator{\normal}{Normal}
 \DeclareMathOperator{\fnormal}{FoldedNormal}
@@ -33,6 +33,7 @@
 % \newcommand{\T}{\mathsf{T}}
 \newcommand{\T}{\intercal}
 \newcommand{\ones}{\boldsymbol{1}}
+\newcommand{\zeros}{\boldsymbol{0}}
 % \newcommand{\T}{\intercal}
 % \newcommand{\T}[1]{{1}^{\mathsf{T}}}
 \newcommand{\ind}[1]{\operatorname{I}_{#1}}
@@ -55,5 +56,6 @@
 
 \newcommand{\mv}[1]{{\boldsymbol{\mathrm{#1}}}}
 
-\newcommand{\pkg}[1]{\texttt{#1}}
-\newcommand{\data}[1]{\texttt{#1}}
+\newcommand{\pkg}[1]{\textsf{#1}}
+\newcommand{\lang}[1]{\textsf{#1}}
+\newcommand{\data}[1]{\textsf{#1}}

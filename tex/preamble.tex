@@ -27,7 +27,8 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[varqu,varl,scale=0.92]{inconsolata}
-\usepackage[ebgaramond,textscale=0,semibold,vvarbb,subscriptcorrection,amsthm]{newtx}
+\usepackage[ebgaramond,textscale=0,semibold,vvarbb,amsthm]{newtx}
+\usepackage[scale=0.9]{cabin}
 
 \usepackage{upquote} % straight quotes in verbatim environments
 \usepackage{microtype}
@@ -63,8 +64,9 @@
 }
 \usepackage{cleveref}
 
-% % algorithms
-% \usepackage[ruled,vlined]{algorithm2e}
+% algorithms
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+% \usepackage{algpseudocode,algorithm}
 % \resetcounteronoverlays{algocf}
 
 % Chapters should have numbers - a typical thesis consists of two chapters:
@@ -134,6 +136,35 @@
 % References should be a section of the summary text, with number and all ...
 % \renewcommand\bibsection{\section{\bibname}\markright{\bibname}}
 
+% code listings
+\usepackage{listings}
+% \usepackage{minted}
+
+% Define a custom color
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.6,0.6,0.6}
+
+\lstdefinestyle{myStyle}{
+  backgroundcolor=\color{backcolour},
+  frame=single,
+  % commentstyle=\color{codegreen},
+  basicstyle=\ttfamily\small,
+  breakatwhitespace=false,
+  breaklines=true,
+  keepspaces=true,
+  numbers=left,
+  % numbersep=5pt,
+  numberstyle=\footnotesize\color{mygray},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+}
+
+% Use \lstset to make myStyle the global default
+\lstset{style=myStyle}
+
 \usepackage{enumitem}
 
 \usepackage[
@@ -146,3 +177,14 @@
   maxcitenames=25
 ]{biblatex}
 \addbibresource{phdthesis.bib}
+
+% Problem environment
+\usepackage{aliascnt}
+\newaliascnt{problem}{equation}
+\aliascntresetthe{problem}
+\creflabelformat{problem}{#2\textup{(#1)}#3}
+\makeatletter
+\def\problem{$$\refstepcounter{problem}}
+\def\endproblem{\eqno \hbox{\@eqnnum}$$\@ignoretrue}
+\makeatother
+\Crefname{problem}{Problem}{Problems}
