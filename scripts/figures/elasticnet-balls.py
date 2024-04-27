@@ -106,6 +106,8 @@ w_opt = fit.coef_
 
 t0 = l1_norm(w_opt)
 
+lim = (-1, 1)
+
 # Generate a grid of beta values
 beta_grid = np.linspace(lim[0], lim[1], 400)
 B1, B2 = np.meshgrid(beta_grid, beta_grid)
@@ -116,7 +118,6 @@ Z = Z.reshape(B1.shape)
 def plot_elasticnetball(alpha, contours=False):
     fig_width = 1.5
     fig_height = 1.5
-    lim = (-1, 1)
 
     # Plot the level curves of the OLS objective
     fig, ax = plt.subplots(

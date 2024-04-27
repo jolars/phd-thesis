@@ -42,7 +42,6 @@ cmap = ListedColormap(PAL)
 for i in range(coefs.shape[0]):
     plt.plot(xx, coefs[i], color=PAL[i])
 
-
 plt.xlabel(r"$t / \max t$")
 plt.ylabel(r"$\hat{\boldsymbol{\beta}}$")
 

@@ -47,7 +47,7 @@ def plot_lassoball(type="sparse"):
         v = "top"
         h = "center"
         xmod = 0
-        ymod = -0.1
+        ymod = -0.15
 
     ax.plot(pos[0], pos[1], "o", color="black")
     ax.text(

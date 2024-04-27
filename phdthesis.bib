@@ -1,3 +1,66 @@
+@article{beale1967,
+  title         = {The Discarding of Variables in Multivariate Analysis},
+  author        = {Beale, E. M. L. and Kendall, M. G. and Mann, D. W.},
+  volume        = {54},
+  number        = {3-4},
+  pages         = {357--366},
+  doi           = {10.1093/biomet/54.3-4.357},
+  issn          = {0006-3444},
+  url           = {https://doi.org/10.1093/biomet/54.3-4.357},
+  urldate       = {2023-11-21},
+  date          = {1967-12-01},
+  journaltitle  = {Biometrika},
+  abstract      = {
+    In many multivariate situations we are presented with more variables than we would
+    like, and the question arises whether they are all necessary and if not which can
+    be discarded. In this paper we consider two such situations.(a)Regression analysis.
+    The problem here is whether any variables can be discarded as adding little or
+    nothing to the accuracy with which the regression equation correlates with the
+    dependent variable.(b)Interdependence analysis. The problem is whether a
+    constellation in p dimonsions collapses, exactly or approximately, into fewer
+    dimensions, and if so whether any of the original variables can be discarded.We may
+    define the best solution to (a) using any given number of variables as the one that
+    maximizes the multiple correlation between the selected variables and the dependent
+    variable, and similarly for (b) as the one that maximizes the smallest multiple
+    correlation with any of the rejected variables. In practice it is usual to accept
+    an approximate solution to (a) based on `step-wise' multiple regression: we know of
+    no standard program for (b). We have developed cut-off rules that enable us to find
+    the best solution to both problems by partial enumeration. The paper discusses the
+    details of this approach, and computational experience.
+  }
+}
+
+% == BibLateX quality report for beale1967:
+% ? unused Library catalog ("Silverchair")
+@article{beck2009,
+  title         = {A Fast Iterative Shrinkage-Thresholding Algorithm for Linear Inverse Problems},
+  author        = {Beck, A. and Teboulle, M.},
+  volume        = {2},
+  number        = {1},
+  pages         = {183--202},
+  doi           = {10.1137/080716542},
+  url           = {https://epubs.siam.org/doi/abs/10.1137/080716542},
+  urldate       = {2019-02-10},
+  date          = {2009-01-01},
+  journaltitle  = {SIAM Journal on Imaging Sciences},
+  shortjournal  = {SIAM J. Imaging Sci.},
+  abstract      = {
+    We consider the class of iterative shrinkage-thresholding algorithms (ISTA) for
+    solving linear inverse problems arising in signal/image processing. This class of
+    methods, which can be viewed as an extension of the classical gradient algorithm,
+    is attractive due to its simplicity and thus is adequate for solving large-scale
+    problems even with dense matrix data. However, such methods are also known to
+    converge quite slowly. In this paper we present a new fast iterative
+    shrinkage-thresholding algorithm (FISTA) which preserves the computational
+    simplicity of ISTA but with a global rate of convergence which is proven to be
+    significantly better, both theoretically and practically. Initial promising
+    numerical results for wavelet-based image deblurring demonstrate the capabilities
+    of FISTA which is shown to be faster than ISTA by several orders of magnitude.
+  }
+}
+
+% == BibLateX quality report for beck2009:
+% ? unused Library catalog ("epubs.siam.org (Atypon)")
 @article{belloni2011,
   title         = {Square-Root Lasso: Pivotal Recovery of Sparse Signals via Conic Programming},
   shorttitle    = {Square-Root Lasso},
@@ -32,6 +95,115 @@
 
 % == BibLateX quality report for belloni2011:
 % ? unused Library catalog ("Silverchair")
+@inproceedings{bergstra2011,
+  title         = {Algorithms for Hyper-Parameter Optimization},
+  author        = {Bergstra, James and Bardenet, R\'{e}mi and Bengio, Yoshua and K\'{e}gl, Bal\'{a}zs},
+  booktitle     = {Advances in {{Neural Information Processing Systems}}},
+  location      = {Granada, Spain},
+  publisher     = {Curran Associates, Inc.},
+  volume        = {24},
+  pages         = {2546--2554},
+  url           = {
+    https://papers.nips.cc/paper\%5Ffiles/paper/2011/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract.html
+  },
+  urldate       = {2024-02-13},
+  date          = {2011-12-12/2011-12-14},
+  abstract      = {
+    Several recent advances to the state of the art in image classification benchmarks
+    have come from better configurations of existing techniques rather than novel
+    approaches to feature learning. Traditionally, hyper-parameter optimization has
+    been the job of humans because they can be very efficient in regimes where only a
+    few trials are possible. Presently, computer clusters and GPU processors make it
+    possible to run more trials and we show that algorithmic approaches can find better
+    results. We present hyper-parameter optimization results on tasks of training
+    neural networks and deep belief networks (DBNs). We optimize hyper-parameters using
+    random search and two new greedy sequential methods based on the expected
+    improvement criterion. Random search has been shown to be sufficiently efficient
+    for learning neural networks for several datasets, but we show it is unreliable for
+    training DBNs. The sequential algorithms are applied to the most difficult DBN
+    learning problems from [Larochelle et al., 2007] and find significantly better
+    results than the best previously reported. This work contributes novel techniques
+    for making response surface models P (y\vert{}x) in which many elements of
+    hyper-parameter assignment (x) are known to be irrelevant given particular values
+    of other elements.
+  },
+  eventtitle    = {{{NIPS}} 2011}
+}
+
+% == BibLateX quality report for bergstra2011:
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("Neural Information Processing Systems")
+@inproceedings{bertrand2020,
+  title         = {Implicit Differentiation of {{Lasso-type}} Models for Hyperparameter Optimization},
+  author        = {
+    Bertrand, Quentin and Klopfenstein, Quentin and Blondel, Mathieu and Vaiter, Samuel
+    and Gramfort, Alexandre and Salmon, Joseph
+  },
+  booktitle     = {Proceedings of the 37th {{International Conference}} on {{Machine Learning}}},
+  location      = {Vienna, Austria},
+  publisher     = {PMLR},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {119},
+  pages         = {810--821},
+  url           = {https://proceedings.mlr.press/v119/bertrand20a.html},
+  editor        = {III, Hal Daum\'{e} and Singh, Aarti},
+  date          = {2020-07-13/2020-07-18},
+  abstract      = {
+    Setting regularization parameters for Lasso-type estimators is notoriously
+    difficult, though crucial for obtaining the best accuracy. The most popular
+    hyperparameter optimization approach is grid-search on a held-out dataset. However,
+    grid-search requires to choose a predefined grid of parameters and scales
+    exponentially in the number of parameters. Another class of approaches casts
+    hyperparameter optimization as a bi-level optimization problem, typically solved by
+    gradient descent. The key challenge for these approaches is the estimation of the
+    gradient w.r.t. the hyperparameters. Computing that gradient via forward or
+    backward automatic differentiation usually suffers from high memory consumption,
+    while implicit differentiation typically involves solving a linear system which can
+    be prohibitive and numerically unstable. In addition, implicit differentiation
+    usually assumes smooth loss functions, which is not the case of Lasso-type
+    problems. This work introduces an efficient implicit differentiation algorithm,
+    without matrix inversion, tailored for Lasso-type problems. Our proposal scales to
+    high-dimensional data by leveraging the sparsity of the solutions. Empirically, we
+    demonstrate that the proposed method outperforms a large number of standard methods
+    for hyperparameter optimization.
+  },
+  eventtitle    = {{{ICML}} 2020}
+}
+
+@article{bertrand2022a,
+  title         = {
+    Implicit Differentiation for Fast Hyperparameter Selection in Non-Smooth Convex
+    Learning
+  },
+  author        = {
+    Bertrand, Quentin and Klopfenstein, Quentin and Massias, Mathurin and Blondel,
+    Mathieu and Vaiter, Samuel and Gramfort, Alexandre and Salmon, Joseph
+  },
+  volume        = {23},
+  number        = {149},
+  pages         = {1--43},
+  doi           = {10.5555/3586589.3586738},
+  issn          = {1532-4435},
+  date          = {2022-04},
+  journaltitle  = {The Journal of Machine Learning Research},
+  shortjournal  = {J. Mach. Learn. Res.},
+  abstract      = {
+    Finding the optimal hyperparameters of a model can be cast as a bilevel
+    optimization problem, typically solved using zero-order techniques. In this work we
+    study first-order methods when the inner optimization problem is convex but
+    non-smooth. We show that the forward-mode differentiation of proximal gradient
+    descent and proximal coordinate descent yield sequences of Jacobians converging
+    toward the exact Jacobian. Using implicit differentiation, we show it is possible
+    to leverage the non-smoothness of the inner problem to speed up the computation.
+    Finally, we provide a bound on the error made on the hypergradient when the inner
+    optimization problem is solved approximately. Results on regression and
+    classification problems reveal computational benefits for hyperparameter
+    optimization, especially when multiple hyperparameters are required.
+  }
+}
+
+% == BibLateX quality report for bertrand2022a:
+% ? unused Library catalog ("ACM Digital Library")
 @article{bertsimas2016,
   title         = {Best Subset Selection via a Modern Optimization Lens},
   author        = {Bertsimas, Dimitris and King, Angela and Mazumder, Rahul},
@@ -119,6 +291,8 @@
   eprinttype    = {pmid}
 }
 
+% == BibLateX quality report for bogdan2015:
+% ? unused Library catalog ("PubMed Central")
 @online{bogdan2022,
   title         = {Pattern Recovery by {{SLOPE}}},
   author        = {
@@ -150,6 +324,8 @@
   pubstate      = {preprint}
 }
 
+% == BibLateX quality report for bogdan2022:
+% ? unused Number ("arXiv:2203.12086")
 @article{bondell2008,
   title         = {
     Simultaneous Regression Shrinkage, Variable Selection, and Supervised Clustering of
@@ -186,6 +362,90 @@
   }
 }
 
+@inproceedings{bottou2010,
+  title         = {Large-Scale Machine Learning with Stochastic Gradient Descent},
+  author        = {Bottou, L\'{e}on},
+  booktitle     = {Proceedings of {{COMPSTAT}}'2010},
+  location      = {Berlin, Germany},
+  publisher     = {Physica-Verlag},
+  pages         = {177--186},
+  doi           = {10.1007/978-3-7908-2604-3\_16},
+  isbn          = {978-3-7908-2604-3},
+  editor        = {Lechevallier, Yves and Saporta, Gilbert},
+  date          = {2010-09-30},
+  abstract      = {
+    During the last decade, the data sizes have grown faster than the speed of
+    processors. In this context, the capabilities of statistical machine learning
+    methods is limited by the computing time rather than the sample size. A more
+    precise analysis uncovers qualitatively different tradeoffs for the case of
+    small-scale and large-scale learning problems. The large-scale case involves the
+    computational complexity of the underlying optimization algorithm in non-trivial
+    ways. Unlikely optimization algorithms such as stochastic gradient descent show
+    amazing performance for large-scale problems. In particular, second order
+    stochastic gradient and averaged stochastic gradient are asymptotically efficient
+    after a single pass on the training set.
+  },
+  eventtitle    = {19th {{International Conference}} on {{Computational Statistics}}},
+  langid        = {english}
+}
+
+@article{boyd2010,
+  title         = {
+    Distributed Optimization and Statistical Learning via the Alternating Direction
+    Method of Multipliers
+  },
+  author        = {
+    Boyd, Stephen and Parikh, Neil and Chu, Eric and Peleato, Borja and Eckstein,
+    Jonathan
+  },
+  volume        = {3},
+  number        = {1},
+  pages         = {1--122},
+  doi           = {10.1561/2200000016},
+  issn          = {1935-8237},
+  url           = {http://www.nowpublishers.com/article/Details/MAL-016},
+  urldate       = {2020-02-07},
+  date          = {2010},
+  journaltitle  = {Foundations and Trends\textregistered{} in Machine Learning},
+  shortjournal  = {FNT in Machine Learning},
+  langid        = {english}
+}
+
+% == BibLateX quality report for boyd2010:
+% ? unused Library catalog ("DOI.org (Crossref)")
+@online{brochu2010,
+  title         = {
+    A Tutorial on {{Bayesian}} Optimization of Expensive Cost Functions, with
+    Application to Active User Modeling and Hierarchical Reinforcement Learning
+  },
+  author        = {
+    Brochu, Eric and Cora, Vlad M. and family=Freitas, given=Nando, prefix=de,
+    useprefix=true
+  },
+  doi           = {10.48550/arXiv.1012.2599},
+  url           = {http://arxiv.org/abs/1012.2599},
+  urldate       = {2024-02-06},
+  date          = {2010-12-12},
+  eprint        = {1012.2599},
+  eprinttype    = {arxiv},
+  eprintclass   = {cs},
+  abstract      = {
+    We present a tutorial on Bayesian optimization, a method of finding the maximum of
+    expensive cost functions. Bayesian optimization employs the Bayesian technique of
+    setting a prior over the objective function and combining it with evidence to get a
+    posterior function. This permits a utility-based selection of the next observation
+    to make on the objective function, which must take into account both exploration
+    (sampling from areas of high uncertainty) and exploitation (sampling areas likely
+    to offer improvement over the current best observation). We also present two
+    detailed extensions of Bayesian optimization, with experiments---active user
+    modelling with preferences, and hierarchical reinforcement learning---and a
+    discussion of the pros and cons of Bayesian optimization based on our experiences.
+  },
+  pubstate      = {preprint}
+}
+
+% == BibLateX quality report for brochu2010:
+% ? unused Number ("arXiv:1012.2599")
 @article{brzyski2018,
   title         = {Group {{SLOPE}} – Adaptive Selection of Groups of Predictors},
   author        = {Brzyski, Damian and Gossmann, Alexej and Su, Weijie and Bogdan, Ma\l{}gorzata},
@@ -230,6 +490,132 @@
 
 % == BibLateX quality report for brzyski2018:
 % ? unused Library catalog ("amstat.tandfonline.com (Atypon)")
+@article{chen1998a,
+  title         = {Atomic Decomposition by Basis Pursuit},
+  author        = {Chen, Scott Shaobing and Donoho, David L. and Saunders, Michael A.},
+  volume        = {20},
+  number        = {1},
+  pages         = {33--61},
+  doi           = {10.1137/S1064827596304010},
+  issn          = {1064-8275},
+  url           = {https://epubs.siam.org/doi/10.1137/S1064827596304010},
+  urldate       = {2024-02-09},
+  date          = {1998-01},
+  journaltitle  = {SIAM Journal on Scientific Computing},
+  shortjournal  = {SIAM J. Sci. Comput.},
+  abstract      = {
+    The time-frequency and time-scale communities have recently developed a large
+    number of overcomplete waveform dictionaries---stationary wavelets, wavelet
+    packets, cosine packets, chirplets, and warplets, to name a few. Decomposition into
+    overcomplete systems is not unique, and several methods for decomposition have been
+    proposed, including the method of frames (MOF), matching pursuit (MP), and, for
+    special dictionaries, the best orthogonal basis (BOB).Basis pursuit (BP) is a
+    principle for decomposing a signal into an "optimal"' superposition of dictionary
+    elements, where optimal means having the smallest l1 norm of coefficients among all
+    such decompositions. We give examples exhibiting several advantages over MOF, MP,
+    and BOB, including better sparsity and superresolution. BP has interesting
+    relations to ideas in areas as diverse as ill-posed problems, abstract harmonic
+    analysis, total variation denoising, and multiscale edge denoising.BP in highly
+    overcomplete dictionaries leads to large-scale optimization problems. With signals
+    of length 8192 and a wavelet packet dictionary, one gets an equivalent linear
+    program of size 8192 by 212,992. Such problems can be attacked successfully only
+    because of recent advances in linear and quadratic programming by interior-point
+    methods. We obtain reasonable success with a primal-dual logarithmic barrier method
+    and conjugate-gradient solver.
+  }
+}
+
+@article{daubechies2004,
+  title         = {
+    An Iterative Thresholding Algorithm for Linear Inverse Problems with a Sparsity
+    Constraint
+  },
+  author        = {Daubechies, I. and Defrise, M. and De Mol, C.},
+  volume        = {57},
+  number        = {11},
+  pages         = {1413--1457},
+  doi           = {10.1002/cpa.20042},
+  issn          = {1097-0312},
+  url           = {https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.20042},
+  urldate       = {2022-05-27},
+  date          = {2004-08-26},
+  journaltitle  = {Communications on Pure and Applied Mathematics},
+  abstract      = {
+    We consider linear inverse problems where the solution is assumed to have a sparse
+    expansion on an arbitrary preassigned orthonormal basis. We prove that replacing
+    the usual quadratic regularizing penalties by weighted 𝓁p-penalties on the
+    coefficients of such expansions, with 1 \leq{} p \leq{} 2, still regularizes the
+    problem. Use of such 𝓁p-penalized problems with p {$<$} 2 is often advocated when
+    one expects the underlying ideal noiseless solution to have a sparse expansion with
+    respect to the basis under consideration. To compute the corresponding regularized
+    solutions, we analyze an iterative algorithm that amounts to a Landweber iteration
+    with thresholding (or nonlinear shrinkage) applied at each iteration step. We prove
+    that this algorithm converges in norm. \textcopyright{} 2004 Wiley Periodicals,
+    Inc.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for daubechies2004:
+% ? unused Library catalog ("Wiley Online Library")
+@article{daubechies2004a,
+  title         = {
+    An Iterative Thresholding Algorithm for Linear Inverse Problems with a Sparsity
+    Constraint
+  },
+  author        = {Daubechies, I. and Defrise, M. and De Mol, C.},
+  volume        = {57},
+  number        = {11},
+  pages         = {1413--1457},
+  doi           = {10.1002/cpa.20042},
+  issn          = {1097-0312},
+  url           = {https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.20042},
+  urldate       = {2024-02-13},
+  date          = {2004},
+  journaltitle  = {Communications on Pure and Applied Mathematics},
+  abstract      = {
+    We consider linear inverse problems where the solution is assumed to have a sparse
+    expansion on an arbitrary preassigned orthonormal basis. We prove that replacing
+    the usual quadratic regularizing penalties by weighted 𝓁p-penalties on the
+    coefficients of such expansions, with 1 \leq{} p \leq{} 2, still regularizes the
+    problem. Use of such 𝓁p-penalized problems with p {$<$} 2 is often advocated when
+    one expects the underlying ideal noiseless solution to have a sparse expansion with
+    respect to the basis under consideration. To compute the corresponding regularized
+    solutions, we analyze an iterative algorithm that amounts to a Landweber iteration
+    with thresholding (or nonlinear shrinkage) applied at each iteration step. We prove
+    that this algorithm converges in norm. \textcopyright{} 2004 Wiley Periodicals,
+    Inc.
+  },
+  langid        = {english}
+}
+
+@online{davis2015,
+  title         = {
+    An \${{O}}(N\textbackslash log(n))\$ Algorithm for Projecting onto the Ordered
+    Weighted \$\textbackslash ell\_1\$ Norm Ball
+  },
+  author        = {Davis, Damek},
+  doi           = {10.48550/arXiv.1505.00870},
+  url           = {http://arxiv.org/abs/1505.00870},
+  urldate       = {2024-04-23},
+  date          = {2015-06-26},
+  eprint        = {1505.00870},
+  eprinttype    = {arxiv},
+  eprintclass   = {cs, math},
+  abstract      = {
+    The ordered weighted \$\textbackslash ell\_1\$ (OWL) norm is a newly developed
+    generalization of the Octogonal Shrinkage and Clustering Algorithm for Regression
+    (OSCAR) norm. This norm has desirable statistical properties and can be used to
+    perform simultaneous clustering and regression. In this paper, we show how to
+    compute the projection of an \$n\$-dimensional vector onto the OWL norm ball in
+    \$O(n\textbackslash log(n))\$ operations. In addition, we illustrate the
+    performance of our algorithm on a synthetic regression test.
+  },
+  pubstate      = {preprint}
+}
+
+% == BibLateX quality report for davis2015:
+% ? unused Number ("arXiv:1505.00870")
 @article{donoho1994,
   title         = {Ideal Spatial Adaptation by Wavelet Shrinkage},
   author        = {Donoho, David L. and Johnstone, Iain M.},
@@ -266,12 +652,9 @@
   }
 }
 
-% == BibLateX quality report for donoho1994:
-% Unexpected field 'publisher'
 @article{donoho1995,
   title         = {Adapting to Unknown Smoothness via Wavelet Shrinkage},
   author        = {Donoho, David L. and Johnstone, Iain M.},
-  publisher     = {American Statistical Association, Taylor \& Francis, Ltd.},
   volume        = {90},
   number        = {432},
   pages         = {1200--1224},
@@ -305,6 +688,65 @@
   }
 }
 
+@inproceedings{duchi2008,
+  title         = {Efficient Projections onto the L1-Ball for Learning in High Dimensions},
+  author        = {Duchi, John and Shalev-Shwartz, Shai and Singer, Yoram and Chandra, Tushar},
+  booktitle     = {Proceedings of the 25th International Conference on {{Machine}} Learning},
+  location      = {Helsinki, Finland},
+  publisher     = {Association for Computing Machinery},
+  pages         = {272--279},
+  doi           = {10.1145/1390156.1390191},
+  isbn          = {978-1-60558-205-4},
+  url           = {https://doi.org/10.1145/1390156.1390191},
+  urldate       = {2024-04-23},
+  editor        = {McCallum, Andrew and Roweis, Sam},
+  date          = {2008-07-05/2008-07-09},
+  abstract      = {
+    We describe efficient algorithms for projecting a vector onto the l1-ball. We
+    present two methods for projection. The first performs exact projection in O(n)
+    expected time, where n is the dimension of the space. The second works on vectors k
+    of whose elements are perturbed outside the l1-ball, projecting in O(k log(n))
+    time. This setting is especially useful for online learning in sparse feature
+    spaces such as text categorization applications. We demonstrate the merits and
+    effectiveness of our algorithms in numerous batch and online learning tasks. We
+    show that variants of stochastic gradient projection methods augmented with our
+    efficient projection procedures outperform interior point methods, which are
+    considered state-of-the-art optimization techniques. We also show that in online
+    settings gradient updates with l1 projections outperform the exponentiated gradient
+    algorithm while obtaining models with high degrees of sparsity.
+  },
+  eventtitle    = {{{ICML}} 2008}
+}
+
+% == BibLateX quality report for duchi2008:
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("ACM Digital Library")
+@online{dupuis2023,
+  title         = {The Solution Path of {{SLOPE}}},
+  author        = {Dupuis, Xavier and Tardivel, Patrick J C},
+  number        = {hal-04100441v2},
+  url           = {https://hal.science/hal-04100441v2},
+  urldate       = {2024-01-17},
+  date          = {2023-10-28},
+  eprint        = {hal-04100441v2},
+  eprinttype    = {HAL},
+  abstract      = {
+    The SLOPE estimator has the particularity of having null components (sparsity) and
+    components that are equal in absolute value (clustering). The number of clusters
+    depends on the regularization parameter of the estimator. This parameter can be
+    chosen as a trade-off between interpretability (with a small number of clusters)
+    and accuracy (with a small mean squared error or a small prediction error). Finding
+    such a compromise requires to compute the solution path, that is the function
+    mapping the regularization parameter to the estimator. We provide in this article
+    an algorithm to compute the solution path of SLOPE.
+  },
+  langid        = {english},
+  pubstate      = {preprint}
+}
+
+% == BibLateX quality report for dupuis2023:
+% Unexpected field 'number'
+% ? unused Library catalog ("HAL Archives Ouvertes")
 @article{efron2004,
   title         = {Least Angle Regression},
   author        = {Efron, Bradley and Hastie, Trevor and Johnstone, Iain M. and Tibshirani, Robert},
@@ -343,6 +785,52 @@
     of covariates.
   },
   langid        = {english}
+}
+
+% == BibLateX quality report for efron2004:
+% ? unused Library catalog ("Project Euclid")
+@incollection{efroymson1960,
+  title         = {Multiple Regression Analysis},
+  author        = {Efroymson, Michael Alin},
+  booktitle     = {Mathematical Methods for Digital Computers},
+  location      = {New York, USA},
+  publisher     = {{John Wiley and Sons}},
+  volume        = {1},
+  pages         = {191--203},
+  isbn          = {978-0-471-70686-1},
+  editor        = {Ralston, Anthony and Wilf, Herbert S.},
+  date          = {1960-12-01},
+  edition       = {1},
+  langid        = {english}
+}
+
+@report{elghaoui2010,
+  title         = {Safe Feature Elimination in Sparse Supervised Learning},
+  author        = {El Ghaoui, Laurent and Viallon, Vivian and Rabbani, Tarek},
+  location      = {Berkeley},
+  number        = {UCB/EECS-2010-126},
+  url           = {http://www.eecs.berkeley.edu/Pubs/TechRpts/2010/EECS-2010-126.html},
+  type          = {Technical report},
+  date          = {2010-09-21},
+  institution   = {EECS Department, University of California},
+  abstract      = {
+    We investigate fast methods that allow to quickly eliminate variables (features) in
+    supervised learning problems involving a convex loss function and a l₁-norm
+    penalty, leading to a potentially substantial reduction in the number of variables
+    prior to running the supervised learning algorithm. The methods are not heuristic:
+    they only eliminate features that are \emph{guaranteed} to be absent after solving
+    the learning problem. Our framework applies to a large class of problems, including
+    support vector machine classification, logistic regression and least-squares. The
+    complexity of the feature elimination step is negligible compared to the typical
+    computational effort involved in the sparse supervised learning problem: it grows
+    linearly with the number of features times the number of examples, with much better
+    count if data is sparse. We apply our method to data sets arising in text
+    classification and observe a dramatic reduction of the dimensionality, hence in
+    computational effort required to solve the learning problem, especially when very
+    sparse classifiers are sought. Our method allows to immediately extend the scope of
+    existing algorithms, allowing us to run them on data sets of sizes that were out of
+    their reach before.
+  }
 }
 
 @article{fan2001,
@@ -385,20 +873,18 @@
 
 % == BibLateX quality report for fan2001:
 % ? unused Library catalog ("Taylor and Francis+NEJM")
-@unpublished{figueiredo2014,
+@online{figueiredo2014,
   title         = {
     Sparse Estimation with Strongly Correlated Variables Using Ordered Weighted {{L1}}
     Regularization
   },
   author        = {Figueiredo, M\'{a}rio A. T. and Nowak, Robert D.},
-  publisher     = {arXiv},
   doi           = {10.48550/arXiv.1409.4005},
   url           = {http://arxiv.org/abs/1409.4005},
   urldate       = {2022-06-03},
   date          = {2014-09-13},
   eprint        = {1409.4005},
   eprinttype    = {arxiv},
-  eprintclass   = {stat},
   abstract      = {
     This paper studies ordered weighted L1 (OWL) norm regularization for sparse
     estimation problems with strongly correlated variables. We prove sufficient
@@ -417,11 +903,11 @@
     requires just as many measurements. In other words, using the OWL we pay no price
     (in terms of the number of measurements) for the presence of strongly correlated
     variables.
-  }
+  },
+  pubstate      = {preprint}
 }
 
 % == BibLateX quality report for figueiredo2014:
-% Unexpected field 'publisher'
 % ? unused Number ("arXiv:1409.4005")
 @inproceedings{figueiredo2016,
   title         = {
@@ -515,6 +1001,160 @@
 
 % == BibLateX quality report for friedman2008:
 % ? unused Library catalog ("Silverchair")
+@article{friedman2010,
+  title         = {Regularization Paths for Generalized Linear Models via Coordinate Descent},
+  author        = {Friedman, Jerome and Hastie, Trevor and Tibshirani, Robert},
+  volume        = {33},
+  number        = {1},
+  pages         = {1--22},
+  doi           = {10.18637/jss.v033.i01},
+  url           = {http://www.jstatsoft.org/v33/i01/},
+  date          = {2010-01},
+  journaltitle  = {Journal of Statistical Software}
+}
+
+@article{fu1998a,
+  title         = {Penalized Regressions: The Bridge versus the Lasso},
+  shorttitle    = {Penalized {{Regressions}}},
+  author        = {Fu, Wenjiang J.},
+  publisher     = {
+    [American Statistical Association, Taylor \& Francis, Ltd., Institute of
+    Mathematical Statistics, Interface Foundation of America]
+  },
+  volume        = {7},
+  number        = {3},
+  pages         = {397--416},
+  doi           = {10.2307/1390712},
+  issn          = {1061-8600},
+  url           = {https://www.jstor.org/stable/1390712},
+  urldate       = {2024-01-16},
+  date          = {1998},
+  journaltitle  = {Journal of Computational and Graphical Statistics},
+  eprint        = {1390712},
+  eprinttype    = {jstor},
+  abstract      = {
+    Bridge regression, a special family of penalized regressions of a penalty function
+    \sum{}\vert{}\ensuremath{\beta}
+    \textsubscript{j}\vert{}\textsuperscript{\ensuremath{\gamma}} with
+    \ensuremath{\gamma} \geq{} 1, is considered. A general approach to solve for the
+    bridge estimator is developed. A new algorithm for the lasso (\ensuremath{\gamma} =
+    1) is obtained by studying the structure of the bridge estimators. The shrinkage
+    parameter \ensuremath{\gamma} and the tuning parameter \ensuremath{\lambda} are
+    selected via generalized cross-validation (GCV). Comparison between the bridge
+    model (\ensuremath{\gamma} \geq{} 1) and several other shrinkage models, namely the
+    ordinary least squares regression (\ensuremath{\lambda} = 0), the lasso
+    (\ensuremath{\gamma} = 1) and ridge regression (\ensuremath{\gamma} = 2), is made
+    through a simulation study. It is shown that the bridge regression performs well
+    compared to the lasso and ridge regression. These methods are demonstrated through
+    an analysis of a prostate cancer data. Some computational advantages and
+    limitations are discussed.
+  }
+}
+
+% == BibLateX quality report for fu1998a:
+% Unexpected field 'publisher'
+@article{gabay1976,
+  title         = {
+    A Dual Algorithm for the Solution of Nonlinear Variational Problems via Finite
+    Element Approximation
+  },
+  author        = {Gabay, Daniel and Mercier, Bertrand},
+  volume        = {2},
+  number        = {1},
+  pages         = {17--40},
+  doi           = {10.1016/0898-1221(76)90003-1},
+  issn          = {0898-1221},
+  url           = {https://www.sciencedirect.com/science/article/pii/0898122176900031},
+  urldate       = {2024-01-16},
+  date          = {1976},
+  journaltitle  = {Computers \& Mathematics with Applications},
+  abstract      = {
+    For variational problems of the form Infv\in{}V\{f(Av)+g(v)\}, we propose a dual
+    method which decouples the difficulties relative to the functionals f and g from
+    the possible ill-conditioning effects of the linear operator A. The approach is
+    based on the use of an Augmented Lagrangian functional and leads to an efficient
+    and simply implementable algorithm. We study also the finite element approximation
+    of such problems, compatible with the use of our algorithm. The method is finally
+    applied to solve several problems of continuum mechanics.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for gabay1976:
+% ? unused Library catalog ("ScienceDirect")
+@incollection{gabay1983,
+  title         = {
+    Chapter {{IX}}: Applications of the Method of Multipliers to Variational
+    Inequalities
+  },
+  author        = {Gabay, Daniel},
+  booktitle     = {
+    Augmented {{Lagrangian}} Methods: Applications to the Numericalsolution of
+    Boundary-Value Problems
+  },
+  location      = {Amsterdam, The Netherlands},
+  publisher     = {Elsevier Science Publishers},
+  series        = {Studies in Mathematics and Its Applications},
+  volume        = {15},
+  pages         = {299--331},
+  doi           = {10.1016/S0168-2024(08)70034-1},
+  isbn          = {0-444-86680-9},
+  url           = {https://www.sciencedirect.com/science/article/pii/S0168202408700341},
+  urldate       = {2024-01-16},
+  editor        = {Fortin, Michel and Glowinski, Roland},
+  date          = {1983},
+  edition       = {1},
+  abstract      = {
+    This chapter discusses the applications of the method of multipliers to variational
+    in equalities. It generalizes the augmented Lagrangian method to the case of
+    variational inequalities and provides to it the more appropriate name of the method
+    of multipliers since these problems do not generally involve a Lagrangian. One
+    shall also demonstrate the equivalence between algorithm ALGl and a method of
+    solution well-known in Nonlinear Analysis, namely the proximal-point algorithm.
+    Further, it reconsiders in detail the ideas introduced on the subject of
+    alternating direction methods, and describes the relationship between these methods
+    and ALG2 and ALG3. To facilitate a proper presentation of the problems, one first
+    recalls a number of definitions and results.
+  },
+  langid        = {english}
+}
+
+@inproceedings{grazzi2021,
+  title         = {Convergence Properties of Stochastic Hypergradients},
+  author        = {Grazzi, Riccardo and Pontil, Massimiliano and Salzo, Saverio},
+  booktitle     = {
+    Proceedings of {{The}} 24th {{International Conference}} on {{Artificial
+    Intelligence}} and {{Statistics}}
+  },
+  publisher     = {PMLR},
+  pages         = {3826--3834},
+  issn          = {2640-3498},
+  url           = {https://proceedings.mlr.press/v130/grazzi21a.html},
+  urldate       = {2024-02-13},
+  date          = {2021-03-18},
+  abstract      = {
+    Bilevel optimization problems are receiving increasing attention in machine
+    learning as they provide a natural framework for hyperparameter optimization and
+    meta-learning. A key step to tackle these problems is the efficient computation of
+    the gradient of the upper-level objective (hypergradient). In this work, we study
+    stochastic approximation schemes for the hypergradient, which are important when
+    the lower-level problem is empirical risk minimization on a large dataset. The
+    method that we propose is a stochastic variant of the approximate implicit
+    differentiation approach in (Pedregosa, 2016). We provide bounds for the mean
+    square error of the hypergradient approximation, under the assumption that the
+    lower-level problem is accessible only through a stochastic mapping which is a
+    contraction in expectation. In particular, our main bound is agnostic to the choice
+    of the two stochastic solvers employed by the procedure. We provide numerical
+    experiments to support our theoretical analysis and to show the advantage of using
+    stochastic hypergradients in practice.
+  },
+  eventtitle    = {International {{Conference}} on {{Artificial Intelligence}} and {{Statistics}}},
+  langid        = {english}
+}
+
+% == BibLateX quality report for grazzi2021:
+% Unexpected field 'issn'
+% ? unused Library catalog ("proceedings.mlr.press")
 @inproceedings{guyon2004,
   title         = {Result Analysis of the {{NIPS}} 2003 Feature Selection Challenge},
   author        = {Guyon, Isabelle and Gunn, Steve and Ben-Hur, Asa and Dror, Gideon},
@@ -534,6 +1174,25 @@
 
 % == BibLateX quality report for guyon2004:
 % ? Unsure about the formatting of the booktitle
+@book{harrell2015,
+  title         = {Regression Modeling Strategies},
+  shorttitle    = {Regression {{Modeling Strategies}}},
+  author        = {Harrell, Jr., Frank E.},
+  location      = {Cham, Switzerland},
+  publisher     = {Springer},
+  series        = {Springer {{Series}} in {{Statistics}}},
+  doi           = {10.1007/978-3-319-19425-7},
+  isbn          = {978-3-319-19425-7},
+  url           = {https://link.springer.com/10.1007/978-3-319-19425-7},
+  urldate       = {2024-01-17},
+  date          = {2015-08-26},
+  edition       = {2},
+  langid        = {english},
+  pagetotal     = {582}
+}
+
+% == BibLateX quality report for harrell2015:
+% ? unused Library catalog ("DOI.org (Crossref)")
 @book{hastie2009,
   title         = {
     The Elements of Statistical Learning: Data Mining, Inference, and Prediction,
@@ -582,6 +1241,42 @@
 
 % == BibLateX quality report for hastie2009:
 % ? unused Library catalog ("www.springer.com")
+@book{hastie2015,
+  title         = {Statistical Learning with Sparsity: The Lasso and Generalizations},
+  shorttitle    = {Statistical {{Learning}} with {{Sparsity}}},
+  author        = {Hastie, Trevor and Tibshirani, Robert and Wainwright, Martin},
+  location      = {Boca Raton},
+  publisher     = {{Chapman and Hall/CRC}},
+  isbn          = {978-1-4987-1216-3},
+  date          = {2015-05-07},
+  edition       = {1 edition},
+  abstract      = {
+    Discover New Methods for Dealing with High-Dimensional Data  A sparse statistical
+    model has only a small number of nonzero parameters or weights; therefore, it is
+    much easier to estimate and interpret than a dense model. Statistical Learning with
+    Sparsity: The Lasso and Generalizations presents methods that exploit sparsity to
+    help recover the underlying signal in a set of data.  Top experts in this rapidly
+    evolving field, the authors describe the lasso for linear regression and a simple
+    coordinate descent algorithm for its computation. They discuss the application of
+    \mathscr{l}1 penalties to generalized linear models and support vector machines,
+    cover generalized penalties such as the elastic net and group lasso, and review
+    numerical methods for optimization. They also present statistical inference methods
+    for fitted (lasso) models, including the bootstrap, Bayesian methods, and recently
+    developed approaches. In addition, the book examines matrix decomposition, sparse
+    multivariate analysis, graphical models, and compressed sensing. It concludes with
+    a survey of theoretical results for the lasso.  In this age of big data, the number
+    of features measured on a person or object can be large and might be larger than
+    the number of observations. This book shows how the sparsity assumption allows us
+    to tackle these problems and extract useful and reproducible patterns from big
+    datasets. Data analysts, computer scientists, and theorists will appreciate this
+    thorough and up-to-date treatment of sparse statistical modeling.
+  },
+  langid        = {english},
+  pagetotal     = {367}
+}
+
+% == BibLateX quality report for hastie2015:
+% ? unused Library catalog ("Amazon")
 @article{hastie2020,
   title         = {
     Best Subset, Forward Stepwise or Lasso? {{Analysis}} and Recommendations Based on
@@ -628,6 +1323,110 @@
 
 % == BibLateX quality report for hastie2020:
 % ? unused Library catalog ("Project Euclid")
+@article{hildreth1957,
+  title         = {A Quadratic Programming Procedure},
+  author        = {Hildreth, Clifford},
+  volume        = {4},
+  number        = {1},
+  pages         = {79--85},
+  doi           = {10.1002/nav.3800040113},
+  url           = {https://ideas.repec.org//a/wly/navlog/v4y1957i1p79-85.html},
+  urldate       = {2023-11-21},
+  date          = {1957-03},
+  journaltitle  = {Naval Research Logistics Quarterly},
+  langid        = {english}
+}
+
+% == BibLateX quality report for hildreth1957:
+% ? unused Library catalog ("ideas.repec.org")
+@article{hocking1967,
+  title         = {Selection of the Best Subset in Regression Analysis},
+  author        = {Hocking, R. R. and Leslie, R. N.},
+  volume        = {9},
+  number        = {4},
+  pages         = {531--540},
+  doi           = {10.2307/1266192},
+  issn          = {0040-1706},
+  date          = {1967},
+  journaltitle  = {Technometrics},
+  abstract      = {
+    The problem of selecting the best subset or subsets of independent variables in a
+    multiple linear regression analysis is two-fold. The first, and most important
+    problem is the development of criterion for choosing between two contending
+    subsets. Applying these criteria to all possible subsets, if the number of
+    independent variables is large, may not be economically feasible and so the second
+    problem is concerned with decreasing the computational effort. This paper is
+    concerned with the second question using the Cp-statistic of Mallows as the basic
+    criterion for comparing two regressions. A procedure is developed which will
+    indicate 'good' regressions with a minimum of computation.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for hocking1967:
+% ? unused Library catalog ("JSTOR")
+@book{holland1992,
+  title         = {
+    Adaptation in Natural and Artificial Systems: An Introductory Analysis with
+    Applications to Biology, Control, and Artificial Intelligence
+  },
+  shorttitle    = {Adaptation in {{Natural}} and {{Artificial Systems}}},
+  author        = {Holland, John H.},
+  location      = {Ann Arbor, MI, USA},
+  publisher     = {The MIT Press},
+  doi           = {10.7551/mitpress/1090.001.0001},
+  isbn          = {978-0-262-27555-2},
+  url           = {https://doi.org/10.7551/mitpress/1090.001.0001},
+  urldate       = {2024-02-06},
+  date          = {1992-04-29},
+  edition       = {Reprint},
+  abstract      = {
+    Genetic algorithms are playing an increasingly important role in studies of complex
+    adaptive systems, ranging from adaptive agents in economic theory to the use
+  },
+  langid        = {english},
+  pagetotal     = {232}
+}
+
+@inproceedings{hutter2011,
+  title         = {Sequential Model-Based Optimization for General Algorithm Configuration},
+  author        = {Hutter, Frank and Hoos, Holger H. and Leyton-Brown, Kevin},
+  booktitle     = {Learning and {{Intelligent Optimization}}},
+  location      = {Berlin, Heidelberg},
+  publisher     = {Springer},
+  series        = {Lecture {{Notes}} in {{Computer Science}}},
+  volume        = {6683},
+  pages         = {507--523},
+  doi           = {10.1007/978-3-642-25566-3\_40},
+  isbn          = {978-3-642-25566-3},
+  editor        = {Coello, Carlos A. Coello},
+  date          = {2011},
+  abstract      = {
+    State-of-the-art algorithms for hard computational problems often expose many
+    parameters that can be modified to improve empirical performance. However, manually
+    exploring the resulting combinatorial space of parameter settings is tedious and
+    tends to lead to unsatisfactory outcomes. Recently, automated approaches for
+    solving this algorithm configuration problem have led to substantial improvements
+    in the state of the art for solving various problems. One promising approach
+    constructs explicit regression models to describe the dependence of target
+    algorithm performance on parameter settings; however, this approach has so far been
+    limited to the optimization of few numerical algorithm parameters on single
+    instances. In this paper, we extend this paradigm for the first time to general
+    algorithm configuration problems, allowing many categorical parameters and
+    optimization for sets of instances. We experimentally validate our new algorithm
+    configuration procedure by optimizing a local search and a tree search solver for
+    the propositional satisfiability problem (SAT), as well as the commercial mixed
+    integer programming (MIP) solver CPLEX. In these experiments, our procedure yielded
+    state-of-the-art performance, and in many cases outperformed the previous best
+    configuration approach.
+  },
+  eventtitle    = {{{LION}} 2011},
+  langid        = {english}
+}
+
+% == BibLateX quality report for hutter2011:
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("Springer Link")
 @incollection{james1961,
   title         = {Estimation with Quadratic Loss},
   author        = {James, Willard and Stein, Charles},
@@ -654,6 +1453,94 @@
 % Unexpected field 'issn'
 % Missing required field 'editor'
 % ? unused Library catalog ("projecteuclid.org")
+@inproceedings{kennedy1995,
+  title         = {Particle Swarm Optimization},
+  author        = {Kennedy, J. and Eberhart, R.},
+  booktitle     = {Proceedings of {{ICNN}}'95},
+  location      = {Perth, WA, Australia},
+  publisher     = {IEEE},
+  volume        = {4},
+  pages         = {1942--1948},
+  doi           = {10.1109/ICNN.1995.488968},
+  isbn          = {0-7803-2768-3},
+  date          = {1995-11-27/1995-12-01},
+  abstract      = {
+    A concept for the optimization of nonlinear functions using particle swarm
+    methodology is introduced. The evolution of several paradigms is outlined, and an
+    implementation of one of the paradigms is discussed. Benchmark testing of the
+    paradigm is described, and applications, including nonlinear function optimization
+    and neural network training, are proposed. The relationships between particle swarm
+    optimization and both artificial life and genetic algorithms are described.
+  },
+  eventtitle    = {{{ICNN}}'95}
+}
+
+@article{kim2007,
+  title         = {An {{Interior-Point Method}} for {{Large-Scale}} -{{Regularized Least Squares}}},
+  author        = {
+    Kim, Seung-Jean and Koh, K. and Lustig, M. and Boyd, Stephen and Gorinevsky,
+    Dimitry
+  },
+  volume        = {1},
+  number        = {4},
+  pages         = {606--617},
+  doi           = {10.1109/JSTSP.2007.910971},
+  issn          = {1932-4553, 1941-0484},
+  url           = {http://ieeexplore.ieee.org/document/4407767/},
+  urldate       = {2024-02-07},
+  date          = {2007-12},
+  journaltitle  = {IEEE Journal of Selected Topics in Signal Processing},
+  shortjournal  = {IEEE J. Sel. Top. Signal Process.},
+  abstract      = {
+    Recently, a lot of attention has been paid to 1 regularization based methods for
+    sparse signal reconstruction (e.g., basis pursuit denoising and compressed sensing)
+    and feature selection (e.g., the Lasso algorithm) in signal processing, statistics,
+    and related fields. These problems can be cast as 1-regularized least-squares
+    programs (LSPs), which can be reformulated as convex quadratic programs, and then
+    solved by several standard methods such as interior-point methods, at least for
+    small and medium size problems. In this paper, we describe a specialized
+    interior-point method for solving large-scale 1-regularized LSPs that uses the
+    preconditioned conjugate gradients algorithm to compute the search direction. The
+    interior-point method can solve large sparse problems, with a million variables and
+    observations, in a few tens of minutes on a PC. It can efficiently solve large
+    dense problems, that arise in sparse signal recovery with orthogonal transforms, by
+    exploiting fast algorithms for these transforms. The method is illustrated on a
+    magnetic resonance imaging data set.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for kim2007:
+% 'issn': not a valid ISSN
+% ? Title looks like it was stored in title-case in Zotero
+% ? unused Library catalog ("DOI.org (Crossref)")
+@article{kirkpatrick1983,
+  title         = {Optimization by Simulated Annealing},
+  author        = {Kirkpatrick, S. and Gelatt, C. D. and Vecchi, M. P.},
+  publisher     = {American Association for the Advancement of Science},
+  volume        = {220},
+  number        = {4598},
+  pages         = {671--680},
+  doi           = {10.1126/science.220.4598.671},
+  url           = {https://www.science.org/doi/10.1126/science.220.4598.671},
+  urldate       = {2024-02-13},
+  date          = {1983-05-13},
+  journaltitle  = {Science},
+  abstract      = {
+    There is a deep and useful connection between statistical mechanics (the behavior
+    of systems with many degrees of freedom in thermal equilibrium at a finite
+    temperature) and multivariate or combinatorial optimization (finding the minimum of
+    a given function depending on many parameters). A detailed analogy with annealing
+    in solids provides a framework for optimization of the properties of very large and
+    complex systems. This connection to statistical mechanics exposes new information
+    and provides an unfamiliar perspective on traditional optimization problems and
+    methods.
+  }
+}
+
+% == BibLateX quality report for kirkpatrick1983:
+% Unexpected field 'publisher'
+% ? unused Library catalog ("science.org (Atypon)")
 @article{kos2020,
   title         = {On the Asymptotic Properties of {{SLOPE}}},
   author        = {Kos, Micha\l{} and Bogdan, Ma\l{}gorzata},
@@ -861,6 +1748,82 @@
 
 % == BibLateX quality report for lawson1995:
 % ? unused Library catalog ("epubs.siam.org (Atypon)")
+@article{li2021,
+  title         = {Fast Projection onto the Ordered Weighted L1 Norm Ball},
+  author        = {Li, Qinzhen and Li, Xudong},
+  volume        = {65},
+  number        = {4},
+  pages         = {869--886},
+  doi           = {10.1007/s11425-020-1743-9},
+  issn          = {1869-1862},
+  url           = {https://doi.org/10.1007/s11425-020-1743-9},
+  urldate       = {2024-04-23},
+  date          = {2021-07-29},
+  journaltitle  = {Science China Mathematics},
+  shortjournal  = {Sci. China Math.},
+  abstract      = {
+    In this paper, we provide a finitely terminated yet efficient approach to compute
+    the Euclidean projection onto the ordered weighted \mathscr{l}1 (OWL1) norm ball.
+    In particular, an efficient semismooth Newton method is proposed for solving the
+    dual of a reformulation of the original projection problem. Global and local
+    quadratic convergence results, as well as the finite termination property, of the
+    algorithm are proved. Numerical comparisons with the two best-known methods
+    demonstrate the efficiency of our method. In addition, we derive the generalized
+    Jacobian of the studied projector which, we believe, is crucial for the future
+    designing of fast second-order nonsmooth methods for solving general OWL1 norm
+    constrained problems.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for li2021:
+% ? unused Library catalog ("Springer Link")
+@inproceedings{mairal2012,
+  title         = {Complexity Analysis of the Lasso Regularization Path},
+  author        = {Mairal, Julien and Yu, Bin},
+  booktitle     = {Proceedings of the 29th {{International Conference}} on {{Machine Learning}}},
+  location      = {Edinburgh, United Kingdom},
+  pages         = {1835--1842},
+  url           = {https://icml.cc/2012/papers/202.pdf},
+  date          = {2012-06},
+  abstract      = {
+    The regularization path of the Lasso can be shown to be piecewise linear, making it
+    possible to ``follow'' and explicitly compute the entire path. We analyze in this
+    paper this popular strategy, and prove that its worst case complexity is
+    exponential in the number of variables. We then oppose this pessimistic result to
+    an (optimistic) approximate analysis: We show \surd{}that an approximate path with
+    at most O(1/ \ensuremath{\epsilon}) linear segments can always be obtained, where
+    every point on the path is guaranteed to be optimal up to a relative
+    \ensuremath{\epsilon}-duality gap. We complete our theoretical analysis with a
+    practical algorithm to compute these approximate paths.
+  },
+  eventtitle    = {International {{Conference}} on {{Machine Learning}} 2012},
+  langid        = {english}
+}
+
+% == BibLateX quality report for mairal2012:
+% ? unused Library catalog ("Zotero")
+@book{mockus1989,
+  title         = {Bayesian Approach to Global Optimization: Theory and Applications},
+  shorttitle    = {Bayesian {{Approach}} to {{Global Optimization}}},
+  author        = {Mockus, Jonas},
+  location      = {Dordrecht},
+  publisher     = {Springer Netherlands},
+  series        = {Mathematics and {{Its Applications}}},
+  volume        = {37},
+  doi           = {10.1007/978-94-009-0909-0},
+  isbn          = {978-94-010-6898-7 978-94-009-0909-0},
+  url           = {http://link.springer.com/10.1007/978-94-009-0909-0},
+  urldate       = {2024-02-13},
+  editorb       = {Hazewinkel, M.},
+  editorbtype   = {redactor},
+  date          = {1989},
+  langid        = {english}
+}
+
+% == BibLateX quality report for mockus1989:
+% 'isbn': not a valid ISBN
+% ? unused Library catalog ("DOI.org (Crossref)")
 @inproceedings{moreau2022a,
   title         = {Benchopt: Reproducible, Efficient and Collaborative Optimization Benchmarks},
   shorttitle    = {Benchopt},
@@ -908,6 +1871,87 @@
 
 % == BibLateX quality report for moreau2022a:
 % ? Unsure about the formatting of the booktitle
+@article{ndiaye2017,
+  title         = {Gap {{Safe Screening Rules}} for Sparsity Enforcing Penalties},
+  author        = {Ndiaye, Eugene and Fercoq, Olivier and Gramfort, Alexandre and Salmon, Joseph},
+  volume        = {18},
+  number        = {128},
+  pages         = {1--33},
+  issn          = {1533-7928},
+  url           = {http://jmlr.org/papers/v18/16-577.html},
+  date          = {2017},
+  journaltitle  = {Journal of Machine Learning Research}
+}
+
+@article{nesterov1983,
+  title         = {
+    A Method of Solving a Convex Programming Problem with Convergence Rate
+    {{O}}(1/K\textasciicircum 2)
+  },
+  author        = {Nesterov, Yuri},
+  volume        = {269},
+  number        = {3},
+  pages         = {543--547},
+  url           = {https://cir.nii.ac.jp/crid/1570572699326076416},
+  urldate       = {2024-01-16},
+  date          = {1983},
+  journaltitle  = {Doklady Akademii Nauk SSSR}
+}
+
+% == BibLateX quality report for nesterov1983:
+% ? unused Library catalog ("cir.nii.ac.jp")
+@book{nesterov2004,
+  title         = {Introductory Lectures on Convex Optimization: A Basic Course},
+  author        = {Nesterov, Yurii},
+  location      = {Boston, MA},
+  publisher     = {Springer US},
+  series        = {Applied {{Optimization}}},
+  volume        = {87},
+  doi           = {10.1007/978-1-4419-8853-9},
+  isbn          = {978-1-4613-4691-3 978-1-4419-8853-9},
+  url           = {http://link.springer.com/10.1007/978-1-4419-8853-9},
+  urldate       = {2024-02-13},
+  editorb       = {Pardalos, Panos M. and Hearn, Donald W.},
+  editorbtype   = {redactor},
+  date          = {2004}
+}
+
+% == BibLateX quality report for nesterov2004:
+% 'isbn': not a valid ISBN
+% ? unused Library catalog ("DOI.org (Crossref)")
+@online{nomura2020,
+  title         = {An Exact Solution Path Algorithm for {{SLOPE}} and Quasi-Spherical {{OSCAR}}},
+  author        = {Nomura, Shunichi},
+  doi           = {10.48550/arXiv.2010.15511},
+  url           = {http://arxiv.org/abs/2010.15511},
+  urldate       = {2021-05-27},
+  date          = {2020-10-29},
+  eprint        = {2010.15511},
+  eprinttype    = {arxiv},
+  abstract      = {
+    Sorted \$L\_1\$ penalization estimator (SLOPE) is a regularization technique for
+    sorted absolute coefficients in high-dimensional regression. By arbitrarily setting
+    its regularization weights \$\textbackslash lambda\$ under the monotonicity
+    constraint, SLOPE can have various feature selection and clustering properties. On
+    weight tuning, the selected features and their clusters are very sensitive to the
+    tuning parameters. Moreover, the exhaustive tracking of their changes is difficult
+    using grid search methods. This study presents a solution path algorithm that
+    provides the complete and exact path of solutions for SLOPE in fine-tuning
+    regularization weights. A simple optimality condition for SLOPE is derived and used
+    to specify the next splitting point of the solution path. This study also proposes
+    a new design of a regularization sequence \$\textbackslash lambda\$ for feature
+    clustering, which is called the quasi-spherical and octagonal shrinkage and
+    clustering algorithm for regression (QS-OSCAR). QS-OSCAR is designed with a contour
+    surface of the regularization terms most similar to a sphere. Among several
+    regularization sequence designs, sparsity and clustering performance are compared
+    through simulation studies. The numerical observations show that QS-OSCAR performs
+    feature clustering more efficiently than other designs.
+  },
+  pubstate      = {preprint}
+}
+
+% == BibLateX quality report for nomura2020:
+% ? unused Number ("arXiv:2010.15511")
 @article{osborne2000a,
   title         = {A New Approach to Variable Selection in Least Squares Problems},
   author        = {Osborne, Michael R. and Presnell, Brett and Turlach, Berwin A.},
@@ -935,6 +1979,124 @@
   }
 }
 
+@article{perez2022,
+  title         = {Efficient Projection Algorithms onto the Weighted L1 Ball},
+  author        = {Perez, Guillaume and Ament, Sebastian and Gomes, Carla and Barlaud, Michel},
+  volume        = {306},
+  pages         = {1--14},
+  doi           = {10.1016/j.artint.2022.103683},
+  issn          = {00043702},
+  url           = {https://linkinghub.elsevier.com/retrieve/pii/S0004370222000236},
+  urldate       = {2024-04-23},
+  date          = {2022-05},
+  journaltitle  = {Artificial Intelligence},
+  shortjournal  = {Artificial Intelligence},
+  langid        = {english}
+}
+
+% == BibLateX quality report for perez2022:
+% ? unused Library catalog ("DOI.org (Crossref)")
+@book{raiffa1968,
+  title         = {Applied Statistical Decision Theory},
+  author        = {Raiffa, Howard and Schlaifer, Robert},
+  location      = {Boston, USA},
+  publisher     = {Harvard University},
+  isbn          = {978-0-87584-017-8},
+  date          = {1968},
+  edition       = {1},
+  langid        = {english},
+  pagetotal     = {356}
+}
+
+@article{robbins1951,
+  title         = {A Stochastic Approximation Method},
+  author        = {Robbins, Herbert and Monro, Sutton},
+  volume        = {22},
+  number        = {3},
+  pages         = {400--407},
+  doi           = {10.1214/aoms/1177729586},
+  issn          = {0003-4851},
+  date          = {1951-09},
+  journaltitle  = {The Annals of Mathematical Statistics},
+  shortjournal  = {Ann. Math. Statist.},
+  abstract      = {
+    Let \$M(x)\$ denote the expected value at level \$x\$ of the response to a certain
+    experiment. \$M(x)\$ is assumed to be a monotone function of \$x\$ but is unknown
+    to the experimenter, and it is desired to find the solution \$x = \textbackslash
+    theta\$ of the equation \$M(x) = \textbackslash alpha\$, where \$\textbackslash
+    alpha\$ is a given constant. We give a method for making successive experiments at
+    levels \$x\_1,x\_2,\textbackslash cdots\$ in such a way that \$x\_n\$ will tend to
+    \$\textbackslash theta\$ in probability.
+  },
+  langid        = {english}
+}
+
+@book{rockafellar1970,
+  title         = {Convex Analysis},
+  author        = {Rockafellar, R. Tyrrell},
+  publisher     = {Princeton University Press},
+  series        = {Princeton {{Landmarks}} in {{Mathematics}} and {{Physics}}},
+  isbn          = {978-0-691-01586-6},
+  url           = {https://www.jstor.org/stable/j.ctt14bs1ff},
+  urldate       = {2022-08-31},
+  date          = {1970},
+  eprint        = {j.ctt14bs1ff},
+  eprinttype    = {jstor},
+  abstract      = {
+    Available for the first time in paperback, R. Tyrrell Rockafellar's classic study
+    presents readers with a coherent branch of nonlinear mathematical analysis that is
+    especially suited to the study of optimization problems. Rockafellar's theory
+    differs from classical analysis in that differentiability assumptions are replaced
+    by convexity assumptions. The topics treated in this volume include: systems of
+    inequalities, the minimum or maximum of a convex function over a convex set,
+    Lagrange multipliers, minimax theorems and duality, as well as basic results about
+    the structure of convex sets and the continuity and differentiability of convex
+    functions and saddle- functions.  This book has firmly established a new and vital
+    area not only for pure mathematics but also for applications to economics and
+    engineering. A sound knowledge of linear algebra and introductory real analysis
+    should provide readers with sufficient background for this book. There is also a
+    guide for the reader who may be using the book as an introduction, indicating which
+    parts are essential and which may be skipped on a first reading.
+  },
+  langid        = {english},
+  pagetotal     = {472}
+}
+
+@article{rockafellar2006,
+  title         = {Monotone Operators and the Proximal Point Algorithm},
+  author        = {Rockafellar, R. Tyrrell},
+  publisher     = {{Society for Industrial and Applied Mathematics}},
+  doi           = {10.1137/0314056},
+  url           = {https://epubs.siam.org/doi/10.1137/0314056},
+  urldate       = {2022-06-14},
+  date          = {2006-07-18},
+  journaltitle  = {SIAM Journal on Control and Optimization},
+  abstract      = {
+    For the problem of minimizing a lower semicontinuous proper convex function f on a
+    Hilbert space, the proximal point algorithm in exact form generates a sequence
+    \$\textbackslash\{ z\textasciicircum k \textbackslash\} \$ by taking
+    \$z\textasciicircum\{k + 1\} \$ to be the minimizes of \$f(z) + (\{1 / \{2c\_k
+    \}\})\textbackslash \vert{} \{z - z\textasciicircum k \} \textbackslash
+    \vert{}\textasciicircum 2 \$, where \$c\_k {\$>\$} 0\$. This algorithm is of
+    interest for several reasons, but especially because of its role in certain
+    computational methods based on duality, such as the Hestenes-Powell method of
+    multipliers in nonlinear programming. It is investigated here in a more general
+    form where the requirement for exact minimization at each iteration is weakened,
+    and the subdifferential \$\textbackslash partial f\$ is replaced by an arbitrary
+    maximal monotone operator T. Convergence is established under several criteria
+    amenable to implementation. The rate of convergence is shown to be ``typically''
+    linear with an arbitrarily good modulus if \$c\_k \$ stays large enough, in fact
+    superlinear if \$c\_k \textbackslash to \textbackslash infty \$. The case of \$T =
+    \textbackslash partial f\$ is treated in extra detail. Application is also made to
+    a related case corresponding to minimax problems.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for rockafellar2006:
+% Unexpected field 'publisher'
+% ? unused Archive location ("world")
+% ? unused Library catalog ("epubs.siam.org")
 @article{santosa1986,
   title         = {Linear Inversion of Band-Limited Reflection Seismograms},
   author        = {Santosa, Fadil and Symes, William W.},
@@ -968,6 +2130,47 @@
   langid        = {english}
 }
 
+@article{sardy2000,
+  title         = {Block Coordinate Relaxation Methods for Nonparametric Wavelet Denoising},
+  author        = {Sardy, Sylvain and Bruce, Andrew G. and Tseng, Paul},
+  publisher     = {
+    [American Statistical Association, Taylor \& Francis, Ltd., Institute of
+    Mathematical Statistics, Interface Foundation of America]
+  },
+  volume        = {9},
+  number        = {2},
+  pages         = {361--379},
+  doi           = {10.2307/1390659},
+  issn          = {1061-8600},
+  url           = {https://www.jstor.org/stable/1390659},
+  urldate       = {2024-02-13},
+  date          = {2000},
+  journaltitle  = {Journal of Computational and Graphical Statistics},
+  eprint        = {1390659},
+  eprinttype    = {jstor},
+  abstract      = {
+    An important class of nonparametric signal processing methods entails forming a set
+    of predictors from an overcomplete set of basis functions associated with a fast
+    transform (e.g., wavelet packets). In these methods, the number of basis functions
+    can far exceed the number of sample values in the signal, leading to an ill-posed
+    prediction problem. The "basis pursuit" denoising method of Chen, Donoho, and
+    Saunders regularizes the prediction problem by adding an l\textsubscript{1} penalty
+    term on the coefficients for the basis functions. Use of an l\textsubscript{1}
+    penalty instead of l\textsubscript{2} has significant benefits, including higher
+    resolution of signals close in time/frequency and a more parsimonious
+    representation. The l\textsubscript{1} penalty, however, poses a challenging
+    optimization problem that was solved by Chen, Donoho and Saunders using a novel
+    application of interior-point algorithms (IP). This article investigates an
+    alternative optimization approach based on block coordinate relaxation (BCR) for
+    sets of basis functions that are the finite union of sets of orthonormal basis
+    functions (e.g., wavelet packets). We show that the BCR algorithm is globally
+    convergent, and empirically, the BCR algorithm is faster than the IP algorithm for
+    a variety of signal denoising problems.
+  }
+}
+
+% == BibLateX quality report for sardy2000:
+% Unexpected field 'publisher'
 @article{schneider2022,
   title         = {The Geometry of Uniqueness, Sparsity and Clustering in Penalized Estimation},
   author        = {Schneider, Ulrike and Tardivel, Patrick},
@@ -997,6 +2200,84 @@
 
 % == BibLateX quality report for schneider2022:
 % ? unused Library catalog ("ACM Digital Library")
+@article{shevade2003,
+  title         = {
+    A Simple and Efficient Algorithm for Gene Selection Using Sparse Logistic
+    Regression
+  },
+  author        = {Shevade, S. K. and Keerthi, S. S.},
+  volume        = {19},
+  number        = {17},
+  pages         = {2246--2253},
+  doi           = {10.1093/bioinformatics/btg308},
+  issn          = {1367-4803},
+  date          = {2003-11-22},
+  journaltitle  = {Bioinformatics},
+  shortjournal  = {Bioinformatics},
+  eprint        = {14630653},
+  eprinttype    = {pmid},
+  abstract      = {
+    MOTIVATION: This paper gives a new and efficient algorithm for the sparse logistic
+    regression problem. The proposed algorithm is based on the Gauss-Seidel method and
+    is asymptotically convergent. It is simple and extremely easy to implement; it
+    neither uses any sophisticated mathematical programming software nor needs any
+    matrix operations. It can be applied to a variety of real-world problems like
+    identifying marker genes and building a classifier in the context of cancer
+    diagnosis using microarray data. RESULTS: The gene selection method suggested in
+    this paper is demonstrated on two real-world data sets and the results were found
+    to be consistent with the literature. AVAILABILITY: The implementation of this
+    algorithm is available at the site http://guppy.mpe.nus.edu.sg/\textasciitilde
+    mpessk/SparseLOGREG.shtml SUPPLEMENTARY INFORMATION: Supplementary material is
+    available at the site http://guppy.mpe.nus.edu.sg/\textasciitilde
+    mpessk/SparseLOGREG.shtml
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for shevade2003:
+% ? unused Library catalog ("PubMed")
+@inproceedings{snoek2012,
+  title         = {Practical {{Bayesian}} Optimization of Machine Learning Algorithms},
+  author        = {Snoek, Jasper and Larochelle, Hugo and Adams, Ryan P},
+  booktitle     = {Advances in {{Neural Information Processing Systems}} 25},
+  location      = {Lake Tahoe, Nevada, USA},
+  publisher     = {Curran Associates, Inc.},
+  volume        = {25},
+  pages         = {2960--2968},
+  url           = {
+    https://proceedings.neurips.cc/paper\%5Ffiles/paper/2012/hash/05311655a15b75fab86956663e1819cd-Abstract.html
+  },
+  urldate       = {2024-02-06},
+  editor        = {
+    Bartlett, Peter L. and Pereira, Fernando C. N. and Burges, Christopher J. C. and
+    Bottou, L\'{e}on and Weinberger, Kilian Q.
+  },
+  date          = {2012-12-03/2012-12-06},
+  abstract      = {
+    The use of machine learning algorithms frequently involves careful tuning of
+    learning parameters and model hyperparameters. Unfortunately, this tuning is often
+    a ``black art'' requiring expert experience, rules of thumb, or sometimes
+    brute-force search. There is therefore great appeal for automatic approaches that
+    can optimize the performance of any given learning algorithm to the problem at
+    hand. In this work, we consider this problem through the framework of Bayesian
+    optimization, in which a learning algorithm's generalization performance is modeled
+    as a sample from a Gaussian process (GP). We show that certain choices for the
+    nature of the GP, such as the type of kernel and the treatment of its
+    hyperparameters, can play a crucial role in obtaining a good optimizer that can
+    achieve expert-level performance. We describe new algorithms that take into account
+    the variable cost (duration) of learning algorithm experiments and that can
+    leverage the presence of multiple cores for parallel experimentation. We show that
+    these proposed algorithms improve on previous automatic procedures and can reach or
+    surpass human expert-level optimization for many algorithms including Latent
+    Dirichlet Allocation, Structured SVMs and convolutional neural networks.
+  },
+  eventtitle    = {{{NIPS}} 2012},
+  langid        = {english}
+}
+
+% == BibLateX quality report for snoek2012:
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("Neural Information Processing Systems")
 @incollection{stein1956,
   title         = {
     Inadmissibility of the Usual Estimator for the Mean of a Multivariate Normal
@@ -1024,6 +2305,35 @@
 % == BibLateX quality report for stein1956:
 % Unexpected field 'issn'
 % ? unused Library catalog ("projecteuclid.org")
+@article{storn1997,
+  title         = {
+    Differential Evolution – a Simple and Efficient Heuristic for Global Optimization
+    over Continuous Spaces
+  },
+  author        = {Storn, Rainer and Price, Kenneth},
+  volume        = {11},
+  number        = {4},
+  pages         = {341--359},
+  doi           = {10.1023/A:1008202821328},
+  issn          = {1573-2916},
+  url           = {https://doi.org/10.1023/A:1008202821328},
+  urldate       = {2024-02-13},
+  date          = {1997-12-01},
+  journaltitle  = {Journal of Global Optimization},
+  shortjournal  = {Journal of Global Optimization},
+  abstract      = {
+    A new heuristic approach for minimizing possiblynonlinear and non-differentiable
+    continuous spacefunctions is presented. By means of an extensivetestbed it is
+    demonstrated that the new methodconverges faster and with more certainty than
+    manyother acclaimed global optimization methods. The newmethod requires few control
+    variables, is robust, easyto use, and lends itself very well to
+    parallelcomputation.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for storn1997:
+% ? unused Library catalog ("Springer Link")
 @article{tibshirani1996,
   title         = {Regression Shrinkage and Selection via the Lasso},
   author        = {Tibshirani, Robert},
@@ -1087,6 +2397,128 @@
 
 % == BibLateX quality report for tibshirani2005:
 % ? unused Library catalog ("Wiley Online Library")
+@article{tibshirani2012,
+  title         = {Strong Rules for Discarding Predictors in Lasso-Type Problems},
+  author        = {
+    Tibshirani, Robert and Bien, Jacob and Friedman, Jerome and Hastie, Trevor and
+    Simon, Noah and Taylor, Jonathan and Tibshirani, Ryan J.
+  },
+  volume        = {74},
+  number        = {2},
+  pages         = {245--266},
+  doi           = {10/c4bb85},
+  issn          = {1369-7412},
+  url           = {
+    https://iths.pure.elsevier.com/en/publications/strong-rules-for-discarding-predictors-in-lasso-type-problems
+  },
+  urldate       = {2018-03-16},
+  date          = {2012-03},
+  journaltitle  = {Journal of the Royal Statistical Society. Series B: Statistical Methodology},
+  langid        = {english}
+}
+
+% == BibLateX quality report for tibshirani2012:
+% ? Possibly abbreviated journal title Journal of the Royal Statistical Society. Series B: Statistical Methodology
+% ? unused Library catalog ("iths.pure.elsevier.com")
+@inproceedings{tsuruoka2009,
+  title         = {
+    Stochastic Gradient Descent Training for {{L1-regularized}} Log-Linear Models with
+    Cumulative Penalty
+  },
+  author        = {Tsuruoka, Yoshimasa and Tsujii, Jun'ichi and Ananiadou, Sophia},
+  booktitle     = {
+    Proceedings of the 47th {{Annual Meeting}} of the {{ACL}} and the 4th {{IJCNLP}} of
+    the {{AFNLP}}
+  },
+  location      = {Singapore},
+  publisher     = {Association for Computational Linguistics},
+  volume        = {1},
+  pages         = {477--485},
+  doi           = {10.3115/1687878.1687946},
+  isbn          = {978-1-932432-45-9},
+  date          = {2009-08-02/2009-08-07},
+  abstract      = {
+    Stochastic gradient descent (SGD) uses approximate gradients estimated from subsets
+    of the training data and updates the parameters in an online fashion. This learning
+    framework is attractive because it often requires much less training time in
+    practice than batch training algorithms. However, L1-regularization, which is
+    becoming popular in natural language processing because of its ability to produce
+    compact models, cannot be efficiently applied in SGD training, due to the large
+    dimensions of feature vectors and the fluctuations of approximate gradients. We
+    present a simple method to solve these problems by penalizing the weights according
+    to cumulative values for L1 penalty. We evaluate the effectiveness of our method in
+    three applications: text chunking, named entity recognition, and part-of-speech
+    tagging. Experimental results demonstrate that our method can produce compact and
+    accurate models much more quickly than a state-of-the-art quasiNewton method for
+    L1-regularized loglinear models.
+  },
+  eventtitle    = {The 47th {{Annual Meeting}} of the {{ACL}} and the 4th {{IJCNLP}} of the {{AFNLP}}},
+  langid        = {english}
+}
+
+@article{wright2015,
+  title         = {Coordinate Descent Algorithms},
+  author        = {Wright, Stephen},
+  publisher     = {Springer Nature},
+  volume        = {151},
+  number        = {1},
+  pages         = {3--34},
+  doi           = {10.1007/s10107-015-0892-3},
+  issn          = {00255610},
+  date          = {2015-03-25},
+  journaltitle  = {Mathematical Programming: Series B},
+  shortjournal  = {Math. Program., Ser. B},
+  abstract      = {
+    Coordinate descent algorithms solve optimization problems by successively
+    performing approximate minimization along coordinate directions or coordinate
+    hyperplanes. They have been used in applications for many years, and their
+    popularity continues to grow because of their usefulness in data analysis, machine
+    learning, and other areas of current interest. This paper describes the
+    fundamentals of the coordinate descent approach, together with variants and
+    extensions and their convergence properties, mostly with reference to convex
+    objectives. We pay particular attention to a certain problem structure that arises
+    frequently in machine learning applications, showing that efficient implementations
+    of accelerated coordinate descent algorithms are possible for problems of this
+    type. We also present some parallel variants and discuss their convergence
+    properties under several models of parallel execution.
+  }
+}
+
+% == BibLateX quality report for wright2015:
+% Unexpected field 'publisher'
+@article{wu2008a,
+  title         = {Coordinate Descent Algorithms for Lasso Penalized Regression},
+  author        = {Wu, Tong Tong and Lange, Kenneth},
+  volume        = {2},
+  number        = {1},
+  pages         = {224--244},
+  doi           = {10.1214/07-AOAS147},
+  issn          = {1932-6157},
+  date          = {2008-03},
+  journaltitle  = {The Annals of Applied Statistics},
+  abstract      = {
+    Imposition of a lasso penalty shrinks parameter estimates toward zero and performs
+    continuous model selection. Lasso penalized regression is capable of handling
+    linear regression problems where the number of predictors far exceeds the number of
+    cases. This paper tests two exceptionally fast algorithms for estimating regression
+    coefficients with a lasso penalty. The previously known \mathscr{l}2 algorithm is
+    based on cyclic coordinate descent. Our new \mathscr{l}1 algorithm is based on
+    greedy coordinate descent and Edgeworth's algorithm for ordinary \mathscr{l}1
+    regression. Each algorithm relies on a tuning constant that can be chosen by
+    cross-validation. In some regression problems it is natural to group parameters and
+    penalize parameters group by group rather than separately. If the group penalty is
+    proportional to the Euclidean norm of the parameters of the group, then it is
+    possible to majorize the norm and reduce parameter estimation to \mathscr{l}2
+    regression with a lasso penalty. Thus, the existing algorithm can be extended to
+    novel settings. Each of the algorithms discussed is tested via either simulated or
+    real data or both. The Appendix proves that a greedy form of the \mathscr{l}2
+    algorithm converges to the minimum value of the objective function.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for wu2008a:
+% ? unused Library catalog ("Project Euclid")
 @article{yuan2005,
   title         = {Model Selection and Estimation in Regression with Grouped Variables},
   author        = {Yuan, Ming and Lin, Yi},
@@ -1172,16 +2604,16 @@
 % == BibLateX quality report for zeng2014a:
 % ? Unsure about the formatting of the booktitle
 % ? unused Library catalog ("IEEE Xplore")
-@unpublished{zeng2015,
+@online{zeng2015,
   title         = {The Ordered Weighted L1 Norm: Atomic Formulation, Projections, and Algorithms},
-  shorttitle    = {The {{Ordered Weighted L1 Norm}}},
+  shorttitle    = {The {{Ordered Weighted}} L1 {{Norm}}},
   author        = {Zeng, Xiangrong and Figueiredo, M\'{a}rio A. T.},
+  doi           = {10.48550/arXiv.1409.4271},
   url           = {http://arxiv.org/abs/1409.4271},
   urldate       = {2019-11-22},
   date          = {2015-04-10},
   eprint        = {1409.4271},
   eprinttype    = {arxiv},
-  eprintclass   = {cs, math},
   abstract      = {
     The ordered weighted \$\textbackslash ell\_1\$ norm (OWL) was recently proposed,
     with two different motivations: its good statistical properties as a sparsity
@@ -1198,9 +2630,12 @@
     projected gradient algorithms for the same class of problems. Finally, a set of
     experiments give evidence that accelerated projected gradient algorithms are
     considerably faster than CG, for the class of problems considered.
-  }
+  },
+  pubstate      = {preprint}
 }
 
+% == BibLateX quality report for zeng2015:
+% ? unused Number ("arXiv:1409.4271")
 @article{zhang2010,
   title         = {Nearly Unbiased Variable Selection under Minimax Concave Penalty},
   author        = {Zhang, Cun-Hui},
@@ -1311,99 +2746,184 @@
 % Unexpected field 'publisher'
 % ? unused extra: _eprint ("https://doi.org/10.1198/016214506000000735")
 % ? unused Library catalog ("Taylor and Francis+NEJM")
-@inproceedings{mairal2012,
-  title         = {Complexity Analysis of the Lasso Regularization Path},
-  author        = {Mairal, Julien and Yu, Bin},
-  booktitle     = {Proceedings of the 29th {{International Conference}} on {{Machine Learning}}},
-  location      = {Edinburgh, United Kingdom},
-  pages         = {1835--1842},
-  url           = {https://icml.cc/2012/papers/202.pdf},
-  date          = {2012-06},
+l@article{lee2014,
+  title         = {Proximal {{Newton-type}} Methods for Minimizing Composite Functions},
+  author        = {Lee, Jason D. and Sun, Yuekai and Saunders, Michael A.},
+  publisher     = {{Society for Industrial and Applied Mathematics}},
+  volume        = {24},
+  number        = {3},
+  pages         = {1420--1443},
+  doi           = {10.1137/130921428},
+  issn          = {1052-6234},
+  url           = {https://epubs.siam.org/doi/abs/10.1137/130921428},
+  urldate       = {2021-04-07},
+  date          = {2014-01-01},
+  journaltitle  = {SIAM Journal on Optimization},
+  shortjournal  = {SIAM J. Optim.},
   abstract      = {
-    The regularization path of the Lasso can be shown to be piecewise linear, making it
-    possible to ``follow'' and explicitly compute the entire path. We analyze in this
-    paper this popular strategy, and prove that its worst case complexity is
-    exponential in the number of variables. We then oppose this pessimistic result to
-    an (optimistic) approximate analysis: We show \surd{}that an approximate path with
-    at most O(1/ \ensuremath{\epsilon}) linear segments can always be obtained, where
-    every point on the path is guaranteed to be optimal up to a relative
-    \ensuremath{\epsilon}-duality gap. We complete our theoretical analysis with a
-    practical algorithm to compute these approximate paths.
+    We generalize Newton-type methods for minimizing smooth functions to handle a sum
+    of two convex functions: a smooth function and a nonsmooth function with a simple
+    proximal mapping. We show that the resulting proximal Newton-type methods inherit
+    the desirable convergence behavior of Newton-type methods for minimizing smooth
+    functions, even when search directions are computed inexactly. Many popular methods
+    tailored to problems arising in bioinformatics, signal processing, and statistical
+    learning are special cases of proximal Newton-type methods, and our analysis yields
+    new convergence results for some of these methods.
+  }
+}
+
+% == BibLateX quality report for lee2014:
+% Unexpected field 'publisher'
+% ? unused Library catalog ("epubs.siam.org (Atypon)")
+@article{keerthi2005,
+  title         = {
+    A Modified Finite {{Newton}} Method for Fast Solution of Large Scale Linear
+    {{SVMs}}
   },
-  eventtitle    = {International {{Conference}} on {{Machine Learning}} 2012},
+  author        = {Keerthi, S. Sathiya and DeCoste, Dennis},
+  volume        = {6},
+  number        = {12},
+  pages         = {341--361},
+  issn          = {1532-4435},
+  url           = {http://jmlr.org/papers/v6/keerthi05a.html},
+  date          = {2005-12-01},
+  journaltitle  = {The Journal of Machine Learning Research},
+  shortjournal  = {J. Mach. Learn. Res.},
+  abstract      = {
+    This paper develops a fast method for solving linear SVMs with L2 loss function
+    that is suited for large scale data mining tasks such as text classification. This
+    is done by modifying the finite Newton method of Mangasarian in several ways.
+    Experiments indicate that the method is much faster than decomposition methods such
+    as SVMlight, SMO and BSVM (e.g., 4-100 fold), especially when the number of
+    examples is large. The paper also suggests ways of extending the method to other
+    loss functions such as the modified Huber's loss function and the L1 loss function,
+    and also for solving ordinal regression.
+  }
+}
+
+% == BibLateX quality report for keerthi2005:
+% ? unused Library catalog ("12/1/2005")
+@article{lewis2004,
+  title         = {{{RCV1}}: A New Benchmark Collection for Text Categorization Research},
+  shorttitle    = {{{RCV1}}},
+  author        = {Lewis, David D. and Yang, Yiming and Rose, Tony G. and Li, Fan},
+  volume        = {5},
+  pages         = {361--397},
+  issn          = {1532-4435},
+  date          = {2004-12-01},
+  journaltitle  = {The Journal of Machine Learning Research},
+  shortjournal  = {J. Mach. Learn. Res.},
+  abstract      = {
+    Reuters Corpus Volume I (RCV1) is an archive of over 800,000 manually categorized
+    newswire stories recently made available by Reuters, Ltd. for research purposes.
+    Use of this data for research on text categorization requires a detailed
+    understanding of the real world constraints under which the data was produced.
+    Drawing on interviews with Reuters personnel and access to Reuters documentation,
+    we describe the coding policy and quality control procedures used in producing the
+    RCV1 data, the intended semantics of the hierarchical category taxonomies, and the
+    corrections necessary to remove errorful data. We refer to the original data as
+    RCV1-v1, and the corrected data as RCV1-v2. We benchmark several widely used
+    supervised learning methods on RCV1-v2, illustrating the collection's properties,
+    suggesting new directions for research, and providing baseline results for future
+    studies. We make available detailed, per-category experimental results, as well as
+    corrected versions of the category assignments and taxonomy structures, via online
+    appendices.
+  }
+}
+
+% == BibLateX quality report for lewis2004:
+% ? unused Library catalog ("12/1/2004")
+@article{golub1999,
+  title         = {
+    Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene
+    Expression Monitoring
+  },
+  shorttitle    = {Molecular Classification of Cancer},
+  author        = {
+    Golub, T. R. and Slonim, D. K. and Tamayo, P. and Huard, C. and Gaasenbeek, M. and
+    Mesirov, J. P. and Coller, H. and Loh, M. L. and Downing, J. R. and Caligiuri, M.
+    A. and Bloomfield, C. D. and Lander, E. S.
+  },
+  volume        = {286},
+  number        = {5439},
+  pages         = {531--537},
+  doi           = {10.1126/science.286.5439.531},
+  issn          = {0036-8075},
+  date          = {1999-10-15},
+  journaltitle  = {Science},
+  shortjournal  = {Science},
+  eprint        = {10521349},
+  eprinttype    = {pmid},
+  abstract      = {
+    Although cancer classification has improved over the past 30 years, there has been
+    no general approach for identifying new cancer classes (class discovery) or for
+    assigning tumors to known classes (class prediction). Here, a generic approach to
+    cancer classification based on gene expression monitoring by DNA microarrays is
+    described and applied to human acute leukemias as a test case. A class discovery
+    procedure automatically discovered the distinction between acute myeloid leukemia
+    (AML) and acute lymphoblastic leukemia (ALL) without previous knowledge of these
+    classes. An automatically derived class predictor was able to determine the class
+    of new leukemia cases. The results demonstrate the feasibility of cancer
+    classification based solely on gene expression monitoring and suggest a general
+    strategy for discovering and predicting cancer classes for other types of cancer,
+    independent of previous biological knowledge.
+  },
   langid        = {english}
 }
 
-% == BibLateX quality report for mairal2012:
-% ? unused Library catalog ("Zotero")
-@article{friedman2010,
-  title         = {Regularization Paths for Generalized Linear Models via Coordinate Descent},
-  author        = {Friedman, Jerome and Hastie, Trevor and Tibshirani, Robert},
-  volume        = {33},
-  number        = {1},
-  pages         = {1--22},
-  doi           = {10.18637/jss.v033.i01},
-  url           = {http://www.jstatsoft.org/v33/i01/},
-  date          = {2010-01},
-  journaltitle  = {Journal of Statistical Software}
+% == BibLateX quality report for golub1999:
+% ? unused Library catalog ("PubMed")
+@incollection{platt1998,
+  title         = {Fast Training of Support Vector Machines Using Sequential Minimal Optimization},
+  author        = {Platt, John C.},
+  booktitle     = {Advances in {{Kernel Methods}}: {{Support Vector Learning}}},
+  location      = {Boston, MA, USA},
+  publisher     = {MIT Press},
+  pages         = {185--208},
+  doi           = {10.7551/mitpress/1130.003.0016},
+  isbn          = {978-0-262-28319-9},
+  editor        = {Sch\"{o}lkopf, Bernhard and Burges, Christopher J. C. and Smola, Alexander J.},
+  date          = {1998-01},
+  edition       = {1}
 }
 
-@online{dupuis2023,
-  title         = {The Solution Path of {{SLOPE}}},
-  author        = {Dupuis, Xavier and Tardivel, Patrick J C},
-  number        = {hal-04100441v2},
-  url           = {https://hal.science/hal-04100441v2},
-  urldate       = {2024-01-17},
-  date          = {2023-10-28},
-  eprint        = {hal-04100441v2},
-  eprinttype    = {HAL},
+@dataset{king,
+  title         = {Qualitative {{Structure}} Activity Relationships},
+  author        = {King, Ross},
+  publisher     = {UCI Machine Learning Repository},
+  doi           = {10.24432/C5TP54},
+  url           = {https://archive.ics.uci.edu/dataset/85},
+  urldate       = {2024-04-25}
+}
+
+% == BibLateX quality report for king:
+% ? unused Library catalog ("DOI.org (Datacite)")
+@article{osborne2000,
+  title         = {On the {{LASSO}} and Its Dual},
+  author        = {Osborne, Michael R. and Presnell, Brett and Turlach, Berwin A.},
+  volume        = {9},
+  number        = {2},
+  pages         = {319--337},
+  doi           = {10.2307/1390657},
+  issn          = {1061-8600},
+  url           = {https://www.jstor.org/stable/1390657},
+  urldate       = {2019-10-30},
+  date          = {2000},
+  journaltitle  = {Journal of Computational and Graphical Statistics},
+  eprint        = {1390657},
+  eprinttype    = {jstor},
   abstract      = {
-    The SLOPE estimator has the particularity of having null components (sparsity) and
-    components that are equal in absolute value (clustering). The number of clusters
-    depends on the regularization parameter of the estimator. This parameter can be
-    chosen as a trade-off between interpretability (with a small number of clusters)
-    and accuracy (with a small mean squared error or a small prediction error). Finding
-    such a compromise requires to compute the solution path, that is the function
-    mapping the regularization parameter to the estimator. We provide in this article
-    an algorithm to compute the solution path of SLOPE.
-  },
-  langid        = {english},
-  pubstate      = {preprint}
+    Proposed by Tibshirani, the least absolute shrinkage and selection operator (LASSO)
+    estimates a vector of regression coefficients by minimizing the residual sum of
+    squares subject to a constraint on the l\textsuperscript{1}-norm of the coefficient
+    vector. The LASSO estimator typically has one or more zero elements and thus shares
+    characteristics of both shrinkage estimation and variable selection. In this
+    article we treat the LASSO as a convex programming problem and derive its dual.
+    Consideration of the primal and dual problems together leads to important new
+    insights into the characteristics of the LASSO estimator and to an improved method
+    for estimating its covariance matrix. Using these results we also develop an
+    efficient algorithm for computing LASSO estimates which is usable even in cases
+    where the number of regressors exceeds the number of observations. An S-Plus
+    library based on this algorithm is available from StatLib.
+  }
 }
-
-% == BibLateX quality report for dupuis2023:
-% Unexpected field 'number'
-% ? unused Library catalog ("HAL Archives Ouvertes")
-@online{nomura2020,
-  title         = {An Exact Solution Path Algorithm for {{SLOPE}} and Quasi-Spherical {{OSCAR}}},
-  author        = {Nomura, Shunichi},
-  doi           = {10.48550/arXiv.2010.15511},
-  url           = {http://arxiv.org/abs/2010.15511},
-  urldate       = {2021-05-27},
-  date          = {2020-10-29},
-  eprint        = {2010.15511},
-  eprinttype    = {arxiv},
-  abstract      = {
-    Sorted \$L\_1\$ penalization estimator (SLOPE) is a regularization technique for
-    sorted absolute coefficients in high-dimensional regression. By arbitrarily setting
-    its regularization weights \$\textbackslash lambda\$ under the monotonicity
-    constraint, SLOPE can have various feature selection and clustering properties. On
-    weight tuning, the selected features and their clusters are very sensitive to the
-    tuning parameters. Moreover, the exhaustive tracking of their changes is difficult
-    using grid search methods. This study presents a solution path algorithm that
-    provides the complete and exact path of solutions for SLOPE in fine-tuning
-    regularization weights. A simple optimality condition for SLOPE is derived and used
-    to specify the next splitting point of the solution path. This study also proposes
-    a new design of a regularization sequence \$\textbackslash lambda\$ for feature
-    clustering, which is called the quasi-spherical and octagonal shrinkage and
-    clustering algorithm for regression (QS-OSCAR). QS-OSCAR is designed with a contour
-    surface of the regularization terms most similar to a sphere. Among several
-    regularization sequence designs, sparsity and clustering performance are compared
-    through simulation studies. The numerical observations show that QS-OSCAR performs
-    feature clustering more efficiently than other designs.
-  },
-  pubstate      = {preprint}
-}
-
-% == BibLateX quality report for nomura2020:
-% ? unused Number ("arXiv:2010.15511")

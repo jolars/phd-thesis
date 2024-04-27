@@ -22,7 +22,7 @@ y_pred = linear_regression(x)
 
 
 def plot_ols(plot_squares=False):
-    fig, ax = plt.subplots(1, 1, figsize=(2, 1.9), layout="constrained")
+    fig, ax = plt.subplots(1, 1, figsize=(2.2, 2.2), layout="constrained")
 
     if plot_squares:
         for i in range(n):
@@ -40,10 +40,12 @@ def plot_ols(plot_squares=False):
 
     ax.plot(x_fit, y_fit, color=PAL[1])
     ax.set_xlabel(r"$\boldsymbol{x}$")
-    ax.set_ylabel(r"$\boldsymbol{y}$")
 
-    # ax.set_xlim(-0.1, 1.1)
-    # ax.set_ylim(-0.25, 1.5)
+    ax.set_yticks([0, 1, 2])
+    if not plot_squares:
+        ax.set_ylabel(r"$\bm{y}$")
+    else:
+        ax.set_yticklabels([])
 
 
 # plt.show(block=False)

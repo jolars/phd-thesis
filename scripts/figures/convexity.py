@@ -100,3 +100,5 @@ save_fig("1d-convexity-nonconvex.pdf")
 
 plot_convexity(f3, g3)
 save_fig("1d-convexity-nonsmooth.pdf")
+
+plt.close("all")

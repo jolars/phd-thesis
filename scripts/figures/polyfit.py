@@ -1,16 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from pythesis.utils import (
-    FULL_WIDTH,
-    default_palette,
-    save_fig,
-    set_default_plot_settings,
-)
+from pythesis.utils import FULL_WIDTH, PAL, save_fig, set_default_plot_settings
 
 set_default_plot_settings()
 
-pal = default_palette()
+pal = PAL
 
 np.random.seed(4)
 
@@ -56,7 +51,5 @@ for i, degree in enumerate(degrees):
     axs[i].set_xticks([])
 
 axs[0].set_ylabel(r"$\boldsymbol{y}$")
-
-plt.show(block=False)
 
 save_fig("polyfit.pdf")

@@ -26,9 +26,13 @@
 ]{geometry}
 
 \usepackage[T1]{fontenc}
-\usepackage[varqu,varl,scale=0.92]{inconsolata}
+\usepackage{mathtools}
+\usepackage[varqu,varl,scale=0.93]{inconsolata}
 \usepackage[ebgaramond,textscale=0,semibold,vvarbb,amsthm]{newtx}
 \usepackage[scale=0.9]{cabin}
+\usepackage{bm}
+
+\usepackage{pifont} % for dingbats
 
 \usepackage{upquote} % straight quotes in verbatim environments
 \usepackage{microtype}
@@ -37,13 +41,23 @@
 % Additional font sizes \HUGE and \ssmall, needed for figure captions
 \usepackage{moresize}
 
+% tikz and pgfplots
 \usepackage{tikz}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc,arrows,shapes,positioning,intersections}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external,colormaps}
+\pgfplotsset{compat=1.11}
+\tikzexternalize[export=false]
 
 \usepackage[labelfont=bf]{caption}
 \usepackage[labelfont=bf]{subcaption}
 
 \usepackage{epigraph}
+
+% algorithms
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+% \usepackage{algpseudocode,algorithm}
+% \resetcounteronoverlays{algocf}
 
 \usepackage{xcolor}
 \usepackage{xurl}
@@ -63,11 +77,6 @@
   citecolor  = lubronze
 }
 \usepackage{cleveref}
-
-% algorithms
-\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
-% \usepackage{algpseudocode,algorithm}
-% \resetcounteronoverlays{algocf}
 
 % Chapters should have numbers - a typical thesis consists of two chapters:
 % One to introduce and summarize the research ("kappa"), and one for
@@ -167,14 +176,16 @@
 
 \usepackage{enumitem}
 
+\usepackage{siunitx}
+
 \usepackage[
   style=authoryear-comp,
   language=english,
   url=false,
-  minbibnames=22,
-  mincitenames=22,
-  maxbibnames=22,
-  maxcitenames=25
+  % minbibnames=22,
+  % mincitenames=22,
+  % maxbibnames=22,
+  % maxcitenames=25
 ]{biblatex}
 \addbibresource{phdthesis.bib}
 

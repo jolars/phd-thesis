@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[10pt]{book}
 
 \input{tex/preamble.tex}
 \input{tex/macros.tex}
@@ -58,19 +58,19 @@
 
 % --- Shortcut thesis commands for paper references and titles ---
 % Included papers - only need to type this once
-\newcommand{\PaperIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-\newcommand{\PaperIIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-\newcommand{\PaperIIIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-\newcommand{\PaperIVauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-\newcommand{\PaperVauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-\newcommand{\PaperVIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-
-\newcommand{\PaperIref}{Journal for Superheroes, pp. 1--10}
-\newcommand{\PaperIIref}{Journal for Bankers, pp. 2--30}
-\newcommand{\PaperIIIref}{Journal for Superheroes, pp. 1--10}
-\newcommand{\PaperIVref}{Journal for Superheroes, pp. 1--10}
-\newcommand{\PaperVref}{Journal for Superheroes, pp. 1--10}
-\newcommand{\PaperVIref}{Journal for Superheroes, pp. 1--10}
+% \newcommand{\PaperIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
+% \newcommand{\PaperIIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
+% \newcommand{\PaperIIIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
+% \newcommand{\PaperIVauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
+% \newcommand{\PaperVauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
+% \newcommand{\PaperVIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
+%
+% \newcommand{\PaperIref}{Journal for Superheroes, pp. 1--10}
+% \newcommand{\PaperIIref}{Journal for Bankers, pp. 2--30}
+% \newcommand{\PaperIIIref}{Journal for Superheroes, pp. 1--10}
+% \newcommand{\PaperIVref}{Journal for Superheroes, pp. 1--10}
+% \newcommand{\PaperVref}{Journal for Superheroes, pp. 1--10}
+% \newcommand{\PaperVIref}{Journal for Superheroes, pp. 1--10}
 
 \newcommand{\PaperItitle}{The Strong Screening Rule for SLOPE}
 \newcommand{\PaperIItitle}{Look-Ahead Screening Rules for the Lasso}
@@ -125,28 +125,12 @@
 \null
 \vspace{20ex}
 
-% Nothing in life is as important as you think it is when you are thinking about it. ---Daniel Kahneman
-% Our comforting conviction that the world makes sense rests on a secure foundation: our almost unlimited ability to ignore our ignorance.
-% As you know from teaching introductory statistics, 30 is infinity. -- Andrew Gelman
-% You should inform your gut and then trust it ---Daniel Kahneman
-% The best thing about being a statistician is that you get to play in everyone's backyard. --- John Tukey
-
-% \epigraph{\itshape
-%   As you know from teaching introductory statistics, 30 is infinity.
-% }{
-%   ---Andrew Gelman
-% }
 
 \epigraph{\itshape
   There’s a point when you go with what you’ve got. Or you don’t go.
 }{
   ---Joan Didion
 }
-
-
-
-
-
 
 \cleardoublepage
 
@@ -181,27 +165,36 @@
 
 This thesis is based on the following publications.
 
-\begin{description}[leftmargin=!,labelwidth=0.7cm]
-  \item[\I] \fullcite{larsson2020b}
-  \item[\II] \fullcite{larsson2021}
-  \item[\III] \fullcite{larsson2022b}
-  \item[\IV] \fullcite{moreau2022a}
-  \item[\V] \fullcite{larsson2023}
-  \item[\VI] PAPER ON THE WAY
-        % TODO: Add details for last paper
-\end{description}
+% \I	  & {\bf \PaperItitle}\\[2mm]
+% 	  & \PaperIauthor\\
+%           & \PaperIref\\[6mm] 
 
-%   % Publications not included in this thesis:
-%   % \vspace{2mm}
-%   %
-%   % \begin{tabularx}{\textwidth}{rX}
-%   % {\sc \phantom{vi}}   & {\bf \PaperNotIncItitle}\\[2mm]
-%   %	  & \PaperNotIncIauthor\\
-%   %          & \PaperNotIncIref\\[5mm] 
-%   %
-%   %\end{tabularx}
-%   %
-% } % End large font tables, continue with font size stated in preamble
+\begin{description}[leftmargin=!,labelwidth=0.7cm]
+  % \item[\I] \fullcite{larsson2020b}
+  \item[\I] \papertitle{\PaperItitle}\papersep
+        Johan Larsson, Małgorzata Bogdan, and Jonas Wallin (Dec. 6--12, 2020). In:
+        \publication{Advances in Neural Information Processing Systems 33.} 34th Conference on Neural Information Processing Systems (NeurIPS 2020). Ed. by Hugo Larochelle et al. Vol. 33. Virtual: Curran Associates, Inc., pp. 14592--14603. \isbn{978-1-71382-954-6}
+        % \item[\II] \fullcite{larsson2021}
+  \item[\II] \papertitle{\PaperIItitle}\papersep
+        Johan Larsson (Sept. 6, 2021). In:
+        \publication{22nd European Young Statisticians Meeting -- Proceedings.} 22nd European Young
+        Statisticians Meeting. Ed. by Andreas Makridis, Fotios S. Milienos, Panagiotis
+        Papastamoulis, Christina Parpoula, and Athanasios Rakitzis. Athens, Greece:
+        Panteion university of social and political sciences, pp. 61–65. \isbn{978-960-
+          7943-23-1}
+        % \item[\III] \fullcite{larsson2022b}
+  \item[\III]\papertitle{\PaperIIItitle}\papersep
+        Johan Larsson and Jonas Wallin (Nov. 28--Dec. 9, 2022). In: \publication{Advances in Neural Information Processing Systems 35.} 36th Conference on Neural Information Processing Systems (NeurIPS 2022). Ed. by Sanmi Koyejo, Sidahmed Mohamed, Alekh Agarwal, Danielle Belgrave, Kyunghyun Cho, and Alice Oh. Vol. 35. New Orleans, USA: Curran Associates, Inc., pp. 15823–15835. \isbn{978-1-71387-108-8}
+        % \item[\IV] \fullcite{moreau2022a}
+  \item[\IV] \papertitle{\PaperIVtitle}\papersep
+        Thomas Moreau, Mathurin Massias, Alexandre Gramfort, Pierre Ablin, Pierre-Antoine Bannier, Benjamin Charlier, Mathieu Dagréou, Tom Dupré la Tour, Ghislain Durif, Cassio F. Dantas, Quentin Klopfenstein, Johan Larsson, En Lai, Tanguy Lefort, Benoit Malézieux, Badr Moufad, Binh T. Nguyen, Alain Rakotomamonjy, Zaccharie Ramzi, Joseph Salmon, and Samuel Vaiter (Nov. 28--Dec. 9, 2022). In: \publication{Advances in Neural Information Processing Systems 35.} 36th Conference on Neural Information Processing Systems (NeurIPS 2022). Ed. by Sanmi Koyejo, Sidahmed Mohamed, Alekh Agarwal, Danielle Belgrave, Kyunghyun Cho, and Alice Oh. Vol. 35. New Orleans, USA: Curran Associates, Inc., pp. 25404–25421. \isbn{978-1-71387-108-8}
+        % \item[\V] \fullcite{larsson2023}
+  \item[\V] \papertitle{\PaperVtitle}\papersep
+        Johan Larsson, Quentin Klopfenstein, Mathurin Massias, and Jonas Wallin (Apr. 25--27, 2023). In: \publication{Proceedings of the 26th International Conference on Artificial Intelligence and Statistics.} AISTATS 2023. Ed. by Francisco Ruiz, Jennifer Dy, and Jan-Willem van de Meent. Vol. 206.
+        Proceedings of Machine Learning Research. Valencia, Spain: PMLR, pp. 4802--4821
+  \item[\VI] \papertitle{\PaperVItitle}\papersep
+        %TODO: fill out paper details
+\end{description}
 
 \noindent {\small All papers are reproduced with permission of their respective publishers.}
 

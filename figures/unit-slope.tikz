@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      ylabel = \(c_j\),
+      xlabel = \(\lambda\),
+      xmin = 0.1,
+      xmax = 1.05,
+      ymin = 0.05,
+      ymax = 0.65,
+      max space between ticks = 1000pt,
+      try min ticks = 5,
+      x dir = reverse
+    ]
+    \addplot[style = dashed, color=Grey]
+    coordinates {
+        (0.1,0.1)
+        (0.6,0.6)
+      };
+    \addplot[thick,color=SteelBlue]
+    coordinates {
+        (0.8,0.2)
+        (0.45,0.55)
+      };
+    \addplot[thick,color=orange]
+    coordinates {
+        (0.8,0.2)
+        (0.45,0.39)
+      };
+    \addplot[thick]
+    coordinates {
+        (0.9,0.15)
+        (0.54,0.33)
+        (0.36,0.36)
+        (0.1,0.1)
+      };
+    \draw [decorate,decoration={brace},xshift=-5pt]
+    (0.8,0.2) -- (0.8,0.55)node [left,black,midway] {\small
+      \(\lambda_{k}-\lambda_{k + 1}\)};
+
+    \node [right] at (0.45, 0.39) {\small Hessian rule};
+    \addplot[thick,mark=*,color=orange,fill=white] coordinates {(0.45,0.39)};
+
+    \node [right] at (0.45, 0.55) {\small Strong rule};
+    \addplot[thick,mark=*,color=SteelBlue,fill=white] coordinates {(0.45,0.55)};
+
+    \addplot[mark=*] coordinates {(0.8,0.2)};
+
+    \addplot[style=dotted]
+    coordinates {
+        (0.45,0.0)
+        (0.45,0.55)
+      };
+    \addplot[style=dotted]
+    coordinates {
+        (0.8,0.0)
+        (0.8,0.2)
+      };
+    \node [left] at (0.45,0.1) {\footnotesize\(\lambda_{k + 1}\)};
+    \node [left] at (0.8,0.1) {\footnotesize\(\lambda_{k}\)};
+  \end{axis}
+\end{tikzpicture}

@@ -42,8 +42,8 @@ ax2.set_xlabel(r"$\boldsymbol{x}_1$")
 ax2.set_ylabel(r"$\boldsymbol{x}_2$")
 ax2.set_zlabel(r"$\boldsymbol{y}$", labelpad=0)
 
-plt.show(block=False)
-
 path = here("figures") / "overfit-3d.pdf"
 
 save_fig("overfit-3d.pdf", pad_inches=1)
+
+plt.close("all")

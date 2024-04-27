@@ -30,11 +30,13 @@ def extend_range(x, f=0.1):
 def set_default_plot_settings():
     plt.rcParams["text.usetex"] = True
     plt.rcParams["font.size"] = 8
-    plt.rcParams["lines.markersize"] = 2
+    plt.rcParams["axes.labelsize"] = 9
+    plt.rcParams["axes.titlesize"] = 9
+    plt.rcParams["lines.markersize"] = 3
     plt.rcParams["figure.labelsize"] = "medium"
     plt.rcParams["font.family"] = "serif"
     plt.rcParams["text.latex.preamble"] = (
-        r"\usepackage[ebgaramond,textscale=0,semibold,vvarbb,subscriptcorrection,amsthm]{newtx}\usepackage{mathtools}"
+        r"\usepackage{mathtools}\usepackage[ebgaramond,textscale=0,semibold,vvarbb,amsthm]{newtx}\usepackage{bm}"
     )
 
 
