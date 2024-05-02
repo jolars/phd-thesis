@@ -71,7 +71,7 @@
   colorlinks = true,
   % hidelinks,
   breaklinks = true,
-  linkcolor  = black,
+  linkcolor  = lublue,
   filecolor  = lublue,
   urlcolor   = lublue,
   citecolor  = lubronze
@@ -113,7 +113,7 @@
 % \usepackage{amsfonts,amsmath,amssymb}
 
 % To include the PDFs of the papers
-\usepackage[draft]{pdfpages}
+\usepackage[]{pdfpages}
 
 % Hyphenation, support for different languages, last one is default
 % Make sure to install the hyphenation packages for all languages you need
@@ -147,7 +147,6 @@
 
 % code listings
 \usepackage{listings}
-% \usepackage{minted}
 
 % Define a custom color
 \definecolor{backcolour}{rgb}{0.95,0.95,0.95}
@@ -201,3 +200,13 @@
 \def\endproblem{\eqno \hbox{\@eqnnum}$$\@ignoretrue}
 \makeatother
 \Crefname{problem}{Problem}{Problems}
+
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\itshape\scshape\nouppercase{\rightmark}}
+\fancyhead[RE]{\itshape\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0pt}

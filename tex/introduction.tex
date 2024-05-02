@@ -135,8 +135,6 @@ The problem is that our linear regression model will be able to fit our particul
   \label{fig:overfitting}
 \end{figure}
 
-% It is also a case of the curse of dimensionality, in the sense that, as we increase the dimensions of our feature space, our observations start to effectively grow further, and further apart, and occupy less and less of the available space.
-
 In principle, the problem of overfitting in linear regression is the same as that in polynomial regression: as we increase the number of parameters (degree of the polynomial in this case), the model eventually becomes too flexible and overfits~(\Cref{fig:polyfit}).
 Note that in this example overfitting occurs even when the number of parameters is smaller than the number of observations. This is the case with linear regression too, for which the problem  may occur in cases when \(n\) is larger than \(p\).
 
@@ -176,8 +174,6 @@ But the following model would not:
 \[
   \vec{\beta} = \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}.
 \]
-
-% There are two problems with this method. The first is that the method involves no shrinkage, which \textcite{stein1956,james1961} in pivotal work asserted was necessary for good performance.
 
 The primary problem with this method is that it is computationally infeasible when \(p\) is large since the number of possible models grows exponentially with \(p\). With \(p = 100\) and \(k = k\), for instance, there are
 \[
@@ -677,11 +673,7 @@ The main reason for why coordinate descent works so well for the lasso, the elas
 
 As in the case proximal gradient descent, coordinate descent can also be accelerated via the Nesterov scheme~\parencite{nesterov1983} or Anderson acceleration~\parencite{bertrand2021}. In practice, however, we have found that the benefit of acceleration is lower in the case of coordinate descent than it is for gradient descent.
 
-% Another way to look at it is to recognize that, in the standard lasso case (when \(g\) is the OLS objective) coordinate descent actually solves the one-dimensional problem \emph{exactly} at each step, which is not the case for proximal gradient descent. In other words: coordinate descent uses more information about the problem, including the curvature of the optimization surface (in the direction of the current coordinate).
-
 One problem with coordinate descent, however, is that it requires the objective to be separable in the optimization variable \(\vec{\beta}\); this is not the case for SLOPE, which makes the method inapplicable for this problem.
-
-%In paper~\V~\parencite{larsson2023}, however, we present a way to tackle this problem by using a hybrid of coordinate descent and proximal gradient descent.
 
 We have introduced many optimization methods in this section, yet have only scratched the surface in the field. Several methods have been omitted, such as the alternating direction method of multipliers (ADMM)~\parencite{boyd2010}, proximal Newton~\parencite{lee2014}, interior-point methods~\parencite{kim2007}, and stochastic gradient descent~\parencite{robbins1951,bottou2010} and its many derivatives. We have also omitted many details regarding the implementation of the algorithms, such as step size selection and convergence criteria. Yet, while these are important and interesting aspects of the algorithms, we omit them here for brevity and provide all the necessary details in the papers themselves.
 

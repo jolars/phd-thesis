@@ -84,7 +84,7 @@
 \newcommand{\PaperIIItitle}{The Hessian Screening Rule}
 \newcommand{\PaperIVtitle}{Benchopt: Reproducible, Efficient and Collaborative Optimization Benchmarks}
 \newcommand{\PaperVtitle}{Coordinate Descent for SLOPE}
-\newcommand{\PaperVItitle}{Regularization and Scaling in Sparse Regression}
+\newcommand{\PaperVItitle}{The Lasso and Ridge Regression Yield Biased Estimates of Imbalanced Binary Features}
 
 \makeatletter
 \newcommand*{\rom}[1]{\expandafter\scshape\romannumeral #1}
@@ -141,13 +141,13 @@
 
 \cleardoublepage
 
-\pagestyle{headings}
+\pagestyle{fancy}
 
 % Table of Contents
 \setcounter{page}{1} % Page Roman 1 of the frontmatter
 \setcounter{tocdepth}{1}
 
-\tableofcontents
+{\hypersetup{hidelinks}\tableofcontents}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,7 +221,7 @@ This thesis is based on the following publications.
 \mainmatter
 % Reset table counters to not count the publications table
 \setcounter{table}{0}
-% Rest page counters, this is where it all starts!
+% Reset page counters, this is where it all starts!
 \setcounter{page}{1}
 
 \input{tex/introduction.tex}
@@ -233,84 +233,126 @@ This thesis is based on the following publications.
 \cleardoublepage
 
 \thispagestyle{empty}
-
 \phantomsection
+\PaperSeparator{1}
 \addcontentsline{toc}{section}{\protect\numberline{\I} {\PaperItitle}}
-\markright{\I{}: \PaperItitle}
+\markright{\I}
+\cleardoublepage
 
 % \begin{tikzpicture}[remember picture, overlay]
 %   \node[fill=black, text=white, font=\bfseries\fontsize{50}{55}\selectfont, anchor=east, minimum height=1.5cm, minimum width=2.5cm, text width=1.5cm, align=left] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
 % \end{tikzpicture}
 
-\PaperSeparator{1}
-
-\cleardoublepage
-% Include the PDF. Comment this while writing the thesis, only add later.
-% Options are: all pages, scaled to full width (use 0.95 if that is too high for some reason), with thesis page number
 \includepdf[
   pages=-,
   width=0.9\textwidth,
-  % scale=0.50,
-  % noautoscale,
-  % offset=-14.56723pt 0pt,
-  % frame=true,
+  offset=-14.56723pt 0pt,
   clip,
   viewport=107 50 506 743,
-  pagecommand={\thispagestyle{headings}},
-]{papers/paper1.pdf}
-% One additional option could be useful: To cut away the margins of the included PDFs use:
-% clip,viewport=<left> <bottom> <right> <top>
-% To determine the four numbers you can use the ./determineViewport.sh script in the thesis directory.
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper1-main.pdf}
+\includepdf[
+  pages=-,
+  width=0.9\textwidth,
+  offset=-14.56723pt 0pt,
+  clip,
+  viewport=107 50 506 743,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper1-erratum.pdf}
+\includepdf[
+  pages=-,
+  width=0.92\textwidth,
+  offset=-14.56723pt 0pt,
+  clip,
+  viewport=133 110 478 665,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper1-supplement.pdf}
 
 \cleardoublepage
 
 \thispagestyle{empty}
-\phantomsection\label{sec:paper-i}
+\phantomsection
 \PaperSeparator{2}
 \addcontentsline{toc}{section}{\protect\numberline{\II} {\PaperIItitle}}
+\markright{\II}
+\cleardoublepage
+
+\includepdf[
+  pages=-,
+  width=\textwidth,
+  offset=-14.56723pt 0pt,
+  clip,
+  viewport=107 125 468 667,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper2.pdf}
 
 \cleardoublepage
 
 \thispagestyle{empty}
 \PaperSeparator{3}
 \addcontentsline{toc}{section}{\protect\numberline{\III} {\PaperIIItitle}}
+\markright{\III}
+\cleardoublepage
+
+\includepdf[
+  pages=-,
+  width=0.9\textwidth,
+  offset=-14.56723pt 0pt,
+  clip,
+  viewport=107 50 506 743,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper3.pdf}
 
 \cleardoublepage
 
 \thispagestyle{empty}
 \PaperSeparator{4}
 \addcontentsline{toc}{section}{\protect\numberline{\IV} {\PaperIVtitle}}
+\markright{\IV}
+\cleardoublepage
+
+\includepdf[
+  pages=-,
+  width=0.9\textwidth,
+  offset=-14.56723pt 0pt,
+  % frame=true,
+  clip,
+  viewport=107 50 506 743,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper4.pdf}
 
 \cleardoublepage
 
 \thispagestyle{empty}
 \PaperSeparator{5}
 \addcontentsline{toc}{section}{\protect\numberline{\V} {\PaperVtitle}}
+\markright{\V}
+\cleardoublepage
+
+\includepdf[
+  pages=-,
+  width=\textwidth,
+  offset=-14.56723pt 0pt,
+  clip,
+  viewport=62 49 551 721,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper5.pdf}
 
 \cleardoublepage
 
 \thispagestyle{empty}
 \PaperSeparator{6}
 \addcontentsline{toc}{section}{\protect\numberline{\VI} {\PaperVItitle}}
-
+\markright{\VI}
 \cleardoublepage
 
-% \appendix
-% \thispagestyle{empty}
-
-% \begin{tikzpicture}[remember picture, overlay]
-%   \node[fill=black, text=white, font=\bfseries\HUGE, anchor=east, minimum height=1.5cm, minimum width=5cm] at ($(current page.north east) + (0,-0.8\paperheight)$) {Appendix};
-% \end{tikzpicture}
-
-% \appendix
-% \chap{Appendix: Conference posters}
-% \section*{Poster 1: \PaperItitle}
-% Media-Tryck's suggestion to a poster layout, can be downloaded from \url{https://bildweb.srv.lu.se/login/}.
-% Presented 2067 at the \emph{Symposium for time travel}
-% in Berlin, Germany. For further details refer to Paper~\I and
-% Sect.~\ref{sec:mainresults}.
-%
-% % include poster itself. Cropping works as described above for the papers.
-% \includepdf[pages=-,width=\paperwidth-10mm]{posterMediaTryck.pdf} %smaller margin, works fine when printing (hopefully ;) Hallå, Jonas!)
+\includepdf[
+  pages=-,
+  width=\textwidth,
+  offset=-14.56723pt 0pt,
+  clip,
+  viewport=71 55 541 712,
+  pagecommand={\thispagestyle{fancy}},
+]{papers/paper6.pdf}
 
 \end{document}
