@@ -2927,3 +2927,250 @@ l@article{lee2014,
     library based on this algorithm is available from StatLib.
   }
 }
+
+@inproceedings{bertrand2021,
+  title         = {Anderson Acceleration of Coordinate Descent},
+  author        = {Bertrand, Quentin and Massias, Mathurin},
+  booktitle     = {
+    Proceedings of {{The}} 24th {{International Conference}} on {{Artificial
+    Intelligence}} and {{Statistics}}
+  },
+  location      = {San Diego, CA, USA},
+  publisher     = {PMLR},
+  volume        = {130},
+  pages         = {1288--1296},
+  issn          = {2640-3498},
+  url           = {https://proceedings.mlr.press/v130/bertrand21a.html},
+  urldate       = {2024-04-29},
+  date          = {2021-03-18},
+  abstract      = {
+    Acceleration of first order methods is mainly obtained via inertia \`{a} la
+    Nesterov, or via nonlinear extrapolation. The latter has known a recent surge of
+    interest, with successful applications to gradient and proximal gradient
+    techniques. On multiple Machine Learning problems, coordinate descent achieves
+    performance significantly superior to full-gradient methods. Speeding up coordinate
+    descent in practice is not easy: inertially accelerated versions of coordinate
+    descent are theoretically accelerated, but might not always lead to practical
+    speed-ups. We propose an accelerated version of coordinate descent using
+    extrapolation, showing considerable speed up in practice, compared to inertial
+    accelerated coordinate descent and extrapolated (proximal) gradient descent.
+    Experiments on least squares, Lasso, elastic net and logistic regression validate
+    the approach.
+  },
+  eventtitle    = {{{AISTATS}} 2021},
+  langid        = {english}
+}
+
+% == BibLateX quality report for bertrand2021:
+% Unexpected field 'issn'
+% ? unused Library catalog ("proceedings.mlr.press")
+@inproceedings{mai2020,
+  title         = {Anderson Acceleration of Proximal Gradient Methods},
+  author        = {Mai, Vien V. and Johansson, Mikael},
+  booktitle     = {Proceedings of the 37th {{International Conference}} on {{Machine Learning}}},
+  location      = {Virtual},
+  publisher     = {PMLR},
+  volume        = {119},
+  pages         = {6620--6629},
+  url           = {https://proceedings.mlr.press/v119/mai20a.html},
+  urldate       = {2024-04-28},
+  editor        = {Daum\'{e} III, Hal and Singh, Aarti},
+  date          = {2020-07-13/2020-07-18},
+  abstract      = {
+    Anderson acceleration is a well-established and simple technique for speeding up
+    fixed-point computations with countless applications. This work introduces novel
+    methods for adapting Anderson acceleration to proximal gradient algorithms. Under
+    some technical conditions, we extend existing local convergence results of Anderson
+    acceleration for smooth fixed-point mappings to the proposed non-smooth setting. We
+    also prove analytically that it is in general, impossible to guarantee global
+    convergence of native Anderson acceleration. We therefore propose a simple scheme
+    for stabilization that combines the global worst-case guarantees of proximal
+    gradient methods with the local adaptation and practical speed-up of Anderson
+    acceleration. Finally, we provide the first applications of Anderson acceleration
+    to non-Euclidean geometry.
+  },
+  eventtitle    = {{{ICML}} 20}
+}
+
+% == BibLateX quality report for mai2020:
+% ? unused Library catalog ("ACM Digital Library")
+@article{xiang2017,
+  title         = {Screening Tests for {{Lasso}} Problems},
+  author        = {Xiang, Zhen James and Wang, Yun and Ramadge, Peter J.},
+  volume        = {39},
+  number        = {5},
+  pages         = {1008--1027},
+  doi           = {10.1109/TPAMI.2016.2568185},
+  issn          = {1939-3539},
+  date          = {2017-05},
+  journaltitle  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  abstract      = {
+    This paper is a survey of dictionary screening for the lasso problem. The lasso
+    problem seeks a sparse linear combination of the columns of a dictionary to best
+    match a given target vector. This sparse representation has proven useful in a
+    variety of subsequent processing and decision tasks. For a given target vector,
+    dictionary screening quickly identifies a subset of dictionary columns that will
+    receive zero weight in a solution of the corresponding lasso problem. These columns
+    can be removed from the dictionary prior to solving the lasso problem without
+    impacting the optimality of the solution obtained. This has two potential
+    advantages: it reduces the size of the dictionary, allowing the lasso problem to be
+    solved with less resources, and it may speed up obtaining a solution. Using a
+    geometrically intuitive framework, we provide basic insights for understanding
+    useful lasso screening tests and their limitations. We also provide illustrative
+    numerical studies on several datasets.
+  },
+  eventtitle    = {{{IEEE Transactions}} on {{Pattern Analysis}} and {{Machine Intelligence}}}
+}
+
+% == BibLateX quality report for xiang2017:
+% Unexpected field 'eventtitle'
+% ? unused Library catalog ("IEEE Xplore")
+@inproceedings{xiang2012,
+  title         = {Fast Lasso Screening Tests Based on Correlations},
+  author        = {Xiang, Zhen James and Ramadge, Peter J.},
+  booktitle     = {
+    2012 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
+    Processing}} ({{ICASSP}})
+  },
+  pages         = {2137--2140},
+  doi           = {10.1109/ICASSP.2012.6288334},
+  date          = {2012-03},
+  abstract      = {
+    Representing a vector as a sparse linear combination of codewords, e.g. by solving
+    a lasso problem, lies at the heart of many machine learning and statistics
+    applications. To improve the efficiency of solving lasso problems, we
+    systematically investigate lasso screening, a process that quickly identifies
+    dictionary entries that won't be used in the optimal sparse representation, and
+    hence can be removed from the problem. We propose a general test called an R region
+    test that unifies existing screening tests and we derive a particular instance
+    called the dome test. This test is stronger than existing screening tests and can
+    be executed in linear-time as a two-pass test with a memory footprint of only three
+    codewords.
+  },
+  eventtitle    = {
+    2012 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
+    Processing}} ({{ICASSP}})
+  }
+}
+
+% == BibLateX quality report for xiang2012:
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("IEEE Xplore")
+@inproceedings{fercoq2015,
+  title         = {Mind the Duality Gap: Safer Rules for the Lasso},
+  author        = {Fercoq, Olivier and Gramfort, Alexandre and Salmon, Joseph},
+  booktitle     = {Proceedings of the 37th International Conference on Machine Learning},
+  location      = {Lille, France},
+  publisher     = {PMLR},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {37},
+  pages         = {333--342},
+  url           = {http://proceedings.mlr.press/v37/fercoq15},
+  editor        = {Bach, Francis and Blei, David},
+  date          = {2015-07-06/2015-07-11},
+  abstract      = {
+    Screening rules allow to early discard irrelevant variables from the optimization
+    in Lasso problems, or its derivatives, making solvers faster. In this paper, we
+    propose new versions of the so-called rules for the Lasso. Based on duality gap
+    considerations, our new rules create safe test regions whose diameters converge to
+    zero, provided that one relies on a converging solver. This property helps
+    screening out more variables, for a wider range of regularization parameter values.
+    In addition to faster convergence, we prove that we correctly identify the active
+    sets (supports) of the solutions in finite time. While our proposed strategy can
+    cope with any solver, its performance is demonstrated using a coordinate descent
+    algorithm particularly adapted to machine learning use cases. Significant computing
+    time reductions are obtained with respect to previous safe rules.
+  },
+  eventtitle    = {{{ICML}} 2015}
+}
+
+% == BibLateX quality report for fercoq2015:
+% ? Unsure about the formatting of the booktitle
+@inproceedings{yamada2021,
+  title         = {Dynamic {{Sasvi}}: Strong Safe Screening for Norm-Regularized Least Squares},
+  author        = {Yamada, Hiroaki and Yamada, Makoto},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  location      = {New Orleans, USA},
+  publisher     = {Curran Associates, Inc.},
+  volume        = {34},
+  pages         = {14645--14655},
+  url           = {
+    https://proceedings.neurips.cc/paper/2021/file/7b5b23f4aadf9513306bcd59afb6e4c9-Paper.pdf
+  },
+  editor        = {
+    Ranzato, M. and Beygelzimer, A. and Dauphin, Y. and Liang, P.S. and Vaughan, J.
+    Wortman
+  },
+  date          = {2021},
+  eventtitle    = {{{NeurIPS}} 2021}
+}
+
+% == BibLateX quality report for yamada2021:
+% ? Unsure about the formatting of the booktitle
+@inproceedings{wang2014,
+  title         = {A Safe Screening Rule for Sparse Logistic Regression},
+  author        = {Wang, Jie and Zhou, Jiayu and Liu, Jun and Wonka, Peter and Ye, Jieping},
+  booktitle     = {
+    Proceedings of the 27th {{International Conference}} on {{Neural Information
+    Processing Systems}} - {{Volume}} 1
+  },
+  location      = {Cambridge, MA, USA},
+  publisher     = {MIT Press},
+  series        = {{{NIPS}}'14},
+  pages         = {1053--1061},
+  date          = {2014-12-08},
+  abstract      = {
+    The \mathscr{l}1-regularized logistic regression (or sparse logistic regression) is
+    a widely used method for simultaneous classification and feature selection.
+    Although many recent efforts have been devoted to its efficient implementation, its
+    application to high dimensional data still poses significant challenges. In this
+    paper, we present a fast and effective sparse logistic regression screening rule
+    (Slores) to identify the "0" components in the solution vector, which may lead to a
+    substantial reduction in the number of features to be entered to the optimization.
+    An appealing feature of Slores is that the data set needs to be scanned only once
+    to run the screening and its computational cost is negligible compared to that of
+    solving the sparse logistic regression problem. Moreover, Slores is independent of
+    solvers for sparse logistic regression, thus Slores can be integrated with any
+    existing solver to improve the efficiency. We have evaluated Slores using
+    high-dimensional data sets from different applications. Experiments demonstrate
+    that Slores outperforms the existing state-of-the-art screening rules and the
+    efficiency of solving sparse logistic regression can be improved by one magnitude.
+  }
+}
+
+% == BibLateX quality report for wang2014:
+% ? unused Library catalog ("ACM Digital Library")
+@inproceedings{xiang2011,
+  title         = {
+    Learning Sparse Representations of High Dimensional Data on Large Scale
+    Dictionaries
+  },
+  author        = {Xiang, Zhen J. and Xu, Hao and Ramadge, Peter J},
+  booktitle     = {Advances in Neural Information Processing Systems 24},
+  publisher     = {Curran Associates, Inc.},
+  pages         = {900--908},
+  url           = {
+    https://papers.nips.cc/paper/4400-learning-sparse-representations-of-high-dimensional-data-on-large-scale-dictionaries
+  },
+  editor        = {
+    Shawe-Taylor, J. and Zemel, R. S. and Bartlett, P. L. and Pereira, F. and
+    Weinberger, K. Q.
+  },
+  date          = {2011-12-12/2011-12-17},
+  eventtitle    = {Neural {{Information Processing Systems}} 2011}
+}
+
+% == BibLateX quality report for xiang2011:
+% ? Unsure about the formatting of the booktitle
+@misc{rcoreteam2024,
+  title         = {R: A Language and Environment for Statistical Computing},
+  author        = {{R Core Team}},
+  year          = {2024},
+  month         = feb,
+  address       = {Vienna, Austria},
+  howpublished  = {R Foundation for Statistical Computing}
+}
+
+% == BibTeX quality report for rcoreteam2024:
+% ? unused Url ("https://www.R-project.org/")
+% ? unused Version number ("4.3.3")

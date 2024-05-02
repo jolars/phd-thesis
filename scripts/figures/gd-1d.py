@@ -53,14 +53,14 @@ plt.plot(
     x_start + x_grad,
     y_grad_df,
     "k:",
-    zorder=11,
+    zorder=9,
     label=r"$\nabla f(\beta)$",
     color="grey",
 )
 plt.xlabel(r"$\beta$")
 plt.ylabel(r"$f(\beta)$")
 
-plt.plot(x_approx, f_approx, zorder=11, label="Approx.", color=PAL[0], alpha=0.6)
+plt.plot(x_approx, f_approx, zorder=11, label="Approximation", color=PAL[0], alpha=0.6)
 plt.plot(x_path[1], approx(x_path[1], x_start, t), "o", zorder=15, color=PAL[0])
 
 plt.scatter(1, 0, s=25, c=PAL[1], zorder=15, marker="X")

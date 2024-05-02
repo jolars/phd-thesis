@@ -1,4 +1,4 @@
-\documentclass[10pt]{book}
+\documentclass{book}
 
 \input{tex/preamble.tex}
 \input{tex/macros.tex}
@@ -27,33 +27,40 @@
   lecture hall (Kentsalen) at the \myDepartment\xspace
   on Sunday, the 34th of December \myYear\xspace at 24:00. }
 \newcommand{\myCoverFront}{%
-  \noindent {\bf Cover illustration front:}
-  The elastic net path for a data set of diabetes patients.
+  \noindent {\bf Cover illustration front:} The elastic net path for a dataset of diabetes patients
 }
 \newcommand{\myCoverBack}{%
-  {\bf Cover illustration back:} Picture showing my research (Paper \V).}
+  {\bf Cover illustration back:} A picture of me.}
 \newcommand{\myFundingInformation}{%
-  {\bf Funding information:}
-  The thesis work was financially supported by my rich uncle.}
+  {\bf Funding information:} This thesis received no external funding.}
 
 % \newcommand{\mySeries}{\ISSN: $<$ISSN number$>$}
 
 \newcommand{\myISBNprint}{978-91-8104-076-0}
 \newcommand{\myISBNpdf}{978-91-8104-077-7}
-\newcommand{\myFormSignDate}{1776-7-4}
+\newcommand{\myFormSignDate}{2024-05-03}
+% TODO: fix form sign date
 
 % total page number is computed automatically:
 \newcommand{\myPages}{\lastpageref{LastPages}}
 
-\newcommand{\myFormDefenceDate}{2024-05-24}
+\newcommand{\myFormDefenceDate}{2024-06-28}
 \newcommand{\myFormKeywords}{%
-  power, victory, awesomeness}
+  high-dimensional statistics, sparse regression, lasso, SLOPE, optimization, screening rules, normalization}
 
 % Write a short english abstract of the thesis here, goes into the data sheet page 4. 
-\newcommand{\myAbstract}{
-  \blindtext
+\newcommand{\myAbstract}{%
+  Datasets are growing in size and complexity, especially with respect to the number of features of the problems that we study, which now often number in the millions. This has lead to a surge in interest for sparse regression models, which help make sense of these datasets by modeling them efficiently whilst still retaining a notion of explainability. Because these datasets are so large, however, they have prompted a need for effective optimization methods with which to apply them---in this thesis, we present several contributions to this area of research.
 
-  \blindtext
+  In papers \I--\III, we focus on screening rules for the lasso and sorted \(\ell_1\) penalized regression (SLOPE)---two sparse regression methods. Screening rules are algorithms that discard a portion of the features in the model before optimization takes place, which means that we effectively get to solve smaller problems than the original ones, yet still recover the same solutions. For the lasso, there has been a large body of work on screening rules since they were first introduced in 2010. In the case of SLOPE, however, there did not exist any screening rule until our work in paper~\I, in which we introduce the first such rule: the strong screening rule for SLOPE.
+
+  In paper \II, we continue our work on screening rules by introducing look-ahead screening rules for the lasso, which enable screening of features for a stretch of the lasso path, rather than just for the following step. In essence, this allows us save computation time by screening features only when it is necessary. In paper \III, we then tackle the case of using screening rules with highly correlated features, which is a setting in which previous screening rules have struggled. We propose the Hessian screening rule, which uses second-order information about the problem in order to provide less conservative screening along the lasso path. In empirical studies we show that our screening rule leads to large improvements in performance.
+
+  In paper~\IV, we introduce benchopt: a framework for benchmarking optimization methods in a transparent, reproducible, and collaborative manner. The current field of research in optimization is overflowing with new algorithms, each time proclaimed by its authors to improve upon its predecessors. It is easy to find benchmarks that directly contradict one another, which is foten the result of variations in the factors that impact the performance of the optimization methods studied. Benchopt makes it easy to construct benchmarks that transparently and objectively compare these methods to one another.
+
+  One particularly effective optimization method for the lasso is coordinate descent. Unfortunately, we cannot directly use coordinate descent for SLOPE since the problem is not separable. In paper~\V, however, we present a hybrid method which circumvents this issue by incorporating proximal gradient descent steps to tackle the separability issue, whilst still enjoying the effectiveness of coordinate descent.
+
+  In the final paper, paper~\VI, we study the use of normalization for the lasso when the data is made up of binary features. Normalization is necessary in regularized regression to put features on the same scale, but its effects are generally not well-understood. In our paper we show that the solutions in the lasso and ridge regression depend strongly on the class balance of the binary features and that this effect depends on the type of normalization used.
 }%
 
 % --- Shortcut thesis commands for paper references and titles ---
@@ -159,7 +166,19 @@
 
 \chap{Abstract}
 
+\myAbstract
+
 \chap{Popular Science Summary}
+
+In this thesis we study the field of big data, where the sheer volume and complexity of information can be overwhelming. The focus is on sparse regression models, a type of statistical model that helps make sense of large datasets by simplifying them in the form of a sparse  representation.
+
+The first three papers of the thesis concentrate on screening rules for two types of sparse regression methods: the lasso and sorted \(\ell_1\) penalized regression (SLOPE). Screening rules are like filters that remove some of the less important features of the data before your computer is tasked with processing it. This makes the problem smaller and easier to solve, yet still gives the same results. We introduce the first-ever screening rule for SLOPE and develop look-ahead screening rules for the lasso, which save additional computation time when you do not know how simple you want your model to be. Finally, we also tackle the challenge of using screening rules when data features are highly correlated, proposing a new rule that improves performance in this situation.
+
+The fourth paper introduces benchopt, a tool for comparing different optimization methods. With so many new algorithms being developed, it is hard to know which one is best. Benchopt provides a transparent and objective way to compare these methods.
+
+The fifth paper presents a new optimization method for the lasso, a popular sparse regression model. In the method, we combine two existing methods to overcome a limitation of the lasso, making it more effective.
+
+The final paper explores the impact of normalization---a process that puts all features on the same scale---on the lasso when dealing with binary features. We find that the balance of the binary features (the balance between ones and zeros) and the type of normalization used can significantly affect the results.
 
 \chap{List of Publications}\label{sec:paperlist}
 
@@ -207,7 +226,7 @@ This thesis is based on the following publications.
 
 \input{tex/introduction.tex}
 
-\printbibliography
+\printbibliography[heading=subbibliography]
 
 \chap{Papers}
 
@@ -246,6 +265,7 @@ This thesis is based on the following publications.
 \cleardoublepage
 
 \thispagestyle{empty}
+\phantomsection\label{sec:paper-i}
 \PaperSeparator{2}
 \addcontentsline{toc}{section}{\protect\numberline{\II} {\PaperIItitle}}
 

@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from benchopt.datasets.simulated import make_correlated_data
+from labellines import labelLines
 
 from pythesis.lasso import lasso_gd
 from pythesis.utils import PAL, save_fig, set_default_plot_settings
@@ -34,14 +35,17 @@ ax[0].semilogy(f_hist_proj - opt, label="Projected GD", color=PAL[1])
 ax[0].set_xlabel("Iteration")
 ax[0].set_ylabel("Suboptimality")
 
-ax[1].semilogy(t_hist, f_hist - opt, label="Proximal GD", color=PAL[0])
-ax[1].semilogy(t_hist_proj, f_hist_proj - opt, label="Projected GD", color=PAL[1])
+ax[1].semilogy(t_hist, f_hist - opt, label="Proximal", color=PAL[0])
+ax[1].semilogy(t_hist_proj, f_hist_proj - opt, label="Projected", color=PAL[1])
 
 ax[1].set_xlabel("Time (s)")
 
-ax[1].legend()
+# ax[1].legend()
+
 
 for a in ax:
     a.set_ylim(1e-7 * 0.9, None)
+
+labelLines(ax[1].get_lines(), xvals=[0.1, 0.2], align=True)
 
 save_fig("lasso-projgrad-comp.pdf")

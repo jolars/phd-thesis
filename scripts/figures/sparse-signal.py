@@ -25,7 +25,7 @@ for j in range(p):
     cor[j] = np.corrcoef(X_train[:, j], y_train)[0, 1]
 
 fig, ax = plt.subplots(
-    1, 1, sharex=True, sharey=True, figsize=(FULL_WIDTH, 1.5), layout="constrained"
+    1, 1, sharex=True, sharey=True, figsize=(FULL_WIDTH, 1.1), layout="constrained"
 )
 
 colors = np.where(np.abs(cor) > 0.1, "black", "gray")

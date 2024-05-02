@@ -27,11 +27,17 @@ rcv1["objective_value"] = suboptim(rcv1["objective_value"])
 
 fig, axs = plt.subplots(1, 2, figsize=(4.2, 2), constrained_layout=True, sharey=True)
 
+colors = {"PGD": PAL[0], "CD": PAL[3]}
+
 for key, grp in news20.groupby(["solver_name"]):
-    axs[0].semilogy(grp["time"], grp["objective_value"], label=key[0])
+    axs[0].semilogy(
+        grp["time"], grp["objective_value"], label=key[0], color=colors[key[0]]
+    )
 
 for key, grp in rcv1.groupby(["solver_name"]):
-    axs[1].semilogy(grp["time"], grp["objective_value"], label=key[0])
+    axs[1].semilogy(
+        grp["time"], grp["objective_value"], label=key[0], color=colors[key[0]]
+    )
 
 axs[0].set_title("news20")
 

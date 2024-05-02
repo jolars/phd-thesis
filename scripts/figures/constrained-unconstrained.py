@@ -66,7 +66,7 @@ ax.plot(t, np.abs(t) - t0, c=PAL[0])  # lower half of diamond
 
 ax.plot(w_opt[0], w_opt[1], "ko")
 ax.annotate(
-    r"$\beta^*$",
+    r"$\boldsymbol{\beta}^*$",
     w_opt,
     w_opt + np.array([0.0, -0.2]),
     horizontalalignment="left",
@@ -94,7 +94,7 @@ ax.vlines(0, lim[0], lim[1], "grey", ":", zorder=2)
 
 ax.plot(w_opt[0], w_opt[1], "ko")
 ax.annotate(
-    r"$\beta^*$",
+    r"$\boldsymbol{\beta}^*$",
     w_opt,
     w_opt + np.array([0.0, -0.2]),
     horizontalalignment="left",

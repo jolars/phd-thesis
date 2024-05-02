@@ -30,7 +30,7 @@ features = [
 xx = np.sum(np.abs(coefs.T), axis=1)
 xx /= xx[-1]
 
-fig = plt.figure(figsize=(4, 3), layout="constrained")
+fig = plt.figure(figsize=(4.5, 5), layout="constrained")
 ax = fig.gca()
 
 ymin = np.min(coefs)
@@ -50,14 +50,14 @@ for i, label in enumerate(features):
 
     nudge = 0.0
 
-    if i == 9:
-        nudge = -10
-    elif i == 6:
-        nudge = 10
-    elif label == "BMI":
-        nudge = 5
-    elif i == 5:
-        nudge = -5
+    # if i == 9:
+    #     nudge = -10
+    # elif i == 6:
+    #     nudge = 10
+    # elif label == "BMI":
+    #     nudge = 5
+    # elif i == 5:
+    #     nudge = -5
 
     plt.text(
         1.02,
