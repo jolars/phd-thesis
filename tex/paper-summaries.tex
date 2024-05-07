@@ -2,10 +2,10 @@
 
 In \Cref{sec:screening-rules}, we demonstrated the considerable effect that screening rules have had on sparse regression problems in the large-\(p\) setting. As a result, the papers by \textcite{elghaoui2010} and \textcite{tibshirani2012} led to a surge in interest for screening rules for the lasso and its derivatives, including the elastic net. For SLOPE, however, there existed no screening rule until our work in this paper, in which we introduced the \emph{strong screening rule for SLOPE}~\parencite{larsson2020b}.
 
-A key contribution in our paper is the development of a practical characterization of the subdifferential for the sorted \(\ell_1\) norm, from which we derive an effective algorithm for implementing the screening rule in practice. Just as for the lasso, we demonstrate remarkable boosts in performance for fitting SLOPE~(\Cref{tab:strong-screening-slope}). The net result is a considerable extension in reach for SLOPE in the high-dimensional setting.
+A key contribution in our paper is the development of a practical characterization of the subdifferential for the sorted \(\ell_1\) norm, from which we derive an effective algorithm for implementing the screening rule in practice. As in the cas of the strong rule for the lasso, we too demonstrate remarkable boosts in performance for fitting SLOPE~(\Cref{tab:strong-screening-slope}). The net result is a considerable extension in reach for SLOPE in the high-dimensional setting.
 
 \begin{table}[hbtp]
-  \caption{Benchmarks measuring wall-clock time for four datasets fit with different models using either the strong screening rule or no rule.}
+  \caption{Benchmarks measuring wall-clock time for four datasets: \data{dorothea}~\parencite{guyon2004}, \data{e2006-tfidf}~\parencite{frandi2015}, \data{news20}~\parencite{lang1995}, and \data{physician}~\parencite{deb1997}, fit with different models using either the strong screening rule or no rule}
   \label{tab:strong-screening-slope}
   \centering
   \small
@@ -32,12 +32,12 @@ A key contribution in our paper is the development of a practical characterizati
 
 \subsection{Paper \II}
 
-As we saw in \Cref{sec:screening-rules}, screening rules are particularly effective when they are sequential, that is, operate along the lasso, elastic net, or SLOPE paths. But another possibility that had previously not been explored is the idea of screening not only for the next step on the path, but for \emph{all} of the remaining steps as well. This is the idea behind \emph{look-ahead screening rules}, which we introduce in this short paper~\parencite{larsson2021}. We employ this idea for the gap-safe screening rule, which, as the name suggests, is a safe screening rule. This means that if a feature is screened out, it is guaranteed to be zero in the solution.
+As we saw in \Cref{sec:screening-rules}, screening rules are particularly effective when they are sequential, that is, operate along the regularization path. But another possibility that had previously not been explored is the idea of screening not only for the next step on the path, but for \emph{all} of the remaining steps as well. This is the idea behind \emph{look-ahead screening rules}, which we introduce in this short paper~\parencite{larsson2021}. We employ this idea for the Gap-Safe screening rule~\parencite{ndiaye2017}, which, as the name suggests, is a safe screening rule. This means that if a feature is screened out, it is guaranteed to be zero in the solution.
 % TODO: add a reference to gap safe rule
 
-In \Cref{fig:paper2-highlight}, we illustrate the effectiveness of look-ahead screening for the lasso path at the first step for the \data{leukemia} dataset. What the plot indicates is that many features can be safely exempt from model fitting for a range of steps on the path, which means that we only need to re-screen them at the first grey square for each given feature.
+In \Cref{fig:paper2-highlight}, we illustrate the effectiveness of look-ahead screening for the lasso path at the first step for the \data{leukemia} dataset. What the plot indicates is that many features can be safely exempt from model fitting for a range of steps on the path. They only need to be re-screened at the first grey square for each given feature, for instance at step 14 for the first feature.
 
-\begin{figure}[htpb]
+\begin{figure}[tpb]
   \centering
   \includegraphics[]{figures/paper2-highlight.pdf}
   \caption{%
@@ -46,7 +46,7 @@ In \Cref{fig:paper2-highlight}, we illustrate the effectiveness of look-ahead sc
   \label{fig:paper2-highlight}
 \end{figure}
 
-In the paper, we show that this effect has sizeable consequences for the computation time requires for fitting the full path.
+In the paper, we show that this effect has sizeable consequences for the computation time required for fitting the full path.
 
 \subsection{Paper \III}
 
@@ -70,17 +70,17 @@ The screening method manages to be effective, particularly when \(g\) is the lea
 
 The few optimization methods that we have introduced so far amount to no more than a drop in the ocean of the vast volume of research that is the field of optimization. And although we have provided a few select benchmarks of our methods, we are still far removed from any kind of comprehensive study of their comparative effectiveness. This is not just an issue of our limited overview in this thesis, but in fact a general problem for research in optimization.
 
-The problem is that there are now so many optimization methods to examine and so many different models and datasets on which to compare them on, that it has become difficult to keep track of which methods it is that actually do best on a given problem. You can easily find a paper A that studies optimization methods X and Y on datasets I and II and conclude that X is better than Y but then find another paper, B, which studies methods X, Y, and Z on datasets I and III and conclude that, actually, Y is better than X and by the way, Z happens to be best of them all. Then, later, you find paper C, which claims that Z actually is considerably worse than X and in fact also performs better for dataset IV. In addition to this confused state of affairs, it is commonly also the case that the authors of these papers 1) used different criteria for convergence, 2) programmed their methods in contrasting programming languages, and 3) benchmarked their experiments on different hardware.
+The problem is that there are now so many optimization methods to examine and so many different models and datasets on which to compare them on, that it has become difficult to keep track of which methods it is that actually do best on a given problem. You can easily find a paper A that studies optimization methods X and Y on datasets I and II and conclude that X is better than Y but then find another paper B, which studies methods X, Y, and Z on datasets I and III and conclude that, actually, Y is better than X and, by the way, Z happens to be best of them all. Then, later, you find paper C, which claims that Z actually is considerably worse than X, which in fact also performs better for dataset IV. This confused state of affairs is typically the result of authors having benchmarked their methods using different hardware, programming languages for their implementations, hyperparameters for their methods, and convergence criteria, to name a few of the many possible sources of variation.
 
 In short, there is a dire need for a framework through which this process can be made simple, reproducible, and transparent. This is the motivation behind the \pkg{benchopt} package, which we present in the fifth of this thesis' papers~\parencite{moreau2022a}.
 
-The goal of \pkg{benchopt} is to make life easier for both researchers in optimization and users of optimization software. For a researcher who has developed new optimization method for SLOPE, for instance, all you need to do is to write the optimization method for your algorithm and plug it into the existing \pkg{benchopt} benchmark for SLOPE and run it. The package will then automatically compare your method to all the other methods in the benchmark and output table and plots of the results~(\Cref{fig:paper4-highlight}). And if you instead are a user who is interested in using SLOPE for your applied work and want to know which algorithm to use, you can either browse the extensive database of results that other users have already uploaded or just download the benchmark and run it yourself on the data that you are interested in using it for.
+The goal of \pkg{benchopt} is to make life easier for both researchers in optimization and users of optimization software. For a researcher who has developed a new optimization method for SLOPE, for instance, all you need to do is to write the code for your solver (optimization method) and plug it into the existing \pkg{benchopt} benchmark for SLOPE and run it. The package will then automatically compare your method with all the other methods in the benchmark and output table and plots of the results~(\Cref{fig:paper4-highlight}). If you instead are a user who is interested in using SLOPE for your applied work and want to know which algorithm to use, you can either browse the extensive database of results that other users have already uploaded or just download the benchmark and run it yourself on the data that you are interested in using it for.
 
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=\textwidth]{figures/benchopt_schema_objectives_with_logos.pdf}
   \caption{%
-    A schematic over how a benchmark is set up and run using \pkg{benchopt}. The benchmark consists of a set of files that define an objective, datasets, and solvers. When the user runs \texttt{benchopt run}, the package combines all of the possible combinations of objectives, datasets, and solvers and outputs a neatly formatted database of the results.
+    A schematic over how a benchmark is set up and run using \pkg{benchopt}. The benchmark consists of a set of files that define objectives, datasets, and solvers. When the user runs \texttt{benchopt run}, the package combines all of the possible combinations of objectives, datasets, and solvers and outputs a neatly formatted database of the results.
     Using \texttt{benchopt plot}, the user can then easily compare the different methods through interative visualizations or produce publication-ready plots to insert directly into a paper.
     Finally, to make the results available to the \pkg{benchopt} community, the user can run \texttt{benchopt publish}, which opens up a pull-request against the public repository of benchmark results.
   }
@@ -97,7 +97,10 @@ In paper v~\parencite{larsson2023}, however, we present a way to circumvent this
   \centering
   \includegraphics[]{figures/illustration_solvers_thesis.pdf}
   \caption{%
-    A illustration of the hybrid coordinate descent solver we developed for SLOPE.
+    An illustration of the hybrid coordinate descent solver we developed for SLOPE,
+    showing progress until convergence for the coordinate descent solver (CD) that we use as part of the hybrid method, our hybrid method, and proximal gradient descent (PGD).
+    The orange cross marks the optimum.
+    Dashed lines indicate PGD steps and solid lines CD steps. Each dot marks a complete epoch, which may correspond to only a single coefficient update for the CD and hybrid solvers if the coefficients flip order. The CD algorithm converges quickly but is stuck after the third epoch. The hybrid and PGD algorithms, meanwhile, reach convergence after 67 and 156 epochs respectively.
   }
   \label{fig:paper5-highlight}
 \end{figure}
@@ -107,13 +110,13 @@ In paper v~\parencite{larsson2023}, however, we present a way to circumvent this
 % TODO: add a reference to this paper
 In the final paper of this thesis, we tackle the issue of normalization of binary features, which we touched upon in \Cref{sec:normalization}. As we saw in that section, normalization is necessary in order to put the features on the ``same scale''. What this means, however, is not clear, yet has been met mostly with neglect in the literature. We think that this is both surprising and problematic given the almost universal use of normalization in regularized methods and the apparent and large effects it has on the solution paths~(\Cref{fig:normalized-realdata-lasso-paths}).
 
-In our paper, we begin to bridge this knowledge gap by studying normalization for the lasso and ridge regression when they are used on binary features (features that only contain values 0 or 1) or mixd of binary and normally distributed features. What we find is that there is a large effect of normalization with respect to the class balance of the features: the proportion of ones to zeros (or vice versa). Both the lasso and the ridge estimators turn out to be sensitive to this class balance and, depending on the type of normalization used, have trouble recovering effects that are associated with binary features as long as their class balance is severe enough~(\Cref{fig:paper6-highlight}).
+In our paper, we begin to bridge this knowledge gap by studying normalization for the lasso and ridge regression when they are used on binary features (features that only contain values 0 or 1) or mix of binary and normally distributed features. What we find is that there is a large effect of normalization with respect to the class balance of the features: the proportion of ones to zeros (or vice versa). Both the lasso and the ridge estimators turn out to be sensitive to this class balance and, depending on the type of normalization used, have trouble recovering effects that are associated with binary features as long as their class balance is severe enough~(\Cref{fig:paper6-highlight}).
 
 \begin{figure}[htpb]
   \centering
   \includegraphics[]{figures/mixed_data_thesis.pdf}
   \caption{%
-    Estimated coefficients from the lasso and ridge for a two-feature problem where one of the features has a quasi-normal distribution (values deterministically set via the quantile function), with standard deviation 1/2, and the other is a binary (quasi-Bernoulli) feature with class-balance \(q\). The normal feature is standardized in every case, whereas the binary feature is scaled with \((q - q^2)^\delta\)---its variance to the power of \(\delta\). In other words, we have no scaling for \(\delta=0\), standard deviation scaling when \(\delta=1/2\), and variance-scaling when \(\delta = 1\).
+    Estimated coefficients from lasso and ridge regression for a two-feature problem where one of the features has a quasi-normal distribution (values deterministically set via the quantile function), with standard deviation 1/2, and the other is a binary (quasi-Bernoulli) feature with class-balance \(q\). The normal feature is standardized in every case, whereas the binary feature is scaled with \((q - q^2)^\delta\)---its variance to the power of \(\delta\). In other words, we have no scaling for \(\delta=0\), standard deviation scaling when \(\delta=1/2\), and variance-scaling when \(\delta = 1\).
   }
   \label{fig:paper6-highlight}
 \end{figure}

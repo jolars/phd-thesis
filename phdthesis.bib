@@ -170,6 +170,42 @@
   eventtitle    = {{{ICML}} 2020}
 }
 
+@inproceedings{bertrand2021,
+  title         = {Anderson Acceleration of Coordinate Descent},
+  author        = {Bertrand, Quentin and Massias, Mathurin and Banerjee, Arindam and Fukumizu, Kenji},
+  booktitle     = {
+    Proceedings of {{The}} 24th {{International Conference}} on {{Artificial
+    Intelligence}} and {{Statistics}}
+  },
+  location      = {San Diego, CA, USA},
+  publisher     = {PMLR},
+  volume        = {130},
+  pages         = {1288--1296},
+  issn          = {2640-3498},
+  url           = {https://proceedings.mlr.press/v130/bertrand21a.html},
+  urldate       = {2024-04-29},
+  date          = {2021-04-13/2021-04-15},
+  abstract      = {
+    Acceleration of first order methods is mainly obtained via inertia \`{a} la
+    Nesterov, or via nonlinear extrapolation. The latter has known a recent surge of
+    interest, with successful applications to gradient and proximal gradient
+    techniques. On multiple Machine Learning problems, coordinate descent achieves
+    performance significantly superior to full-gradient methods. Speeding up coordinate
+    descent in practice is not easy: inertially accelerated versions of coordinate
+    descent are theoretically accelerated, but might not always lead to practical
+    speed-ups. We propose an accelerated version of coordinate descent using
+    extrapolation, showing considerable speed up in practice, compared to inertial
+    accelerated coordinate descent and extrapolated (proximal) gradient descent.
+    Experiments on least squares, Lasso, elastic net and logistic regression validate
+    the approach.
+  },
+  eventtitle    = {{{AISTATS}} 2021},
+  langid        = {english}
+}
+
+% == BibLateX quality report for bertrand2021:
+% Unexpected field 'issn'
+% ? unused Library catalog ("proceedings.mlr.press")
 @article{bertrand2022a,
   title         = {
     Implicit Differentiation for Fast Hyperparameter Selection in Non-Smooth Convex
@@ -809,6 +845,7 @@
   author        = {El Ghaoui, Laurent and Viallon, Vivian and Rabbani, Tarek},
   location      = {Berkeley},
   number        = {UCB/EECS-2010-126},
+  pages         = {1--30},
   url           = {http://www.eecs.berkeley.edu/Pubs/TechRpts/2010/EECS-2010-126.html},
   type          = {Technical report},
   date          = {2010-09-21},
@@ -873,6 +910,36 @@
 
 % == BibLateX quality report for fan2001:
 % ? unused Library catalog ("Taylor and Francis+NEJM")
+@inproceedings{fercoq2015,
+  title         = {Mind the Duality Gap: Safer Rules for the Lasso},
+  author        = {Fercoq, Olivier and Gramfort, Alexandre and Salmon, Joseph},
+  booktitle     = {Proceedings of the 37th International Conference on Machine Learning},
+  location      = {Lille, France},
+  publisher     = {PMLR},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {37},
+  pages         = {333--342},
+  url           = {http://proceedings.mlr.press/v37/fercoq15},
+  editor        = {Bach, Francis and Blei, David},
+  date          = {2015-07-06/2015-07-11},
+  abstract      = {
+    Screening rules allow to early discard irrelevant variables from the optimization
+    in Lasso problems, or its derivatives, making solvers faster. In this paper, we
+    propose new versions of the so-called rules for the Lasso. Based on duality gap
+    considerations, our new rules create safe test regions whose diameters converge to
+    zero, provided that one relies on a converging solver. This property helps
+    screening out more variables, for a wider range of regularization parameter values.
+    In addition to faster convergence, we prove that we correctly identify the active
+    sets (supports) of the solutions in finite time. While our proposed strategy can
+    cope with any solver, its performance is demonstrated using a coordinate descent
+    algorithm particularly adapted to machine learning use cases. Significant computing
+    time reductions are obtained with respect to previous safe rules.
+  },
+  eventtitle    = {{{ICML}} 2015}
+}
+
+% == BibLateX quality report for fercoq2015:
+% ? Unsure about the formatting of the booktitle
 @online{figueiredo2014,
   title         = {
     Sparse Estimation with Strongly Correlated Variables Using Ordered Weighted {{L1}}
@@ -1119,6 +1186,46 @@
   langid        = {english}
 }
 
+@article{golub1999,
+  title         = {
+    Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene
+    Expression Monitoring
+  },
+  shorttitle    = {Molecular Classification of Cancer},
+  author        = {
+    Golub, T. R. and Slonim, D. K. and Tamayo, P. and Huard, C. and Gaasenbeek, M. and
+    Mesirov, J. P. and Coller, H. and Loh, M. L. and Downing, J. R. and Caligiuri, M.
+    A. and Bloomfield, C. D. and Lander, E. S.
+  },
+  volume        = {286},
+  number        = {5439},
+  pages         = {531--537},
+  doi           = {10.1126/science.286.5439.531},
+  issn          = {0036-8075},
+  date          = {1999-10-15},
+  journaltitle  = {Science},
+  shortjournal  = {Science},
+  eprint        = {10521349},
+  eprinttype    = {pmid},
+  abstract      = {
+    Although cancer classification has improved over the past 30 years, there has been
+    no general approach for identifying new cancer classes (class discovery) or for
+    assigning tumors to known classes (class prediction). Here, a generic approach to
+    cancer classification based on gene expression monitoring by DNA microarrays is
+    described and applied to human acute leukemias as a test case. A class discovery
+    procedure automatically discovered the distinction between acute myeloid leukemia
+    (AML) and acute lymphoblastic leukemia (ALL) without previous knowledge of these
+    classes. An automatically derived class predictor was able to determine the class
+    of new leukemia cases. The results demonstrate the feasibility of cancer
+    classification based solely on gene expression monitoring and suggest a general
+    strategy for discovering and predicting cancer classes for other types of cancer,
+    independent of previous biological knowledge.
+  },
+  langid        = {english}
+}
+
+% == BibLateX quality report for golub1999:
+% ? unused Library catalog ("PubMed")
 @inproceedings{grazzi2021,
   title         = {Convergence Properties of Stochastic Hypergradients},
   author        = {Grazzi, Riccardo and Pontil, Massimiliano and Salzo, Saverio},
@@ -1453,6 +1560,67 @@
 % Unexpected field 'issn'
 % Missing required field 'editor'
 % ? unused Library catalog ("projecteuclid.org")
+@inproceedings{johnson2015,
+  title         = {Blitz: A Principled Meta-Algorithm for Scaling Sparse Optimization},
+  author        = {Johnson, Tyler B and Guestrin, Carlos},
+  booktitle     = {
+    Proceedings  of  the 32nd {{International}}  {{Conference}}  on  {{Machine
+    Learning}}
+  },
+  location      = {Lille, France},
+  publisher     = {JMLR: W\&CP},
+  volume        = {37},
+  pages         = {9},
+  url           = {http://proceedings.mlr.press/v37/johnson15.pdf},
+  date          = {2015},
+  abstract      = {
+    By reducing optimization to a sequence of small subproblems, working set methods
+    achieve fast convergence times for many challenging problems. Despite excellent
+    performance, theoretical understanding of working sets is limited, and
+    implementations often resort to heuristics to determine subproblem size, makeup,
+    and stopping criteria. We propose BLITZ, a fast working set algorithm accompanied
+    by useful guarantees. Making no assumptions on data, our theory relates subproblem
+    size to progress toward convergence. This result motivates methods for optimizing
+    algorithmic parameters and discarding irrelevant variables as iterations progress.
+    Applied to 1-regularized learning, BLITZ convincingly outperforms existing solvers
+    in sequential, limited-memory, and distributed settings. BLITZ is not specific to
+    1-regularized learning, making the algorithm relevant to many applications
+    involving sparsity or constraints.
+  },
+  eventtitle    = {International  {{Conference}}  on  {{Machine Learning}}},
+  langid        = {english}
+}
+
+% == BibLateX quality report for johnson2015:
+% ? unused Library catalog ("Zotero")
+@article{keerthi2005,
+  title         = {
+    A Modified Finite {{Newton}} Method for Fast Solution of Large Scale Linear
+    {{SVMs}}
+  },
+  author        = {Keerthi, S. Sathiya and DeCoste, Dennis},
+  volume        = {6},
+  number        = {12},
+  pages         = {341--361},
+  issn          = {1532-4435},
+  url           = {http://jmlr.org/papers/v6/keerthi05a.html},
+  date          = {2005-12-01},
+  journaltitle  = {The Journal of Machine Learning Research},
+  shortjournal  = {J. Mach. Learn. Res.},
+  abstract      = {
+    This paper develops a fast method for solving linear SVMs with L2 loss function
+    that is suited for large scale data mining tasks such as text classification. This
+    is done by modifying the finite Newton method of Mangasarian in several ways.
+    Experiments indicate that the method is much faster than decomposition methods such
+    as SVMlight, SMO and BSVM (e.g., 4-100 fold), especially when the number of
+    examples is large. The paper also suggests ways of extending the method to other
+    loss functions such as the modified Huber's loss function and the L1 loss function,
+    and also for solving ordinal regression.
+  }
+}
+
+% == BibLateX quality report for keerthi2005:
+% ? unused Library catalog ("12/1/2005")
 @inproceedings{kennedy1995,
   title         = {Particle Swarm Optimization},
   author        = {Kennedy, J. and Eberhart, R.},
@@ -1476,10 +1644,10 @@
 }
 
 @article{kim2007,
-  title         = {An {{Interior-Point Method}} for {{Large-Scale}} -{{Regularized Least Squares}}},
+  title         = {An Interior-Point Method for Large-Scale L1-Regularized Least Squares},
   author        = {
-    Kim, Seung-Jean and Koh, K. and Lustig, M. and Boyd, Stephen and Gorinevsky,
-    Dimitry
+    Kim, Seung-Jean and Koh, Kwangmoo and Lustig, Michael and Boyd, Stephen and
+    Gorinevsky, Dimitry
   },
   volume        = {1},
   number        = {4},
@@ -1512,8 +1680,18 @@
 
 % == BibLateX quality report for kim2007:
 % 'issn': not a valid ISSN
-% ? Title looks like it was stored in title-case in Zotero
 % ? unused Library catalog ("DOI.org (Crossref)")
+@dataset{king,
+  title         = {Qualitative Structure Activity Relationships},
+  author        = {King, Ross},
+  publisher     = {UCI Machine Learning Repository},
+  doi           = {10.24432/C5TP54},
+  url           = {https://archive.ics.uci.edu/dataset/85},
+  urldate       = {2024-04-25}
+}
+
+% == BibLateX quality report for king:
+% ? unused Library catalog ("DOI.org (Datacite)")
 @article{kirkpatrick1983,
   title         = {Optimization by Simulated Annealing},
   author        = {Kirkpatrick, S. and Gelatt, C. D. and Vecchi, M. P.},
@@ -1748,6 +1926,65 @@
 
 % == BibLateX quality report for lawson1995:
 % ? unused Library catalog ("epubs.siam.org (Atypon)")
+@article{lee2014,
+  title         = {Proximal {{Newton-type}} Methods for Minimizing Composite Functions},
+  author        = {Lee, Jason D. and Sun, Yuekai and Saunders, Michael A.},
+  publisher     = {{Society for Industrial and Applied Mathematics}},
+  volume        = {24},
+  number        = {3},
+  pages         = {1420--1443},
+  doi           = {10.1137/130921428},
+  issn          = {1052-6234},
+  url           = {https://epubs.siam.org/doi/abs/10.1137/130921428},
+  urldate       = {2021-04-07},
+  date          = {2014-01-01},
+  journaltitle  = {SIAM Journal on Optimization},
+  shortjournal  = {SIAM J. Optim.},
+  abstract      = {
+    We generalize Newton-type methods for minimizing smooth functions to handle a sum
+    of two convex functions: a smooth function and a nonsmooth function with a simple
+    proximal mapping. We show that the resulting proximal Newton-type methods inherit
+    the desirable convergence behavior of Newton-type methods for minimizing smooth
+    functions, even when search directions are computed inexactly. Many popular methods
+    tailored to problems arising in bioinformatics, signal processing, and statistical
+    learning are special cases of proximal Newton-type methods, and our analysis yields
+    new convergence results for some of these methods.
+  }
+}
+
+% == BibLateX quality report for lee2014:
+% Unexpected field 'publisher'
+% ? unused Library catalog ("epubs.siam.org (Atypon)")
+@article{lewis2004,
+  title         = {{{RCV1}}: A New Benchmark Collection for Text Categorization Research},
+  shorttitle    = {{{RCV1}}},
+  author        = {Lewis, David D. and Yang, Yiming and Rose, Tony G. and Li, Fan},
+  volume        = {5},
+  pages         = {361--397},
+  issn          = {1532-4435},
+  date          = {2004-12-01},
+  journaltitle  = {The Journal of Machine Learning Research},
+  shortjournal  = {J. Mach. Learn. Res.},
+  abstract      = {
+    Reuters Corpus Volume I (RCV1) is an archive of over 800,000 manually categorized
+    newswire stories recently made available by Reuters, Ltd. for research purposes.
+    Use of this data for research on text categorization requires a detailed
+    understanding of the real world constraints under which the data was produced.
+    Drawing on interviews with Reuters personnel and access to Reuters documentation,
+    we describe the coding policy and quality control procedures used in producing the
+    RCV1 data, the intended semantics of the hierarchical category taxonomies, and the
+    corrections necessary to remove errorful data. We refer to the original data as
+    RCV1-v1, and the corrected data as RCV1-v2. We benchmark several widely used
+    supervised learning methods on RCV1-v2, illustrating the collection's properties,
+    suggesting new directions for research, and providing baseline results for future
+    studies. We make available detailed, per-category experimental results, as well as
+    corrected versions of the category assignments and taxonomy structures, via online
+    appendices.
+  }
+}
+
+% == BibLateX quality report for lewis2004:
+% ? unused Library catalog ("12/1/2004")
 @article{li2021,
   title         = {Fast Projection onto the Ordered Weighted L1 Norm Ball},
   author        = {Li, Qinzhen and Li, Xudong},
@@ -1778,6 +2015,36 @@
 
 % == BibLateX quality report for li2021:
 % ? unused Library catalog ("Springer Link")
+@inproceedings{mai2020,
+  title         = {Anderson Acceleration of Proximal Gradient Methods},
+  author        = {Mai, Vien V. and Johansson, Mikael},
+  booktitle     = {Proceedings of the 37th {{International Conference}} on {{Machine Learning}}},
+  location      = {Virtual},
+  publisher     = {PMLR},
+  volume        = {119},
+  pages         = {6620--6629},
+  url           = {https://proceedings.mlr.press/v119/mai20a.html},
+  urldate       = {2024-04-28},
+  editor        = {Daum\'{e} III, Hal and Singh, Aarti},
+  date          = {2020-07-13/2020-07-18},
+  abstract      = {
+    Anderson acceleration is a well-established and simple technique for speeding up
+    fixed-point computations with countless applications. This work introduces novel
+    methods for adapting Anderson acceleration to proximal gradient algorithms. Under
+    some technical conditions, we extend existing local convergence results of Anderson
+    acceleration for smooth fixed-point mappings to the proposed non-smooth setting. We
+    also prove analytically that it is in general, impossible to guarantee global
+    convergence of native Anderson acceleration. We therefore propose a simple scheme
+    for stabilization that combines the global worst-case guarantees of proximal
+    gradient methods with the local adaptation and practical speed-up of Anderson
+    acceleration. Finally, we provide the first applications of Anderson acceleration
+    to non-Euclidean geometry.
+  },
+  eventtitle    = {{{ICML}} 20}
+}
+
+% == BibLateX quality report for mai2020:
+% ? unused Library catalog ("ACM Digital Library")
 @inproceedings{mairal2012,
   title         = {Complexity Analysis of the Lasso Regularization Path},
   author        = {Mairal, Julien and Yu, Bin},
@@ -1803,6 +2070,72 @@
 
 % == BibLateX quality report for mairal2012:
 % ? unused Library catalog ("Zotero")
+@online{massias2017,
+  title         = {From Safe Screening Rules to Working Sets for Faster {{Lasso-type}} Solvers},
+  author        = {Massias, Mathurin and Gramfort, Alexandre and Salmon, Joseph},
+  doi           = {10.48550/arXiv.1703.07285},
+  url           = {http://arxiv.org/abs/1703.07285},
+  urldate       = {2022-09-22},
+  date          = {2017-05-01},
+  eprint        = {1703.07285},
+  eprinttype    = {arxiv},
+  eprintclass   = {cs, math, stat},
+  abstract      = {
+    Convex sparsity-promoting regularizations are ubiquitous in modern statistical
+    learning. By construction, they yield solutions with few non-zero coefficients,
+    which correspond to saturated constraints in the dual optimization formulation.
+    Working set (WS) strategies are generic optimization techniques that consist in
+    solving simpler problems that only consider a subset of constraints, whose indices
+    form the WS. Working set methods therefore involve two nested iterations: the outer
+    loop corresponds to the definition of the WS and the inner loop calls a solver for
+    the subproblems. For the Lasso estimator a WS is a set of features, while for a
+    Group Lasso it refers to a set of groups. In practice, WS are generally small in
+    this context so the associated feature Gram matrix can fit in memory. Here we show
+    that the Gauss-Southwell rule (a greedy strategy for block coordinate descent
+    techniques) leads to fast solvers in this case. Combined with a working set
+    strategy based on an aggressive use of so-called Gap Safe screening rules, we
+    propose a solver achieving state-of-the-art performance on sparse learning
+    problems. Results are presented on Lasso and multi-task Lasso estimators.
+  },
+  pubstate      = {preprint}
+}
+
+% == BibLateX quality report for massias2017:
+% ? unused Number ("arXiv:1703.07285")
+@inproceedings{massias2018,
+  title         = {Celer: A Fast Solver for the Lasso with Dual Extrapolation},
+  author        = {Massias, Mathurin and Gramfort, Alexandre and Salmon, Joseph},
+  booktitle     = {Proceedings of the 35th {{International Conference}} on {{Machine Learning}}},
+  location      = {Stockholm, Sweden},
+  publisher     = {PMLR},
+  series        = {Proceedings of {{Machine Learning Research}}},
+  volume        = {80},
+  pages         = {3315--3324},
+  url           = {http://proceedings.mlr.press/v80/massias18a},
+  editor        = {Dy, Jennifer and Krause, Andreas},
+  date          = {2018-07-10/2018-07-15},
+  abstract      = {
+    Convex sparsity-inducing regularizations are ubiquitous in high-dimensional machine
+    learning, but solving the resulting optimization problems can be slow. To
+    accelerate solvers, state-of-the-art approaches consist in reducing the size of the
+    optimization problem at hand. In the context of regression, this can be achieved
+    either by discarding irrelevant features (screening techniques) or by prioritizing
+    features likely to be included in the support of the solution (working set
+    techniques). Duality comes into play at several steps in these techniques. Here, we
+    propose an extrapolation technique starting from a sequence of iterates in the dual
+    that leads to the construction of improved dual points. This enables a tighter
+    control of optimality as used in stopping criterion, as well as better screening
+    performance of Gap Safe rules. Finally, we propose a working set strategy based on
+    an aggressive use of Gap Safe screening rules. Thanks to our new dual point
+    construction, we show significant computational speedups on multiple real-world
+    problems.
+  },
+  eventtitle    = {{{ICML}} 2018},
+  langid        = {english}
+}
+
+% == BibLateX quality report for massias2018:
+% ? unused Library catalog ("Zotero")
 @book{mockus1989,
   title         = {Bayesian Approach to Global Optimization: Theory and Applications},
   shorttitle    = {Bayesian {{Approach}} to {{Global Optimization}}},
@@ -1815,8 +2148,8 @@
   isbn          = {978-94-010-6898-7 978-94-009-0909-0},
   url           = {http://link.springer.com/10.1007/978-94-009-0909-0},
   urldate       = {2024-02-13},
-  editorb       = {Hazewinkel, M.},
-  editorbtype   = {redactor},
+  editor        = {Hazewinkel, M.},
+  editortype    = {redactor},
   date          = {1989},
   langid        = {english}
 }
@@ -1872,14 +2205,14 @@
 % == BibLateX quality report for moreau2022a:
 % ? Unsure about the formatting of the booktitle
 @article{ndiaye2017,
-  title         = {Gap {{Safe Screening Rules}} for Sparsity Enforcing Penalties},
+  title         = {Gap {{Safe}} Screening Rules for Sparsity Enforcing Penalties},
   author        = {Ndiaye, Eugene and Fercoq, Olivier and Gramfort, Alexandre and Salmon, Joseph},
   volume        = {18},
   number        = {128},
   pages         = {1--33},
   issn          = {1533-7928},
-  url           = {http://jmlr.org/papers/v18/16-577.html},
-  date          = {2017},
+  url           = {https://jmlr.org/papers/v18/16-577.html},
+  date          = {2017-11},
   journaltitle  = {Journal of Machine Learning Research}
 }
 
@@ -1911,8 +2244,8 @@
   isbn          = {978-1-4613-4691-3 978-1-4419-8853-9},
   url           = {http://link.springer.com/10.1007/978-1-4419-8853-9},
   urldate       = {2024-02-13},
-  editorb       = {Pardalos, Panos M. and Hearn, Donald W.},
-  editorbtype   = {redactor},
+  editor        = {Pardalos, Panos M. and Hearn, Donald W.},
+  editortype    = {redactor},
   date          = {2004}
 }
 
@@ -1952,6 +2285,36 @@
 
 % == BibLateX quality report for nomura2020:
 % ? unused Number ("arXiv:2010.15511")
+@article{osborne2000,
+  title         = {On the {{LASSO}} and Its Dual},
+  author        = {Osborne, Michael R. and Presnell, Brett and Turlach, Berwin A.},
+  volume        = {9},
+  number        = {2},
+  pages         = {319--337},
+  doi           = {10.2307/1390657},
+  issn          = {1061-8600},
+  url           = {https://www.jstor.org/stable/1390657},
+  urldate       = {2019-10-30},
+  date          = {2000},
+  journaltitle  = {Journal of Computational and Graphical Statistics},
+  eprint        = {1390657},
+  eprinttype    = {jstor},
+  abstract      = {
+    Proposed by Tibshirani, the least absolute shrinkage and selection operator (LASSO)
+    estimates a vector of regression coefficients by minimizing the residual sum of
+    squares subject to a constraint on the l\textsuperscript{1}-norm of the coefficient
+    vector. The LASSO estimator typically has one or more zero elements and thus shares
+    characteristics of both shrinkage estimation and variable selection. In this
+    article we treat the LASSO as a convex programming problem and derive its dual.
+    Consideration of the primal and dual problems together leads to important new
+    insights into the characteristics of the LASSO estimator and to an improved method
+    for estimating its covariance matrix. Using these results we also develop an
+    efficient algorithm for computing LASSO estimates which is usable even in cases
+    where the number of regressors exceeds the number of observations. An S-Plus
+    library based on this algorithm is available from StatLib.
+  }
+}
+
 @article{osborne2000a,
   title         = {A New Approach to Variable Selection in Least Squares Problems},
   author        = {Osborne, Michael R. and Presnell, Brett and Turlach, Berwin A.},
@@ -1996,6 +2359,20 @@
 
 % == BibLateX quality report for perez2022:
 % ? unused Library catalog ("DOI.org (Crossref)")
+@incollection{platt1998,
+  title         = {Fast Training of Support Vector Machines Using Sequential Minimal Optimization},
+  author        = {Platt, John C.},
+  booktitle     = {Advances in {{Kernel Methods}}: {{Support Vector Learning}}},
+  location      = {Boston, MA, USA},
+  publisher     = {MIT Press},
+  pages         = {185--208},
+  doi           = {10.7551/mitpress/1130.003.0016},
+  isbn          = {978-0-262-28319-9},
+  editor        = {Sch\"{o}lkopf, Bernhard and Burges, Christopher J. C. and Smola, Alexander J.},
+  date          = {1998-01},
+  edition       = {1}
+}
+
 @book{raiffa1968,
   title         = {Applied Statistical Decision Theory},
   author        = {Raiffa, Howard and Schlaifer, Robert},
@@ -2345,7 +2722,7 @@
   url           = {http://www.jstor.org/stable/2346178},
   urldate       = {2018-03-12},
   date          = {1996},
-  journaltitle  = {Journal of the Royal Statistical Society: Series B},
+  journaltitle  = {The Journal of the Royal Statistical Society, Series B (Statistical Methodology)},
   eprint        = {2346178},
   eprinttype    = {jstor},
   abstract      = {
@@ -2378,7 +2755,7 @@
   url           = {https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9868.2005.00490.x},
   urldate       = {2021-04-26},
   date          = {2005-02},
-  journaltitle  = {Journal of the Royal Statistical Society: Series B},
+  journaltitle  = {The Journal of the Royal Statistical Society, Series B (Statistical Methodology)},
   abstract      = {
     Summary. The lasso penalizes a least squares regression by the sum of the absolute
     values (L1-norm) of the coefficients. The form of this penalty encourages sparse
@@ -2413,12 +2790,11 @@
   },
   urldate       = {2018-03-16},
   date          = {2012-03},
-  journaltitle  = {Journal of the Royal Statistical Society. Series B: Statistical Methodology},
+  journaltitle  = {The Journal of the Royal Statistical Society, Series B (Statistical Methodology)},
   langid        = {english}
 }
 
 % == BibLateX quality report for tibshirani2012:
-% ? Possibly abbreviated journal title Journal of the Royal Statistical Society. Series B: Statistical Methodology
 % ? unused Library catalog ("iths.pure.elsevier.com")
 @inproceedings{tsuruoka2009,
   title         = {
@@ -2456,6 +2832,74 @@
   langid        = {english}
 }
 
+@inproceedings{wang2013b,
+  title         = {Tradeoffs in Improved Screening of Lasso Problems},
+  author        = {Wang, Yun and Xiang, Zhen James and Ramadge, Peter J.},
+  booktitle     = {
+    2013 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
+    Processing}}
+  },
+  pages         = {3297--3301},
+  doi           = {10.1109/ICASSP.2013.6638268},
+  issn          = {2379-190X},
+  date          = {2013-05},
+  abstract      = {
+    Recently, methods of screening the lasso problem have been developed that use the
+    target vector x to quickly identify a subset of columns of the dictionary that will
+    receive zero weight in the solution. Current classes of screening tests are based
+    on bounding the dual lasso solution within a sphere or the intersection of a sphere
+    and a half space. Stronger tests are possible but are more complex and incur a
+    higher computational cost. To investigate this, we determine the optimal screening
+    test when the dual lasso solution is bounded within the intersection of a sphere
+    and two half spaces, and empirically investigate the trade-off that this test makes
+    between screening power and computational efficiency. We also compare its
+    performance both in terms of rejection power and efficiency to existing test
+    classes. The new test always has better rejection, and for an interesting range of
+    regularization parameters, offers better computational efficiency.
+  },
+  eventtitle    = {
+    2013 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
+    Processing}}
+  }
+}
+
+% == BibLateX quality report for wang2013b:
+% Unexpected field 'issn'
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("IEEE Xplore")
+@article{wang2015,
+  title         = {Lasso Screening Rules via Dual Polytope Projection},
+  author        = {Wang, Jie and Wonka, Peter and Ye, Jieping},
+  volume        = {16},
+  number        = {1},
+  pages         = {1063--1101},
+  issn          = {1532-4435},
+  date          = {2015-05-15},
+  journaltitle  = {Journal of Machine Learning Research},
+  abstract      = {
+    Lasso is a widely used regression technique to find sparse representations. When
+    the dimension of the feature space and the number of samples are extremely large,
+    solving the Lasso problem remains challenging. To improve the efficiency of solving
+    large-scale Lasso problems, El Ghaoui and his colleagues have proposed the SAFE
+    rules which are able to quickly identify the inactive predictors, i.e., predictors
+    that have 0 components in the solution vector. Then, the inactive predictors or
+    features can be removed from the optimization problem to reduce its scale. By
+    transforming the standard Lasso to its dual form, it can be shown that the inactive
+    predictors include the set of inactive constraints on the optimal dual solution. In
+    this paper, we propose an efficient and effective screening rule via Dual Polytope
+    Projections (DPP), which is mainly based on the uniqueness and nonexpansiveness of
+    the optimal dual solution due to the fact that the feasible set in the dual space
+    is a convex and closed polytope. Moreover, we show that our screening rule can be
+    extended to identify inactive groups in group Lasso. To the best of our knowledge,
+    there is currently no exact screening rule for group Lasso. We have evaluated our
+    screening rule using synthetic and real data sets. Results show that our rule is
+    more effective in identifying inactive predictors than existing state-of-the-art
+    screening rules for Lasso.
+  }
+}
+
+% == BibLateX quality report for wang2015:
+% ? unused Library catalog ("January 2015")
 @article{wright2015,
   title         = {Coordinate Descent Algorithms},
   author        = {Wright, Stephen},
@@ -2519,6 +2963,111 @@
 
 % == BibLateX quality report for wu2008a:
 % ? unused Library catalog ("Project Euclid")
+@inproceedings{xiang2011,
+  title         = {
+    Learning Sparse Representations of High Dimensional Data on Large Scale
+    Dictionaries
+  },
+  author        = {Xiang, Zhen J. and Xu, Hao and Ramadge, Peter J},
+  booktitle     = {Advances in Neural Information Processing Systems 24},
+  publisher     = {Curran Associates, Inc.},
+  pages         = {900--908},
+  url           = {
+    https://papers.nips.cc/paper/4400-learning-sparse-representations-of-high-dimensional-data-on-large-scale-dictionaries
+  },
+  editor        = {
+    Shawe-Taylor, J. and Zemel, R. S. and Bartlett, P. L. and Pereira, F. and
+    Weinberger, K. Q.
+  },
+  date          = {2011-12-12/2011-12-17},
+  eventtitle    = {Neural {{Information Processing Systems}} 2011}
+}
+
+% == BibLateX quality report for xiang2011:
+% ? Unsure about the formatting of the booktitle
+@inproceedings{xiang2012,
+  title         = {Fast Lasso Screening Tests Based on Correlations},
+  author        = {Xiang, Zhen James and Ramadge, Peter J.},
+  booktitle     = {
+    2012 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
+    Processing}} ({{ICASSP}})
+  },
+  pages         = {2137--2140},
+  doi           = {10.1109/ICASSP.2012.6288334},
+  date          = {2012-03},
+  abstract      = {
+    Representing a vector as a sparse linear combination of codewords, e.g. by solving
+    a lasso problem, lies at the heart of many machine learning and statistics
+    applications. To improve the efficiency of solving lasso problems, we
+    systematically investigate lasso screening, a process that quickly identifies
+    dictionary entries that won't be used in the optimal sparse representation, and
+    hence can be removed from the problem. We propose a general test called an R region
+    test that unifies existing screening tests and we derive a particular instance
+    called the dome test. This test is stronger than existing screening tests and can
+    be executed in linear-time as a two-pass test with a memory footprint of only three
+    codewords.
+  },
+  eventtitle    = {
+    2012 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
+    Processing}} ({{ICASSP}})
+  }
+}
+
+% == BibLateX quality report for xiang2012:
+% ? Unsure about the formatting of the booktitle
+% ? unused Library catalog ("IEEE Xplore")
+@article{xiang2017,
+  title         = {Screening Tests for {{Lasso}} Problems},
+  author        = {Xiang, Zhen James and Wang, Yun and Ramadge, Peter J.},
+  volume        = {39},
+  number        = {5},
+  pages         = {1008--1027},
+  doi           = {10.1109/TPAMI.2016.2568185},
+  issn          = {1939-3539},
+  date          = {2017-05},
+  journaltitle  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  abstract      = {
+    This paper is a survey of dictionary screening for the lasso problem. The lasso
+    problem seeks a sparse linear combination of the columns of a dictionary to best
+    match a given target vector. This sparse representation has proven useful in a
+    variety of subsequent processing and decision tasks. For a given target vector,
+    dictionary screening quickly identifies a subset of dictionary columns that will
+    receive zero weight in a solution of the corresponding lasso problem. These columns
+    can be removed from the dictionary prior to solving the lasso problem without
+    impacting the optimality of the solution obtained. This has two potential
+    advantages: it reduces the size of the dictionary, allowing the lasso problem to be
+    solved with less resources, and it may speed up obtaining a solution. Using a
+    geometrically intuitive framework, we provide basic insights for understanding
+    useful lasso screening tests and their limitations. We also provide illustrative
+    numerical studies on several datasets.
+  },
+  eventtitle    = {{{IEEE Transactions}} on {{Pattern Analysis}} and {{Machine Intelligence}}}
+}
+
+% == BibLateX quality report for xiang2017:
+% Unexpected field 'eventtitle'
+% ? unused Library catalog ("IEEE Xplore")
+@inproceedings{yamada2021,
+  title         = {Dynamic {{Sasvi}}: Strong Safe Screening for Norm-Regularized Least Squares},
+  author        = {Yamada, Hiroaki and Yamada, Makoto},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  location      = {New Orleans, USA},
+  publisher     = {Curran Associates, Inc.},
+  volume        = {34},
+  pages         = {14645--14655},
+  url           = {
+    https://proceedings.neurips.cc/paper/2021/file/7b5b23f4aadf9513306bcd59afb6e4c9-Paper.pdf
+  },
+  editor        = {
+    Ranzato, M. and Beygelzimer, A. and Dauphin, Y. and Liang, P.S. and Vaughan, J.
+    Wortman
+  },
+  date          = {2021},
+  eventtitle    = {{{NeurIPS}} 2021}
+}
+
+% == BibLateX quality report for yamada2021:
+% ? Unsure about the formatting of the booktitle
 @article{yuan2005,
   title         = {Model Selection and Estimation in Regression with Grouped Variables},
   author        = {Yuan, Ming and Lin, Yi},
@@ -2530,7 +3079,7 @@
   url           = {https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9868.2005.00532.x},
   urldate       = {2024-04-18},
   date          = {2005-12-21},
-  journaltitle  = {Journal of the Royal Statistical Society: Series B},
+  journaltitle  = {The Journal of the Royal Statistical Society, Series B (Statistical Methodology)},
   abstract      = {
     Summary. We consider the problem of selecting grouped variables (factors) for
     accurate prediction in regression. Such a problem arises naturally in many
@@ -2696,7 +3245,7 @@
   url           = {www.jstor.org/stable/3647580},
   urldate       = {2018-03-12},
   date          = {2005},
-  journaltitle  = {Journal of the Royal Statistical Society. Series B (Statistical Methodology)},
+  journaltitle  = {The Journal of the Royal Statistical Society, Series B (Statistical Methodology)},
   abstract      = {
     We propose the elastic net, a new regularization and variable selection method.
     Real world data and a simulation study show that the elastic net often outperforms
@@ -2711,7 +3260,6 @@
 }
 
 % == BibLateX quality report for zou2005:
-% ? Possibly abbreviated journal title Journal of the Royal Statistical Society. Series B (Statistical Methodology)
 % ? unused Library catalog ("JSTOR")
 @article{zou2006,
   title         = {The Adaptive Lasso and Its Oracle Properties},
@@ -2742,435 +3290,103 @@
   }
 }
 
-% == BibLateX quality report for zou2006:
-% Unexpected field 'publisher'
-% ? unused extra: _eprint ("https://doi.org/10.1198/016214506000000735")
-% ? unused Library catalog ("Taylor and Francis+NEJM")
-l@article{lee2014,
-  title         = {Proximal {{Newton-type}} Methods for Minimizing Composite Functions},
-  author        = {Lee, Jason D. and Sun, Yuekai and Saunders, Michael A.},
-  publisher     = {{Society for Industrial and Applied Mathematics}},
-  volume        = {24},
-  number        = {3},
-  pages         = {1420--1443},
-  doi           = {10.1137/130921428},
-  issn          = {1052-6234},
-  url           = {https://epubs.siam.org/doi/abs/10.1137/130921428},
-  urldate       = {2021-04-07},
-  date          = {2014-01-01},
-  journaltitle  = {SIAM Journal on Optimization},
-  shortjournal  = {SIAM J. Optim.},
-  abstract      = {
-    We generalize Newton-type methods for minimizing smooth functions to handle a sum
-    of two convex functions: a smooth function and a nonsmooth function with a simple
-    proximal mapping. We show that the resulting proximal Newton-type methods inherit
-    the desirable convergence behavior of Newton-type methods for minimizing smooth
-    functions, even when search directions are computed inexactly. Many popular methods
-    tailored to problems arising in bioinformatics, signal processing, and statistical
-    learning are special cases of proximal Newton-type methods, and our analysis yields
-    new convergence results for some of these methods.
-  }
-}
-
-% == BibLateX quality report for lee2014:
-% Unexpected field 'publisher'
-% ? unused Library catalog ("epubs.siam.org (Atypon)")
-@article{keerthi2005,
-  title         = {
-    A Modified Finite {{Newton}} Method for Fast Solution of Large Scale Linear
-    {{SVMs}}
-  },
-  author        = {Keerthi, S. Sathiya and DeCoste, Dennis},
-  volume        = {6},
-  number        = {12},
-  pages         = {341--361},
-  issn          = {1532-4435},
-  url           = {http://jmlr.org/papers/v6/keerthi05a.html},
-  date          = {2005-12-01},
-  journaltitle  = {The Journal of Machine Learning Research},
-  shortjournal  = {J. Mach. Learn. Res.},
-  abstract      = {
-    This paper develops a fast method for solving linear SVMs with L2 loss function
-    that is suited for large scale data mining tasks such as text classification. This
-    is done by modifying the finite Newton method of Mangasarian in several ways.
-    Experiments indicate that the method is much faster than decomposition methods such
-    as SVMlight, SMO and BSVM (e.g., 4-100 fold), especially when the number of
-    examples is large. The paper also suggests ways of extending the method to other
-    loss functions such as the modified Huber's loss function and the L1 loss function,
-    and also for solving ordinal regression.
-  }
-}
-
-% == BibLateX quality report for keerthi2005:
-% ? unused Library catalog ("12/1/2005")
-@article{lewis2004,
-  title         = {{{RCV1}}: A New Benchmark Collection for Text Categorization Research},
-  shorttitle    = {{{RCV1}}},
-  author        = {Lewis, David D. and Yang, Yiming and Rose, Tony G. and Li, Fan},
-  volume        = {5},
-  pages         = {361--397},
-  issn          = {1532-4435},
-  date          = {2004-12-01},
-  journaltitle  = {The Journal of Machine Learning Research},
-  shortjournal  = {J. Mach. Learn. Res.},
-  abstract      = {
-    Reuters Corpus Volume I (RCV1) is an archive of over 800,000 manually categorized
-    newswire stories recently made available by Reuters, Ltd. for research purposes.
-    Use of this data for research on text categorization requires a detailed
-    understanding of the real world constraints under which the data was produced.
-    Drawing on interviews with Reuters personnel and access to Reuters documentation,
-    we describe the coding policy and quality control procedures used in producing the
-    RCV1 data, the intended semantics of the hierarchical category taxonomies, and the
-    corrections necessary to remove errorful data. We refer to the original data as
-    RCV1-v1, and the corrected data as RCV1-v2. We benchmark several widely used
-    supervised learning methods on RCV1-v2, illustrating the collection's properties,
-    suggesting new directions for research, and providing baseline results for future
-    studies. We make available detailed, per-category experimental results, as well as
-    corrected versions of the category assignments and taxonomy structures, via online
-    appendices.
-  }
-}
-
-% == BibLateX quality report for lewis2004:
-% ? unused Library catalog ("12/1/2004")
-@article{golub1999,
-  title         = {
-    Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene
-    Expression Monitoring
-  },
-  shorttitle    = {Molecular Classification of Cancer},
-  author        = {
-    Golub, T. R. and Slonim, D. K. and Tamayo, P. and Huard, C. and Gaasenbeek, M. and
-    Mesirov, J. P. and Coller, H. and Loh, M. L. and Downing, J. R. and Caligiuri, M.
-    A. and Bloomfield, C. D. and Lander, E. S.
-  },
-  volume        = {286},
-  number        = {5439},
-  pages         = {531--537},
-  doi           = {10.1126/science.286.5439.531},
-  issn          = {0036-8075},
-  date          = {1999-10-15},
-  journaltitle  = {Science},
-  shortjournal  = {Science},
-  eprint        = {10521349},
-  eprinttype    = {pmid},
-  abstract      = {
-    Although cancer classification has improved over the past 30 years, there has been
-    no general approach for identifying new cancer classes (class discovery) or for
-    assigning tumors to known classes (class prediction). Here, a generic approach to
-    cancer classification based on gene expression monitoring by DNA microarrays is
-    described and applied to human acute leukemias as a test case. A class discovery
-    procedure automatically discovered the distinction between acute myeloid leukemia
-    (AML) and acute lymphoblastic leukemia (ALL) without previous knowledge of these
-    classes. An automatically derived class predictor was able to determine the class
-    of new leukemia cases. The results demonstrate the feasibility of cancer
-    classification based solely on gene expression monitoring and suggest a general
-    strategy for discovering and predicting cancer classes for other types of cancer,
-    independent of previous biological knowledge.
-  },
-  langid        = {english}
-}
-
-% == BibLateX quality report for golub1999:
-% ? unused Library catalog ("PubMed")
-@incollection{platt1998,
-  title         = {Fast Training of Support Vector Machines Using Sequential Minimal Optimization},
-  author        = {Platt, John C.},
-  booktitle     = {Advances in {{Kernel Methods}}: {{Support Vector Learning}}},
-  location      = {Boston, MA, USA},
-  publisher     = {MIT Press},
-  pages         = {185--208},
-  doi           = {10.7551/mitpress/1130.003.0016},
-  isbn          = {978-0-262-28319-9},
-  editor        = {Sch\"{o}lkopf, Bernhard and Burges, Christopher J. C. and Smola, Alexander J.},
-  date          = {1998-01},
-  edition       = {1}
-}
-
-@dataset{king,
-  title         = {Qualitative {{Structure}} Activity Relationships},
-  author        = {King, Ross},
-  publisher     = {UCI Machine Learning Repository},
-  doi           = {10.24432/C5TP54},
-  url           = {https://archive.ics.uci.edu/dataset/85},
-  urldate       = {2024-04-25}
-}
-
-% == BibLateX quality report for king:
-% ? unused Library catalog ("DOI.org (Datacite)")
-@article{osborne2000,
-  title         = {On the {{LASSO}} and Its Dual},
-  author        = {Osborne, Michael R. and Presnell, Brett and Turlach, Berwin A.},
-  volume        = {9},
-  number        = {2},
-  pages         = {319--337},
-  doi           = {10.2307/1390657},
-  issn          = {1061-8600},
-  url           = {https://www.jstor.org/stable/1390657},
-  urldate       = {2019-10-30},
-  date          = {2000},
-  journaltitle  = {Journal of Computational and Graphical Statistics},
-  eprint        = {1390657},
-  eprinttype    = {jstor},
-  abstract      = {
-    Proposed by Tibshirani, the least absolute shrinkage and selection operator (LASSO)
-    estimates a vector of regression coefficients by minimizing the residual sum of
-    squares subject to a constraint on the l\textsuperscript{1}-norm of the coefficient
-    vector. The LASSO estimator typically has one or more zero elements and thus shares
-    characteristics of both shrinkage estimation and variable selection. In this
-    article we treat the LASSO as a convex programming problem and derive its dual.
-    Consideration of the primal and dual problems together leads to important new
-    insights into the characteristics of the LASSO estimator and to an improved method
-    for estimating its covariance matrix. Using these results we also develop an
-    efficient algorithm for computing LASSO estimates which is usable even in cases
-    where the number of regressors exceeds the number of observations. An S-Plus
-    library based on this algorithm is available from StatLib.
-  }
-}
-
-@inproceedings{bertrand2021,
-  title         = {Anderson Acceleration of Coordinate Descent},
-  author        = {Bertrand, Quentin and Massias, Mathurin},
-  booktitle     = {
-    Proceedings of {{The}} 24th {{International Conference}} on {{Artificial
-    Intelligence}} and {{Statistics}}
-  },
-  location      = {San Diego, CA, USA},
-  publisher     = {PMLR},
-  volume        = {130},
-  pages         = {1288--1296},
-  issn          = {2640-3498},
-  url           = {https://proceedings.mlr.press/v130/bertrand21a.html},
-  urldate       = {2024-04-29},
-  date          = {2021-03-18},
-  abstract      = {
-    Acceleration of first order methods is mainly obtained via inertia \`{a} la
-    Nesterov, or via nonlinear extrapolation. The latter has known a recent surge of
-    interest, with successful applications to gradient and proximal gradient
-    techniques. On multiple Machine Learning problems, coordinate descent achieves
-    performance significantly superior to full-gradient methods. Speeding up coordinate
-    descent in practice is not easy: inertially accelerated versions of coordinate
-    descent are theoretically accelerated, but might not always lead to practical
-    speed-ups. We propose an accelerated version of coordinate descent using
-    extrapolation, showing considerable speed up in practice, compared to inertial
-    accelerated coordinate descent and extrapolated (proximal) gradient descent.
-    Experiments on least squares, Lasso, elastic net and logistic regression validate
-    the approach.
-  },
-  eventtitle    = {{{AISTATS}} 2021},
-  langid        = {english}
-}
-
-% == BibLateX quality report for bertrand2021:
-% Unexpected field 'issn'
-% ? unused Library catalog ("proceedings.mlr.press")
-@inproceedings{mai2020,
-  title         = {Anderson Acceleration of Proximal Gradient Methods},
-  author        = {Mai, Vien V. and Johansson, Mikael},
-  booktitle     = {Proceedings of the 37th {{International Conference}} on {{Machine Learning}}},
-  location      = {Virtual},
-  publisher     = {PMLR},
-  volume        = {119},
-  pages         = {6620--6629},
-  url           = {https://proceedings.mlr.press/v119/mai20a.html},
-  urldate       = {2024-04-28},
-  editor        = {Daum\'{e} III, Hal and Singh, Aarti},
-  date          = {2020-07-13/2020-07-18},
-  abstract      = {
-    Anderson acceleration is a well-established and simple technique for speeding up
-    fixed-point computations with countless applications. This work introduces novel
-    methods for adapting Anderson acceleration to proximal gradient algorithms. Under
-    some technical conditions, we extend existing local convergence results of Anderson
-    acceleration for smooth fixed-point mappings to the proposed non-smooth setting. We
-    also prove analytically that it is in general, impossible to guarantee global
-    convergence of native Anderson acceleration. We therefore propose a simple scheme
-    for stabilization that combines the global worst-case guarantees of proximal
-    gradient methods with the local adaptation and practical speed-up of Anderson
-    acceleration. Finally, we provide the first applications of Anderson acceleration
-    to non-Euclidean geometry.
-  },
-  eventtitle    = {{{ICML}} 20}
-}
-
-% == BibLateX quality report for mai2020:
-% ? unused Library catalog ("ACM Digital Library")
-@article{xiang2017,
-  title         = {Screening Tests for {{Lasso}} Problems},
-  author        = {Xiang, Zhen James and Wang, Yun and Ramadge, Peter J.},
-  volume        = {39},
-  number        = {5},
-  pages         = {1008--1027},
-  doi           = {10.1109/TPAMI.2016.2568185},
-  issn          = {1939-3539},
-  date          = {2017-05},
-  journaltitle  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  abstract      = {
-    This paper is a survey of dictionary screening for the lasso problem. The lasso
-    problem seeks a sparse linear combination of the columns of a dictionary to best
-    match a given target vector. This sparse representation has proven useful in a
-    variety of subsequent processing and decision tasks. For a given target vector,
-    dictionary screening quickly identifies a subset of dictionary columns that will
-    receive zero weight in a solution of the corresponding lasso problem. These columns
-    can be removed from the dictionary prior to solving the lasso problem without
-    impacting the optimality of the solution obtained. This has two potential
-    advantages: it reduces the size of the dictionary, allowing the lasso problem to be
-    solved with less resources, and it may speed up obtaining a solution. Using a
-    geometrically intuitive framework, we provide basic insights for understanding
-    useful lasso screening tests and their limitations. We also provide illustrative
-    numerical studies on several datasets.
-  },
-  eventtitle    = {{{IEEE Transactions}} on {{Pattern Analysis}} and {{Machine Intelligence}}}
-}
-
-% == BibLateX quality report for xiang2017:
-% Unexpected field 'eventtitle'
-% ? unused Library catalog ("IEEE Xplore")
-@inproceedings{xiang2012,
-  title         = {Fast Lasso Screening Tests Based on Correlations},
-  author        = {Xiang, Zhen James and Ramadge, Peter J.},
-  booktitle     = {
-    2012 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
-    Processing}} ({{ICASSP}})
-  },
-  pages         = {2137--2140},
-  doi           = {10.1109/ICASSP.2012.6288334},
-  date          = {2012-03},
-  abstract      = {
-    Representing a vector as a sparse linear combination of codewords, e.g. by solving
-    a lasso problem, lies at the heart of many machine learning and statistics
-    applications. To improve the efficiency of solving lasso problems, we
-    systematically investigate lasso screening, a process that quickly identifies
-    dictionary entries that won't be used in the optimal sparse representation, and
-    hence can be removed from the problem. We propose a general test called an R region
-    test that unifies existing screening tests and we derive a particular instance
-    called the dome test. This test is stronger than existing screening tests and can
-    be executed in linear-time as a two-pass test with a memory footprint of only three
-    codewords.
-  },
-  eventtitle    = {
-    2012 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal
-    Processing}} ({{ICASSP}})
-  }
-}
-
-% == BibLateX quality report for xiang2012:
-% ? Unsure about the formatting of the booktitle
-% ? unused Library catalog ("IEEE Xplore")
-@inproceedings{fercoq2015,
-  title         = {Mind the Duality Gap: Safer Rules for the Lasso},
-  author        = {Fercoq, Olivier and Gramfort, Alexandre and Salmon, Joseph},
-  booktitle     = {Proceedings of the 37th International Conference on Machine Learning},
-  location      = {Lille, France},
-  publisher     = {PMLR},
-  series        = {Proceedings of Machine Learning Research},
-  volume        = {37},
-  pages         = {333--342},
-  url           = {http://proceedings.mlr.press/v37/fercoq15},
-  editor        = {Bach, Francis and Blei, David},
-  date          = {2015-07-06/2015-07-11},
-  abstract      = {
-    Screening rules allow to early discard irrelevant variables from the optimization
-    in Lasso problems, or its derivatives, making solvers faster. In this paper, we
-    propose new versions of the so-called rules for the Lasso. Based on duality gap
-    considerations, our new rules create safe test regions whose diameters converge to
-    zero, provided that one relies on a converging solver. This property helps
-    screening out more variables, for a wider range of regularization parameter values.
-    In addition to faster convergence, we prove that we correctly identify the active
-    sets (supports) of the solutions in finite time. While our proposed strategy can
-    cope with any solver, its performance is demonstrated using a coordinate descent
-    algorithm particularly adapted to machine learning use cases. Significant computing
-    time reductions are obtained with respect to previous safe rules.
-  },
-  eventtitle    = {{{ICML}} 2015}
-}
-
-% == BibLateX quality report for fercoq2015:
-% ? Unsure about the formatting of the booktitle
-@inproceedings{yamada2021,
-  title         = {Dynamic {{Sasvi}}: Strong Safe Screening for Norm-Regularized Least Squares},
-  author        = {Yamada, Hiroaki and Yamada, Makoto},
-  booktitle     = {Advances in Neural Information Processing Systems},
-  location      = {New Orleans, USA},
-  publisher     = {Curran Associates, Inc.},
-  volume        = {34},
-  pages         = {14645--14655},
-  url           = {
-    https://proceedings.neurips.cc/paper/2021/file/7b5b23f4aadf9513306bcd59afb6e4c9-Paper.pdf
-  },
-  editor        = {
-    Ranzato, M. and Beygelzimer, A. and Dauphin, Y. and Liang, P.S. and Vaughan, J.
-    Wortman
-  },
-  date          = {2021},
-  eventtitle    = {{{NeurIPS}} 2021}
-}
-
-% == BibLateX quality report for yamada2021:
-% ? Unsure about the formatting of the booktitle
-@inproceedings{wang2014,
-  title         = {A Safe Screening Rule for Sparse Logistic Regression},
-  author        = {Wang, Jie and Zhou, Jiayu and Liu, Jun and Wonka, Peter and Ye, Jieping},
-  booktitle     = {
-    Proceedings of the 27th {{International Conference}} on {{Neural Information
-    Processing Systems}} - {{Volume}} 1
-  },
-  location      = {Cambridge, MA, USA},
-  publisher     = {MIT Press},
-  series        = {{{NIPS}}'14},
-  pages         = {1053--1061},
-  date          = {2014-12-08},
-  abstract      = {
-    The \mathscr{l}1-regularized logistic regression (or sparse logistic regression) is
-    a widely used method for simultaneous classification and feature selection.
-    Although many recent efforts have been devoted to its efficient implementation, its
-    application to high dimensional data still poses significant challenges. In this
-    paper, we present a fast and effective sparse logistic regression screening rule
-    (Slores) to identify the "0" components in the solution vector, which may lead to a
-    substantial reduction in the number of features to be entered to the optimization.
-    An appealing feature of Slores is that the data set needs to be scanned only once
-    to run the screening and its computational cost is negligible compared to that of
-    solving the sparse logistic regression problem. Moreover, Slores is independent of
-    solvers for sparse logistic regression, thus Slores can be integrated with any
-    existing solver to improve the efficiency. We have evaluated Slores using
-    high-dimensional data sets from different applications. Experiments demonstrate
-    that Slores outperforms the existing state-of-the-art screening rules and the
-    efficiency of solving sparse logistic regression can be improved by one magnitude.
-  }
-}
-
-% == BibLateX quality report for wang2014:
-% ? unused Library catalog ("ACM Digital Library")
-@inproceedings{xiang2011,
-  title         = {
-    Learning Sparse Representations of High Dimensional Data on Large Scale
-    Dictionaries
-  },
-  author        = {Xiang, Zhen J. and Xu, Hao and Ramadge, Peter J},
-  booktitle     = {Advances in Neural Information Processing Systems 24},
-  publisher     = {Curran Associates, Inc.},
-  pages         = {900--908},
-  url           = {
-    https://papers.nips.cc/paper/4400-learning-sparse-representations-of-high-dimensional-data-on-large-scale-dictionaries
-  },
-  editor        = {
-    Shawe-Taylor, J. and Zemel, R. S. and Bartlett, P. L. and Pereira, F. and
-    Weinberger, K. Q.
-  },
-  date          = {2011-12-12/2011-12-17},
-  eventtitle    = {Neural {{Information Processing Systems}} 2011}
-}
-
-% == BibLateX quality report for xiang2011:
-% ? Unsure about the formatting of the booktitle
-@misc{rcoreteam2024,
+@software{rcoreteam2024,
   title         = {R: A Language and Environment for Statistical Computing},
   author        = {{R Core Team}},
-  year          = {2024},
-  month         = feb,
-  address       = {Vienna, Austria},
-  howpublished  = {R Foundation for Statistical Computing}
+  location      = {Vienna, Austria},
+  url           = {https://www.R-project.org/},
+  date          = {2024-02-29},
+  organization  = {R Foundation for Statistical Computing},
+  version       = {4.3.3}
 }
 
-% == BibTeX quality report for rcoreteam2024:
-% ? unused Url ("https://www.R-project.org/")
-% ? unused Version number ("4.3.3")
+@article{deb1997,
+  title         = {Demand for Medical Care by the Elderly: A Finite Mixture Approach},
+  shorttitle    = {Demand for {{Medical Care}} by the {{Elderly}}},
+  author        = {Deb, Partha and Trivedi, Pravin K.},
+  publisher     = {Wiley},
+  volume        = {12},
+  number        = {3},
+  pages         = {313--336},
+  issn          = {0883-7252},
+  url           = {https://www.jstor.org/stable/2285252},
+  urldate       = {2020-04-06},
+  date          = {1997-05},
+  journaltitle  = {Journal of Applied Econometrics},
+  eprint        = {2285252},
+  eprinttype    = {jstor},
+  abstract      = {
+    In this article we develop a finite mixture negative binomial count model that
+    accommodates unobserved heterogeneity in an intuitive and analytically tractable
+    manner. This model, the standard negative binomial model, and its hurdle extension
+    are estimated for six measures of medical care demand by the elderly using a sample
+    from the 1987 National Medical Expenditure Survey. The finite mixture model is
+    preferred overall by statistical model selection criteria. Two points of support
+    adequately describe the distribution of the unobserved heterogeneity, suggesting
+    two latent populations, the `healthy' and the `ill' whose fitted distributions
+    differ substantially from each other.
+  }
+}
+
+% == BibLateX quality report for deb1997:
+% Unexpected field 'publisher'
+@dataset{frandi2015,
+  title         = {
+    Replication Data for: "{{Fast}} and Scalable {{Lasso}} via Stochastic
+    {{Frank-Wolfe}} Methods with a Convergence Guarantee"
+  },
+  shorttitle    = {Replication {{Data}} For},
+  author        = {Frandi, Emanuele},
+  publisher     = {Harvard Dataverse},
+  doi           = {10.7910/DVN/QJEUKR},
+  url           = {https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QJEUKR},
+  urldate       = {2020-10-09},
+  date          = {2015-10-23},
+  journaltitle  = {Harvard Dataverse},
+  abstract      = {
+    Datasets used for the experiments in Section 5 of the paper "Fast and Scalable
+    Lasso via Stochastic Frank-Wolfe Methods with a Convergence Guarante...
+  },
+  langid        = {english},
+  version       = {1}
+}
+
+% == BibLateX quality report for frandi2015:
+% Unexpected field 'journaltitle'
+@inproceedings{lang1995,
+  title         = {{{NewsWeeder}}: Learning to Filter Netnews},
+  shorttitle    = {{{NewsWeeder}}},
+  author        = {Lang, Ken},
+  booktitle     = {
+    Proceedings of the {{Twelfth International Conference}} on {{International
+    Conference}} on {{Machine Learning}}
+  },
+  location      = {Tahoe City, CA, USA},
+  publisher     = {Morgan Kaufmann},
+  pages         = {331--339},
+  doi           = {10.1016/B978-1-55860-377-6.50048-7},
+  isbn          = {978-1-55860-377-6},
+  url           = {http://www.sciencedirect.com/science/article/pii/B9781558603776500487},
+  urldate       = {2020-10-09},
+  editor        = {Prieditis, Armand and Russell, Stuart},
+  date          = {1995-07-09/1995-07-12},
+  abstract      = {
+    A significant problem in many information filtering systems is the dependence on
+    the user for the creation and maintenance of a user profile, which describes the
+    user's interests. NewsWeeder is a netnews-filtering system that addresses this
+    problem by letting the user rate his or her interest level for each article being
+    read (1-5), and then learning a user profile based on these ratings. This paper
+    describes how NewsWeeder accomplishes this task, and examines the alternative
+    learning methods used. The results show that a learning algorithm based on the
+    Minimum Description Length (MDL) principle was able to raise the percentage of
+    interesting articles to be shown to users from 14\% to 52\% on average. Further,
+    this performance significantly outperformed (by 21\%) one of the most successful
+    techniques in Information Retrieval (IR), term-frequency/inverse-document-frequency
+    (tf-idf) weighting.
+  },
+  eventtitle    = {{{ICML}} 1995},
+  langid        = {english}
+}
+
+% == BibLateX quality report for lang1995:
+% ? unused Library catalog ("ScienceDirect")

@@ -81,10 +81,10 @@ In the simplest case, we assume that \(\vec{y}\) is a linear combination of the 
 \[
   \vec{y} = \mat{X}\vec{\beta} + \beta_0 + \vec{\varepsilon},
 \]
-where \(\vec{\beta}\) is a vector of coefficients and \(\beta_0\) the \emph{intercept}. In this representation of the data, the coefficients \(\vec{\beta}\) are the parameters that we are interested in estimating and represent the effect each feature has on the response vector \(\vec{y}\).
+where \(\vec{\beta}\) is a vector of coefficients and \(\beta_0\) the \emph{intercept}. In this representation of the data, the coefficients \(\vec{\beta}\) are the parameters that we are interested in estimating and represent the effect each feature has on the response vector \(\vec{y}\). From here on we will ignore the intercept \(\beta_0\) to simplify our discussion since we are not interested in interpreting it.
 Assuming that this is in fact the true relationship between \(\vec{\beta}\), \(\mat{X}\), and \(\vec{y}\), a natural choice of model to fit this data with is \emph{linear regression}.\footnote{In general, we also need additional assumptions on the noise term \(\vec{\varepsilon}\).}
 
-In the presence of noise, however, there generally exists no \(\beta_0\) and \(\vec{\beta}\) that will fit the data perfectly, and we must therefore accept that the linear regression model is only an approximation. The natural follow-up question is then: what \emph{is} a good approximation? To answer this question, we need to define some measure of error. The most common measure, at least as far as linear regression models go, is the sum of squared errors between the predicted response vector
+In the presence of noise, however, there generally exists no \(\vec{\beta}\) that will fit the data perfectly, and we must therefore accept that the linear regression model is only an approximation. The natural follow-up question is then: what \emph{is} a good approximation? To answer this question, we need to define some measure of error. The most common measure, at least as far as linear regression models go, is the sum of squared errors between the predicted response vector
 \[
   \hat{\vec{y}} = \mat{X}\hat{\vec{\beta}}
 \]
@@ -99,7 +99,7 @@ The smaller this measure---the better the fit, which means that finding a vector
    & \text{minimize} &  & \frac{1}{2} \lVert \vec{y} - \mat{X}\vec{\beta}\rVert^2_2.
 \end{aligned}
 \end{problem}
-We let \(\vec{\beta}^*\) to be the solution to this problem---the optimum, and will use \(\hat{\vec{\beta}}\) to refer to the estimate that we obtain from some algorithm. Generally, we will assume that the algorithm has converged to the optimum so that \smash{\(\vec{\beta}^* = \hat{\vec{\beta}}\)}, but in actuality we almost always have some amount of \emph{suboptimality} so that \smash{\(|\hat{\vec{\beta}} - \vec{\beta}| > 0\)}. The factor \(1/2\) in \Cref{pb:ols} is included for convenience, for reasons that will become clear later on.
+We let \(\vec{\beta}^*\) to be the solution to this problem---the optimum, and will use \(\hat{\vec{\beta}}\) to refer to the estimate that we obtain from some algorithm. Generally, we will assume that the algorithm has converged to the optimum, that is, \smash{\(\vec{\beta}^* = \hat{\vec{\beta}}\)}, but in actuality we almost always have some amount of \emph{suboptimality} so that \smash{\(|\hat{\vec{\beta}} - \vec{\beta}| > 0\)}. The factor \(1/2\) in \Cref{pb:ols} is included for convenience, for reasons that will become clear later on.
 
 Solving \Cref{pb:ols} is equivalent to fitting the ordinary least-squares (OLS) regression model, which, for a simple case of a single feature, we have illustrated in \Cref{fig:ols}. Picking a different measure of error would lead to a different method (and often a different linear regression line), but in this thesis we will focus on the method of least squares.
 
@@ -119,7 +119,7 @@ Solving \Cref{pb:ols} is equivalent to fitting the ordinary least-squares (OLS) 
 
 If we have many more observations than features (\(n \gg p\)), then our linear regression model might stand a decent chance of recovering the true model (coefficients). But if the tables were turned and the features instead outnumbered the observations (\(p \gg n\)), the model would in fact break down.
 
-The problem is that our linear regression model will be able to fit our particular dataset perfectly but typically not generalize well to new data, even if it comes from the same underlying data-generating mechanism. This is called \emph{overfitting} and it happens because we have more parameters (regression coefficients) than unknowns (observations). This means that there are now many different regression models that will fit the data equally well and that the solution, therefore, is not unique. In \Cref{fig:overfitting}, we illustrate what overfitting looks like for the linear regression model in one and two parameters.
+The problem is that our linear regression model will be able to fit our particular dataset perfectly but typically not generalize well to new data, even if it comes from the same underlying data-generating mechanism. This is called \emph{overfitting} and it happens because we have more parameters (regression coefficients) than observations. This means that there are now many different regression models that will fit the data equally well and that the solution, therefore, is not unique. In \Cref{fig:overfitting}, we illustrate what overfitting looks like for the linear regression model in one and two parameters.
 
 \begin{figure}
   \centering
@@ -155,7 +155,7 @@ One way to deal with overfitting is to decrease the complexity of the model by r
 \section{Regularization}
 
 When we regularize a model, we introduce a budget on \(\vec{\beta}\), allowing only some of its elements to be non-zero or restricting the values they can take.
-The simplest type of regularization is called \emph{best-subset selection}, in which we simply limit the number of coefficients we allow to be non-zero to a constant \(k\), which is equivalent to selecting \(k\) of the features in \(\mat{X}\). We call the indices of the selected features the model's \emph{support}. If features one and three are selected, for instance, then the support is \(\{1,3\}\). If all of the features are in the model, then the support is \(\{1,2,\dots,p\}\) (as in the case of OLS regression). Finally, if no features are selected, then the support is the empty set (\(\emptyset\)).
+The simplest type of regularization is called \emph{best-subset selection}, in which we simply limit the number of coefficients we allow to be non-zero to a constant \(k\), which is equivalent to selecting at most \(k\) features from \(\mat{X}\). We call the indices of the selected features the model's \emph{support}. If features one and three are selected, for instance, then the support is \(\{1,3\}\). If all of the features are in the model, then the support is \(\{1,2,\dots,p\}\) (as in the case of OLS regression). Finally, if no features are selected, then the support is the empty set (\(\emptyset\)).
 
 In best-subset selection, we examine all \(\binom{p}{k}\) possible combinations of features and pick the combination that fits our data best. Formally, the method can be posed as the following optimization problem:
 \[
@@ -179,13 +179,13 @@ The primary problem with this method is that it is computationally infeasible wh
 \[
   \binom{100}{5} = \num{75287520}
 \]
-possible models to consider. And this problem is further exacerbated by the fact that we typically has to consider a variety of values for \(k\).
+possible models to consider. In addition, we typically have to consider a range of values for \(k\), which makes the problem even worse.
 
-In an interesting turn of events, however, \textcite{bertsimas2016} has shown that the best subset selection problem can actually be written as a mixed-integer optimization problem. This enables the use of modern optimization software, which can then handle best subset problems of dimensions that previously were thought unattainable. Yet, although this result has offered a considerable improvement in run-time performance for the algorithm, it is still the case that it struggles in high dimensions. Solving a problem with \(n=500\) and \(p=100\) for \(k \in \{1,2,\dots,50\}\), for instance, still comes down to a hefty 76.8 hours of computation~\parencite{hastie2020}. In contrast, the time taken to fit the model that we will consider next, the lasso, amounts to 0.014 seconds for the equivalent problem.
+In an interesting turn of events, however, \textcite{bertsimas2016} has shown that the best subset selection problem can actually be written as a mixed-integer optimization problem. This enables the use of modern optimization software, which can then handle best subset problems of dimensions that previously were thought unattainable. But even though this result has offered considerable improvement in run-time performance for the algorithm, it is still the case that it struggles in high dimensions. Solving a problem with \(n=500\) and \(p=100\) for \(k \in \{1,2,\dots,50\}\), for instance, still comes down to a hefty 76.8 hours of computation~\parencite{hastie2020}. In contrast, the time taken to fit the model that we will consider next, the lasso, amounts to 0.014 seconds for the equivalent problem.
 
 \subsection{The Lasso}
 
-One solution to the complexity problem of best-subset selection is to relax the constraint to one that makes the problem easier to solve, yet still retains the sparsity-enforcing property of the \(\ell_0\) norm. A natural candidate for this is the \(\ell_1\) norm, which leads to the following problem,
+One solution to the complexity problem of best-subset selection is to relax the constraint to one that makes the problem easier to solve, yet still retains the sparsity-enforcing property of the \(\ell_0\) norm. A natural candidate for this is the \(\ell_1\) norm, which leads to the following problem:
 \begin{problem}
 \label{pb:lasso}
 \begin{aligned}
@@ -195,7 +195,7 @@ One solution to the complexity problem of best-subset selection is to relax the 
 \end{problem}
 where all we did was replace the \(\ell_0\) norm with the \(\ell_1\) norm,
 \[\lVert \vec{\beta}\rVert_1 = \sum_{j=1}^p |\beta_j|\]
-As a consequence, we have replaced the integer-valued \(k\) with a real-valued (but positive) \(t\). This problem is known as \(\ell_1\)-regularized regression or, more commonly, as the \emph{lasso}\footnote{The lasso is sometimes written as the acronym LASSO for \emph{least absolute shrinkage and selection operator}, but we will stick with the lower-case version here, which the authors themselves use in their recent work.}. The lasso was introduced to the statistics community by \textcite{tibshirani1996} but actually stems from much earlier research done in the field of signal processing by \textcite{santosa1986}. \textcite{donoho1994,donoho1995} subsequently introduced the concept of the \emph{basis pursuit} problem, which is closely related to the lasso, and developed much of the theoretical framework for the lasso.
+As a consequence, we have replaced the integer-valued \(k\) with a real-valued (but positive) \(t\). This problem is known as \(\ell_1\)-regularized regression or, more commonly, as the \emph{lasso}\footnote{The lasso is sometimes written as the acronym LASSO for \emph{least absolute shrinkage and selection operator}, but we will stick with the lower-case version here, which the authors themselves use in their recent work.}. The lasso was introduced to the statistics community by \textcite{tibshirani1996} but actually stems from earlier research in the field of signal processing by \textcite{santosa1986}. \textcite{donoho1994,donoho1995} subsequently introduced the concept of the \emph{basis pursuit} problem, which is closely related to the lasso, and developed much of the theoretical framework for the lasso.
 
 If you have encountered the lasso previously, it is likely that you have seen it formulated as the following unconstrained optimization problem:
 \[
@@ -203,14 +203,14 @@ If you have encountered the lasso previously, it is likely that you have seen it
      & \text{minimize} &  & \frac{1}{2} \lVert \vec{y} - \mat{X}\vec{\beta}\rVert^2_2 + \lambda \lVert \vec{\beta}\rVert_1.
   \end{aligned}
 \]
-In this section, however, we will prefer the constrained formulation of the problem as it is given in \Cref{pb:lasso}, which we think is intuitive and easier to understand. The two formulations are equivalent, however, and will lead to exactly the same solution for a suitable choice of \(t\) and \(\lambda\). Later, in \Cref{sec:iterative-optimization}, we will make this connection clear.
+In this section, however, we will prefer the constrained formulation of the problem as it is given in \Cref{pb:lasso}, which we think is intuitive and easier to understand. The two formulations are equivalent, however, and will lead to exactly the same solution for a suitable choice of \(t\) and \(\lambda\). Later, in \Cref{sec:iterative-optimization}, we will expand on this connection.
 
 We saw previously that the \(\ell_0\) constraint in best-subset selection puts a budget on the number of features allowed in the model. The \(\ell_1\) norm, in contrast, instead puts a budget on the \emph{size} of the coefficients. This enforces not only sparsity but also shrinkage in the solution. In \Cref{fig:lasso-ball}, we have visualized how this constraint affects the solution of the least-squares objective.
 
 \begin{figure}
   \centering
   \subcaptionbox{A sparse solution, \(\beta_1 = 0\) and \(\beta_2 = -1\).}{\includegraphics[]{figures/lasso-ball-sparse.pdf}}\hfill%
-  \subcaptionbox{A dense solution, \(\beta_1 = 0.5\) and \(\beta_2 = 0.5\).}{\includegraphics[]{figures/lasso-ball-dense.pdf}}\hfill%
+  \subcaptionbox{A dense solution, \(\beta_1 = \beta_2 = 0.5\).}{\includegraphics[]{figures/lasso-ball-dense.pdf}}\hfill%
   \subcaptionbox{A solution in which the constraint is inactive (\(t\) is too large to affect the solution), \(\beta_1 = 0.4\) and \(\beta_2 = 0.3\).}{\includegraphics[]{figures/lasso-ball-inactive.pdf}}
 
   \caption{%
@@ -235,7 +235,7 @@ An interesting property of the lasso is that it is possible (and computationally
   \label{fig:lasso-path}
 \end{figure}
 
-One problem with the lasso, however, is that it does not deal with correlated features as intuition (at least that of the author) would suggest. If two features are correlated highly enough, for instance, the lasso will select one of them and drop the other (set its coefficient to zero).\footnote{In the case where the features are perfectly correlated, it may in fact be the optimization algorithm that decides which of them is picked.} This is not necessarily a problem for the prediction \(\hat{\vec{y}}\), but it means that the estimated coefficients no longer provide trustworthy estimates of variable (feature) importance. This effect is the result of the behavior of the \(\ell_1\) norm, which penalizes the \emph{size} of the coefficients. If two features provide the same, or nearly the same, information about the response, then the optimization problem can attain a lower value by setting one of the coefficients to zero.
+One problem with the lasso, however, is that it does not deal with correlated features as intuition (at least that of the author) would suggest. If two features are correlated highly enough, for instance, the lasso will select one of them and drop the other (set its coefficient to zero).\footnote{In the case where the features are perfectly correlated, it may in fact be the optimization algorithm that decides which of them is picked.} This is not necessarily a problem for the prediction \(\hat{\vec{y}}\), but it means that the estimated coefficients no longer provide trustworthy estimates of variable (feature) importance. This effect is the result of the behavior of the \(\ell_1\) norm in that it penalizes the magnitude of the coefficients. If two features provide the same, or nearly the same, information about the response, then the optimization problem can attain a lower value by setting one of the coefficients to zero.
 
 This is a problem that the \emph{elastic net}---the topic of the next section---is designed to overcome.
 
@@ -328,9 +328,9 @@ An issue that we have so far largely ignored is how to pick good values for \(t\
 
 The alternative, which is the dominating procedure in practice, is to resort to hyperparameter optimization, in which we treat the problem of finding good hyperparameters as an upper-level optimization problem (on top of the optimization problem of finding \(\vec{\beta}\)). This procedure is often also called \emph{model validation}. This is most commonly done via a grid search in which we construct a grid across the hyperparameter space. In the lasso case, for instance, it is common to construct a linearly spaced sequence of \(t\) values.\footnote{If we were to use the unconstrained version of the lasso in which the model is parameterized by \(\lambda\), the sequence is typically \emph{geometrically} spaced instead.}
 
-In the simplest case, typically called \emph{hold-out validation}, we split the dataset into a training set and a validation set. The lasso is fit for the full \(t\) sequence on the training data; in other words, we fit a full lasso path. Afterwards, we measure the model's error on the validation data and pick the \(t\) value with the best score. Often, there is also a separate test dataset that is held-out before hyperparameter optimization; at the end, this test set is used to obtain a final unbiased goodness-of-fit measure for the model selected during hyper-optimization.
+In the simplest case, typically called \emph{hold-out validation}, we split the dataset into a training set and a validation set. The lasso is fit for the full \(t\) sequence on the training data; in other words, we fit a full lasso path. Afterwards, we measure the model's error on the validation data and pick the \(t\) value with the best score. Often, there is also a separate test dataset that is held-out before hyperparameter optimization; at the end, this test set is used to obtain a final unbiased goodness-of-fit measure for the model selected via hyperparmeter optimization.
 
-A more common, although slightly more involved, method is to use \(k\)-fold cross-validation~(\Cref{fig:k-fold-cv}), which is similar to hold-out validation, except the data is iteratively split into \(k\) folds; the method is run for as many iterations. In the \(k\)th iteration, the \(k\)th fold is held out as a validation set on which an error is computed after the model has been fit on the remaining \(k-1\) folds. After the last iteration, a cross-validation error is computed by averaging the validation error over all of the validation folds. Typical choices of \(k\) are 5 and 10. If \(k=n\), then the method is called \emph{leave-one-out cross-validation}. In a sense, cross-validation can be seen as a variance-reduction technique for hold-out validation. The downside, however, is that this comes at a price of increased bias since the validation sets are also used during training. There is also \emph{repeated} \(k\)-fold cross validation, which simply repeats the cross-validation procedure for some number of times, each time with different splits.
+A more common, albeit slightly more involved, method is to use \(k\)-fold cross-validation~(\Cref{fig:k-fold-cv}). It is similar to hold-out validation, except the data is iteratively split into \(k\) folds and the method is run for as many iterations. In the \(k\)th iteration, the \(k\)th fold is held out as a validation set on which an error is computed after the model has been fit on the remaining \(k-1\) folds. After the last iteration, a cross-validation error is computed by averaging the validation error over all of the validation folds. Typical choices of \(k\) are 5 and 10. If \(k=n\), then the method is called \emph{leave-one-out cross-validation}. In a sense, cross-validation can be seen as a variance-reduction technique for hold-out validation. The downside, however, is that this comes at a price of increased bias since the validation sets are also used during training. There is also \emph{repeated} \(k\)-fold cross validation, which simply repeats the cross-validation procedure for some number of times, each time with different splits.
 
 \begin{figure}[htpb]
   \centering
@@ -342,7 +342,7 @@ A more common, although slightly more involved, method is to use \(k\)-fold cros
   \label{fig:k-fold-cv}
 \end{figure}
 
-For the lasso, it is typical to construct a grid of 100 \(t\) values, which means that we have to, for instance, fit \(100k\) lasso models if we use cross-validation. This can easily become computationally expensive, especially if either or both of \(n\) and \(p\) are large. In the case of the elastic net and SLOPE, the problem is complicated further since we then have \(\alpha\) or \(q\) to optimize over as well. As a result, it is vital that there are efficient methods for fitting these models, which is the topic of the following two sections. In \Cref{sec:optimization}, we discuss the various optimization methods that we can use to solve the lasso, the elastic net, and SLOPE. And in \Cref{sec:screening-rules}, we introduce the concept of \emph{screening rules}, which have been a game changer in the high-dimensional context.
+For the lasso, it is typical to construct a grid of 100 \(t\) values, which means that we have to, for instance, fit \(100k\) lasso models if we use cross-validation. This can easily become computationally expensive, especially if either or both of \(n\) and \(p\) are large. In the case of the elastic net and SLOPE, the problem is complicated further since we then have \(\alpha\) or \(q\) to optimize over as well. As a result, it is vital that there are efficient methods for fitting these models, which is an issue that we will deal with in the following two sections. In \Cref{sec:optimization}, we discuss the various optimization methods that we can use to solve the lasso, the elastic net, and SLOPE. And in \Cref{sec:screening-rules}, we introduce the concept of \emph{screening rules}, which have been a game changer in the high-dimensional context.
 
 \section{Optimization}\label{sec:optimization}
 
@@ -358,23 +358,23 @@ fit <- lars(diabetes$x, diabetes$y, type = "lasso")
 
 Behind the scenes, however, the method invoked through these commands actually involve a complicated optimization algorithm into which considerable effort has been put in order to ensure that what you get in \texttt{fit} is reliable---and that you get it \emph{fast}.
 
-Throughout the following sections, we will discuss various optimization methods that can be used to solve the lasso, the elastic net, and SLOPE. For simplicity, we will generally focus on the lasso and, in particular, the ordinary lasso (\(\ell_1\)-regularized least-squares regression). In general, however, the methods that we introduce here can be used to solve all of these problems, including the case when the objective that is regularized is part of the family of generalized linear models, which include, for instance, logistic , multinomial, and Poisson regression.
+Throughout the following sections, we will discuss various optimization methods that can be used to solve the lasso, the elastic net, and SLOPE. For simplicity, we will generally focus on the lasso and, in particular, the ordinary lasso (\(\ell_1\)-regularized least-squares regression). In general, however, the methods that we introduce here can be used to solve all of these problems, including the case when the objective that is regularized is part of the family of generalized linear models, which include, for instance, logistic, multinomial, and Poisson regression.
 
 \subsection{Direct Methods}
 
-The first optimization problem that we encountered in this text was ordinary least-squares regression, which we formally defined in \Cref{pb:ols}. Naively speaking, the solution to this problem is actually relatively straightforward. To start off, we let
+The first optimization problem that we encountered in this text was ordinary least-squares (OLS) regression, which we formally defined in \Cref{pb:ols}. Naively speaking, the solution to this problem is actually relatively straightforward. To start off, we let
 \begin{equation}
   \label{eq:ols-obj}
   f(\vec{\beta}) = \frac{1}{2}\lVert \vec{y} - \mat{X}\vec{\beta}\rVert_2^2
 \end{equation}
-be the objective function that we want to minimize. Here and onwards we will omit the intercept term for simplicity but note that we can incorporate in any of the following methods. To minimize \Cref{eq:ols-obj}, we simply set the gradient of it to zero:
+be the objective function that we want to minimize. As in the previous section, we omit the intercept term for simplicity but note that we can incorporate it in any of the following methods. To minimize \Cref{eq:ols-obj}, we simply set its gradient to zero:
 \[
   \begin{aligned}
     \nabla f(\vec{\beta})                & = \mat{X}^\intercal (\mat{X}\vec{\beta} - \vec{y}) = \zeros \implies \\
     \mat{X}^\intercal \mat{X}\vec{\beta} & = \mat{X}^\intercal \vec{y}.
   \end{aligned}
 \]
-This system\footnote{We have ignored the intercept \(\beta_0\) here for simplicity, but it could be incorporated easily by prepending a vector of ones to \(\mat{X}\).} is called the \emph{normal equations}. Solving the system in \(\beta\) yields the ordinary least squares estimate, which, for a one-dimensional problem is equivalent to locating the ``bottom'' of the function \(f(\beta)\) in \Cref{fig:1dconvexity-convex}. It might be tempting to want to simply invert \(\mat{X}^\intercal\mat{X}\) here and premultiply by both sides to yield an explicit solution of the form
+This system is called the \emph{normal equations}. Solving the system in \(\beta\) yields the ordinary least squares estimate, which, for a one-dimensional problem is equivalent to locating the ``bottom'' of the function \(f(\beta)\) in \Cref{fig:1dconvexity-convex}. It might be tempting to want to simply invert \(\mat{X}^\intercal\mat{X}\) here and premultiply by both sides to yield an explicit solution of the form
 \[
   \vec{\beta} = (\mat{X}^\intercal\mat{X})^{-1}\mat{X}^\intercal\vec{y}
 \]
@@ -395,19 +395,19 @@ Regardless, however, OLS regression can be solved directly and with accuracy at 
 
 All the problems that we have covered so far: ordinary least-squares regression, the lasso, the elastic net, and SLOPE are all convex, which is the class of problems this thesis focuses on. Being convex, however, does not necessarily mean that the problem is easy to solve. The lasso, \Cref{pb:lasso}, for instance, is a convex problem, but the involvement of the inequality constraint means that a direct solution is not readily available.
 
-Somewhat remarkably, however, it actually \emph{is} possible to solve the lasso directly, as long as we also solve the full lasso path up to the \(t\) that we want. The class of methods that makes this possible are called \emph{homotopy algorithms} since they can be used to solve the problem for all values they are parameterized by (in this case \(t\)). The first homotopy method for the lasso was introduced by \textcite{osborne2000,osborne2000a} but it is the LARS algorithm~\parencite{efron2004}, that we already saw in action at the beginning of the section, which popularized the method for the lasso.
+Somewhat remarkably, however, it actually \emph{is} possible to solve the lasso directly, as long as we also solve the full lasso path up to the \(t\) that we want. The class of methods that makes this possible are called \emph{homotopy algorithms} since they can be used to solve the problem for all values they are parameterized by (in this case \(t\)). The first homotopy method for the lasso was introduced by \textcite{osborne2000,osborne2000a} but it is the least angle regression (LARS) algorithm~\parencite{efron2004}, that we saw in action at the beginning of the section, which has popularized the method for the lasso.
 
-In essence, homotopy methods for the lasso are based on the idea that the model can be solved directly if we know the support of the solution (the identity of the non-zero coefficients). Based on this idea, we start with the empty support at \(t=0\). From this point, it is possible to say which features will become active first and at what \(t\) this happens, which makes it possible to then solve the problem (directly) a this value of \(t\). The process is repeated until the entire path has been computed. We give a rough, but slightly more formalized, description of the method in \Cref{alg:homotopy}.
+In essence, homotopy methods for the lasso are based on the idea that the model can be solved directly if we know the support of the solution (the identity of the non-zero coefficients). Based on this idea, we start with the empty support at \(t=0\). From this point, it is possible to say which features will become active first and at what \(t\) this happens, which makes it possible to then solve the problem (directly) at this value of \(t\). The process is repeated until the entire path has been computed. We give a rough, but slightly more formalized, description of the method in \Cref{alg:homotopy}.
 
 \begin{algorithm}
   \caption{A rough outline of the homotopy method for the lasso path. The steps in lines 3 and 4 represent the critical aspect of the algorithm, but are omitted here for brevity. They are not, however, particularly demanding computationally. Instead, the primary costs come from the linear systems that need to be solved at each step of the path.}
   \label{alg:homotopy}
-  \KwIn{$\vec{\beta}^{(0)} = \zeros$, $t \gets 0$, $\mathcal{A} = \emptyset$, $i = 0$}
+  \KwIn{$\vec{\beta}^{(0)} = \zeros$, $t = 0$, $\mathcal{A} = \emptyset$, $i = 0$}
   \Repeat{$|\mathcal{A}| = p$}{
   $i \gets i + 1$\;
   $t \gets$ next value for which the support changes\;
   $\mathcal{A} \gets$ support at $t$\;
-  $\vec{\beta}^{(i)}_{\mathcal{A}} \gets \arg\min_{\vec{\beta} \in \mathbb{R}^{|\mathcal{A}|}} f(\vec{\beta})$\;
+  $\vec{\beta}^{(i)}_{\mathcal{A}} \gets \arg\min_{\vec{\beta} \in \mathbb{R}^{|\mathcal{A}|}, \lVert \bvec \rVert_1 \leq t} f(\vec{\beta})$ \;
   $\vec{\beta}^{(i)}_{\mathcal{A}^C} \gets \zeros$\;
   }
 \end{algorithm}
@@ -416,11 +416,11 @@ At the time that these methods were introduced, they offered a remarkable boost 
 
 Since the elastic net can be recast as a lasso problem, it also means that the same homotopy methods can be used also in this case. In addition, there now also exists homotopy methods for SLOPE~\parencite{nomura2020,dupuis2023}, which comes from the SLOPE path sharing the piecewise-linear property of the lasso path (although the SLOPE path is typically more complicated and features more changes in support).
 
-Even if these homotopy methods provide a much-wanted upgrade compared to the original method in the high-dimensional setting, it is nevertheless this domain that they ultimately struggle to deal with. The root of this problem is that there are at least \(\min(n,p)\) kinks (changes in support) along the full lasso path---and in the worst case as many as \((3^p + 1)/2\) such changes~\parencite{mairal2012}. The algorithm has to solve an equivalent number of OLS regression problems, albeit at a complexity much reduced from that of solving the full problem,\footnote{LARS, for instance, incrementally update a Cholesky factorization of the Hessian matrix \(\mat{X}^\intercal\mat{X}\).} which, in the end, means that the method has found itself outperformed by iterative optimization methods~\parencite{friedman2010}, which we will introduce in the next section.
+Even if these homotopy methods provide a much-wanted upgrade compared to the original method in the high-dimensional setting, it is nevertheless this domain that they ultimately struggle to deal with. The root of this problem is that there are at least \(\min(n,p)\) kinks (changes in support) along the full lasso path---and in the worst case as many as \((3^p + 1)/2\) such changes~\parencite{mairal2012}. The algorithm has to solve an equivalent number of OLS regression problems, albeit at a complexity much reduced from that of solving the full problem,\footnote{LARS, for instance, incrementally updates a Cholesky factorization of the Hessian matrix \(\mat{X}^\intercal\mat{X}\).} which, in the end, means that the method has found itself outperformed by iterative optimization methods~\parencite{friedman2010}, which we will introduce next.
 
 \subsection{Iterative Optimization}\label{sec:iterative-optimization}
 
-In iterative optimization, we start with an initial guess of the solution (usually \(\vec{\beta} = \zeros\)) and then update it step-by-step until we get ``close enough'' to the optimum.\footnote{As you might expect, defining ``close enough'' is not at all a trivial matter.} This puts them apart from the direct methods we covered in the previous section, which typically involve solving a system of equations or a similar problem and yield a solution directly and at machine precision.
+In iterative optimization we start with an initial guess of the solution (such as \(\vec{\beta} = \zeros\)) and then update it step-by-step until we get ``close enough'' to the optimum.\footnote{As you might expect, defining ``close enough'' is not at all a trivial matter.} This puts them apart from the direct methods we covered in the previous section, which typically involve solving a system of equations or a similar problem and yield a solution directly and at machine precision.
 
 \subsubsection{Gradient Descent}
 
@@ -438,7 +438,7 @@ and then, finally, solve for \(\bvec\), which gives the gradient descent update
 \[
   \bvec^+ =\argmin_{\bvec \in \mathbb{R}^p} f'(\bvec; \bvec') = \bvec' - \tau \nabla f(\bvec').
 \]
-The method, which is simple this step repeated in each iteration, is outlined in \Cref{alg:gradient-descent}.
+The method, which is simply this step repeated in each iteration, is outlined in \Cref{alg:gradient-descent}.
 
 Observe that the \(\tau\) we used when we replaced the Hessian with a diagonal matrix is the step size in the gradient descent algorithm. This is the key parameter in the algorithm, which controls how far we move in the direction of the negative gradient.
 In \Cref{fig:gradient-descent}, we show how gradient descent works for simple problems in one and two features.
@@ -488,7 +488,7 @@ is the projection operator that projects \(\vec{u}\) onto the feasible region \(
   }
 \end{algorithm}
 
-\Cref{fig:projected-gradient-descent} shows the method in action for a two-dimensional lasso problem. Note how the gradient step (dotted lines) takes the algorithm outside the feasible region and that the projection step (solid lines) then moves the solution back to the feasible region.
+\Cref{fig:projected-gradient-descent} shows the method in action for a two-dimensional lasso problem. Note how the gradient step (dotted lines) takes the current estimate outside the feasible region but that the projection step (solid lines) then moves the solution back to the feasible region.
 
 \begin{figure}[htpb]
   \centering
@@ -631,7 +631,7 @@ In conclusion, proximal gradient descent is a simple algorithm with strong conve
 
 \subsubsection{Proximal Coordinate Descent}
 
-Coordinate descent is a simple algorithm: update one coefficient (coordinate) at a time by finding the minimizer with respect to that coefficient. In other words, we solve a one-dimensional problem at each iteration of the algorithm. The algorithm extends naturally to the case when we have a composite objective of the form \(f = h + g\), as in the case of proximal gradient descent, provided that \(h\) is differentiable and \(g\) is convex and \emph{separable} in \(\bvec\). Formally, this algorithm is called \emph{proximal coordinate descent}. In this text, however, we will also allow ourselves a slight misuse of nomenclature and simply call it \emph{coordinate descent}. The basic outline of the algorithm is given in \Cref{alg:pcd}.
+Coordinate descent is a simple algorithm: update one coefficient (coordinate) at a time by taking a gradient step with respect to that coefficient. In other words, we solve a one-dimensional problem at each iteration of the algorithm. The algorithm extends naturally to the case when we have a composite objective of the form \(f = h + g\), as in the case of proximal gradient descent, provided that \(g\) is differentiable and \(h\) is convex as well as \emph{separable} in \(\bvec\). Formally, this algorithm is called \emph{proximal coordinate descent}, but we will allow ourselves the slightly more informal but simpler \emph{coordinate descent}. We give a basic outline of the method in \Cref{alg:pcd}.
 
 \begin{algorithm}[hbtp]
   \caption{Proximal coordinate descent. Note that the implementation given here is designed for illustration; many improvements can be made that are critical to the practical performance of the algorithm.}
@@ -643,7 +643,7 @@ Coordinate descent is a simple algorithm: update one coefficient (coordinate) at
   }
 \end{algorithm}
 
-For the lasso, the coordinate descent update in \Cref{alg:pcd-update}~(\Cref{alg:pcd}) is particularly cheap and amounts only to soft-thresholding of the partial residual. In \Cref{fig:pcd-lasso}, we show a simple example of how coordinate descent works for a two-dimensional lasso problem.
+For the lasso, the coordinate descent update in \Cref{alg:pcd-update}~(\Cref{alg:pcd}) is particularly cheap and amounts only to soft-thresholding of the partial residual, which is part of the reason for why it is so efficient in this case. In \Cref{fig:pcd-lasso}, we show a simple example of how coordinate descent works for a two-dimensional lasso problem.
 
 \begin{figure}[htpb]
   \centering
@@ -654,7 +654,7 @@ For the lasso, the coordinate descent update in \Cref{alg:pcd-update}~(\Cref{alg
   \label{fig:pcd-lasso}
 \end{figure}
 
-There are varies strategies for picking the coefficient to optimize over in step three. The simplest and most common alternative is to cycle through the coefficients one by one, which is called \emph{cyclic} coordinate descent. Another common alternative is to pick the coefficient at random, which makes for an algorithm that is easier to analyze than cyclic coordinate descent and somewhat more robust, but which also, in our experience, usually slightly slower.
+There are varies strategies for picking the coefficient to optimize over in step three. The simplest and most common alternative is to cycle through the coefficients one by one, which is called \emph{cyclic} coordinate descent. Another common alternative is to pick the coefficient at random, which makes for an algorithm that is easier to analyze than cyclic coordinate descent and somewhat more robust, but which also, in our experience, is usually slightly slower.
 
 At face-value it may seem somewhat surprising that this simple strategy should outperform proximal gradient descent, which considers all features simultaneously, particularly in light of the fact that proximal gradient descent sports better convergence rates~\parencite{wright2015}. Yet, barring a few exceptions, this is precisely the case~(\Cref{fig:cd-vs-pgd}).
 
@@ -662,16 +662,16 @@ At face-value it may seem somewhat surprising that this simple strategy should o
   \centering
   \includegraphics[]{figures/cd-vs-pgd.pdf}
   \caption{%
-    Proximal coordinate descent versus accelerated proximal gradient descent~(FISTA) for two datasets: \data{news20}~\parencite{keerthi2005} and \data{RCV1}~\parencite{lewis2004}. The dimensions of the data are $n=\num{199961}$, $p=\num{355191}$ for \data{news20} and $n = \num{20242}$,  $p=\num{47236}$ for \data{RCV1}. The response in both cases is binary and we fit a standard lasso model In both cases we normalize with maximum--absolute value scaling. The comparisons were made using the \pkg{benchopt} package~\parencite{moreau2022a}.
+    Proximal coordinate descent versus accelerated proximal gradient descent~(FISTA) for two datasets: \data{news20}~\parencite{lang1995} and \data{RCV1}~\parencite{lewis2004}. The dimensions of the data are $n=\num{199961}$, $p=\num{355191}$ for \data{news20} and $n = \num{20242}$,  $p=\num{47236}$ for \data{RCV1}. The response in both cases is binary and we fit a standard lasso model In both cases we normalize with maximum--absolute value scaling. The comparisons were made using the \pkg{benchopt} package~\parencite{moreau2022a}.
   }
   \label{fig:cd-vs-pgd}
 \end{figure}
 
 The counterintuitive nature of this result may explain why coordinate descent algorithms were initially largely ignored in the literature on optimization. \textcite{shevade2003,fu1998a, daubechies2004} all wrote (relatively) early papers on coordinate-descent algorithms for the lasso, yet these initially received scant attention. It was only several years later that a paper by \textcite{friedman2007} and corresponding software implementation in the \lang{R} package \pkg{glmnet}~\parencite{friedman2010} caused the method to grow in popularity.
 
-The main reason for why coordinate descent works so well for the lasso, the elastic net, and many related problems is related to the size of the steps that the algorithms can take (while still guaranteeing convergence). In the least-squares case, proximal gradient descent is limited by a step size of \(\tau = 1/\lVert \mat{X}\rVert_2\), whereas coordinate descent can take steps of size \(\tau_j =1/\lVert \vec{x}_j \rVert_2^2\), which for much real data are decidedly larger for many of the features and hence promote faster convergence. For \data{news20}, for instance, we have \(\lVert \mat{X}\rVert_2 = 161\) whereas the median of \(\{\lVert \vec{x}_j\rVert_2^2 : j = 1,2,\dots,p\}\) is \(1.40\) (interquartile range: 1.26--1.60, maximum: 34.4). The price we pay for this increase in step size is a limit to one direction at a time. This can pose problems in the case when there is large correlation between some features, since coordinate descent then may struggle to break this dependency apart.\footnote{Note that proximal gradient descent is also not well-equipped to deal with this situation. Instead, this is the setting where Hessian-based methods such as proximal Newton~\parencite{lee2014} dominate.} Empirically, however, we have found coordinate descent to largely dominate proximal gradient descent.
+The main reason for why coordinate descent works so well for the lasso, the elastic net, and many related problems is related to the size of the steps that the algorithms can take (while still guaranteeing convergence). In the least-squares case, proximal gradient descent is limited by a step size of \(\tau = 1/\lVert \mat{X}\rVert_2\), whereas coordinate descent can take steps of size \(\tau_j =1/\lVert \vec{x}_j \rVert_2^2\), which for much real data are decidedly larger for many of the features and hence promote faster convergence. For \data{news20}~\parencite{lang1995}, for instance, we have \(\lVert \mat{X}\rVert_2 = 161\) whereas the median of \(\{\lVert \vec{x}_j\rVert_2^2 : j = 1,2,\dots,p\}\) is \(1.40\) (and with a maximum of 34.4). The price we pay for this increase in step size is a limit to one direction at a time. This can pose problems in the case when there is large correlation between some features, since coordinate descent then may struggle to break this dependency apart.\footnote{Note that proximal gradient descent is also not particularly well-equipped to deal with this situation. Instead, this is the setting where Hessian-based methods such as proximal Newton~\parencite{lee2014} dominate.} Empirically, however, we have found coordinate descent to largely dominate proximal gradient descent.
 
-As in the case proximal gradient descent, coordinate descent can also be accelerated via the Nesterov scheme~\parencite{nesterov1983} or Anderson acceleration~\parencite{bertrand2021}. In practice, however, we have found that the benefit of acceleration is lower in the case of coordinate descent than it is for gradient descent.
+As in the case of proximal gradient descent, coordinate descent can also be accelerated via the Nesterov scheme~\parencite{nesterov1983} or Anderson acceleration~\parencite{bertrand2021}. In practice, however, we have found that the benefits of acceleration are smaller in the case of coordinate descent than they are for proximal gradient descent.
 
 One problem with coordinate descent, however, is that it requires the objective to be separable in the optimization variable \(\vec{\beta}\); this is not the case for SLOPE, which makes the method inapplicable for this problem.
 
@@ -683,7 +683,7 @@ Although optimization algorithms are fundamental in ensuring good performance in
 
 Screening rules are a remarkably efficient method for speeding up the optimization of sparse regression methods. They are based on the following reasoning:
 \begin{enumerate}
-  \item We know that the solution is going to be sparse, especially if \(p \gg n\)\footnote{Recall, for instance, that the lasso can only select \(\min(n, p)\) features.}.
+  \item We know that the solution is going to be sparse, especially if \(p \gg n\).\footnote{Recall, for instance, that the lasso can only select \(\min(n, p)\) features.}
   \item We also know something about the importance of the features, even before fitting the model, since we for instance (as in \Cref{fig:sparse-signal}) can compute the correlation between the features and the response. In addition to this, we are also typically interested in solving for a range of regularization parameters, which means that the problem we are currently trying to solve is likely related to a problem we have already solved.
   \item Therefore, we might be better of by only considering a subset of the features when solving the problem. And if this subset is small and selecting it is cheap, then we should be able to save a lot of time.
 \end{enumerate}
@@ -695,12 +695,11 @@ In practice, this means that if you have a dataset of, say, one million features
 
 The screening rule introduced by \textcite{elghaoui2010} is a \emph{safe} screening rule, meaning that all of the features discarded by the rule are guaranteed to be absent at the optimum. As it turns out, however, this requirement on safety in general leads to rules that are overly conservative. This was made clear in a paper by \textcite{tibshirani2012}, in which they introduced the \emph{strong screening rule for the lasso}. This rule uses an initial screening test that is \emph{heuristic} (as opposed to safe), which means that it may discard features that actually are part of the solution. This necessitates a check of the optimality conditions after solving the reduced problem and, in case any features were incorrectly discarded, a refitting of the model with these features icluded. As the authors showed, however, these \emph{violations} of the screening rule are so rare in practice that there is often no need to refit. And if there is, the estimate from the reduced problem is often so close to the optimum of the real problem that only a few extra iterations of the optimization algorithm are needed.
 
-It is important to highlight that the nomenclature for screening rules is quite misleading.\footnote{We stress this point since we have (repeatedly) found this fact to stump reviewers of our papers.} Even if the screening performed by the strong rule is \emph{not} safe, the actual screening rule method \emph{is}, which stems directly from the fact that all of these methods include checks of the optimality conditions in order to safeguard against discarding features that are part of the solution.\footnote{There \emph{are} screening rules that actually are unsafe, but they are used for an altogether different purpose in which one is interested not just in screening, but also changing the model (for instance the lasso) itself.} In other words, even though we call some rules \emph{safe} and some \emph{heuristic}, they are in fact \emph{all} safe as they are implemented in practice.
+It is important to highlight that the nomenclature for screening rules is quite misleading.\footnote{We stress this point since we have (repeatedly) found this fact to stump reviewers of our papers.} Even if the screening performed by the strong rule is not safe, the actual screening rule method \emph{is}, which stems directly from the fact that all of these methods include checks of the optimality conditions in order to safeguard against discarding features that are part of the solution.\footnote{There \emph{are} screening rules that actually are unsafe, but they are used for an altogether different purpose in which one is interested not just in screening, but also changing the model (for instance the lasso) itself.} In other words, even though we call some rules \emph{safe} and some \emph{heuristic}, they are in fact \emph{all} safe as they are implemented in practice.
 
-\textcite{tibshirani2012} also introduced the notion of \emph{sequential} screening rules, meaning that screening is performed along the regularization (lasso) path with the solution at the current step on the path as the starting point for the screening rule, which significantly impoves the effectiveness of the rule. One problem with both SAFE and the strong rule, however, is that their effectiveness decrease when features in the design are heavily correlated---the problem is particularly severe in SAFE. This lead \textcite{tibshirani2012} to conclude, which they also demonstrate empirically, that the most efficient screening method (at least in the sequential case) is to begin with the set of features that have so far \emph{ever} been active along the path: \(\mathcal{E}\), and solve the problem for this set first. After reaching a solution for this set, the optimality checks are then performed on the features present in the strong rule set \(\mathcal{S}\), but not in \(\mathcal{E}\) (\(\mathcal{S} \setminus \mathcal{E}\)). If there are any violations, which is often the case since no screening was performed, these features are entered into \(\mathcal{E}\). The problem is then solved, again, but this time for the updated \(\mathcal{E}\). This procedure is then repeated until no violations are found among \(\mathcal{S} \setminus \mathcal{E}\). Finally, when this happens, the optimality conditions are checked for the entire set of features, and if no violations are found, the solution is deemed to be found. If there are violations, the procedure repeats with these features added to \(\mathcal{E}\).
+\textcite{tibshirani2012} also introduced the notion of \emph{sequential} screening rules, meaning that screening is performed along the regularization (lasso) path with the solution at the current step on the path as the starting point for the screening rule, which significantly impoves the effectiveness of the rule. One problem with both SAFE and the strong rule, however, is that their effectiveness decrease when features in the design are heavily correlated---the problem is particularly severe in SAFE. This lead \textcite{tibshirani2012} to conclude, which they also demonstrate empirically, that the most efficient screening method (at least in the sequential case) is to begin with the set of features that have so far \emph{ever} been active along the path: \(\mathcal{E}\), and solve the problem for this set first. After reaching a solution for this set, the optimality checks are then performed on the features present in the strong rule set \(\mathcal{S}\), but not in \(\mathcal{E}\) (\(\mathcal{S} \setminus \mathcal{E}\)). If there are any violations, which is often the case since no screening was performed, these features are entered into \(\mathcal{E}\). The problem is then solved, again, but this time for the updated \(\mathcal{E}\). This procedure is then repeated until no violations are found among \(\mathcal{S} \setminus \mathcal{E}\). Finally, when this happens, the optimality conditions are checked for the entire set of features, and if no violations are found, then we are done. If there are violations, however, the procedure repeats with these features added to \(\mathcal{E}\).
 
-Since these two papers were published, there has been a slew of research around screening rules for the lasso as well as other sparse regression problems. Other notable examples of safe rules include the sphere tests~\parencite{xiang2011},
-R-region test~\parencite{xiang2012}, and
+Since these two papers were published, there has been an explosion in research around screening rules for the lasso as well as other sparse regression problems. Some notable examples of this include the sphere tests~\parencite{xiang2011}, R-region test~\parencite{xiang2012}, and
 Gap~Safe~\parencite{fercoq2015,ndiaye2017}.
 
 We have so far discussed screening rules in relatively informal terms. In the next section, we will provide a more formal treatment of the topic, which we hope will provide a better understanding of how the methods work.
@@ -746,7 +745,7 @@ then it must also hold that \smash{\(\beta_j^* = 0\)}. In other words, if the ab
 
 So, if we knew, before fitting, that \(|c_j| < \lambda\), then we could safely discard feature \(j\) from the problem and still solve it as if it were always there. The problem, however, is that we do not have access to the correlation vector before fitting the model.
 
-What we can do instead, however, is to estimate the correlation vector and use that in the place of the true value. Let us say that we are at step \(k\) on the path and have computed the solution at this step; then we also know \(\vec{c}\) at this step (\(\vec{c}^{(k)}\)). Next, we want to predict what \(\vec{c}^{(k+1)}\) will be in order to screen features for this (upcoming) step. One rather conservative approach for this is to assume that gradient of the correlation vector is bounded by one, in other words, we introduce the approximation
+What we can do instead, however, is to estimate the correlation vector and use that in the place of the true value. Let us say that we are at step \(k\) on the path and have computed the solution at this step; then we also know \(\vec{c}\) at this step (\smash{\(\vec{c}^{(k)}\)}). Next, we want to predict what \smash{\(\vec{c}^{(k+1)}\)} will be in order to screen features for this (upcoming) step. One rather conservative approach for this is to assume that gradient of the correlation vector is bounded by one, in other words, we introduce the approximation
 \[
   \hat{c}_j^{(k+1)} = c_j^{(k)} + \sign\left(c_j^{(k)}\right)\left(\lambda_k - \lambda_{k+1}\right).
 \]
@@ -773,7 +772,7 @@ since we know that \(\bvec = \zeros\) at this point. This means that the largest
 \]
 We have used this setting repeatedly throughout this text as a starting point for the lasso path (in the unconstrained case).
 
-This also, however, highlights a property of the lasso that is true of the elastic net and SLOPE as well: it is sensitive to the scales of the features. The larger the values of \(\vec{x}_j\), the larger the inner product \smash{\(\vec{x}_j^\intercal \vec{y}\)} becomes, which means that if feature \(j\) for instance is the length of a person, then it will enter the path earlier if our measurements are in meters rather than centimeters. This is of course not desireable. To deal with this issue, we need to \emph{normalize} the features, which is the topic of the next section.
+This also, however, highlights a property of the lasso that is true of the elastic net and SLOPE as well: it is sensitive to the scales of the features. The larger the values of \(\vec{x}_j\), the larger the inner product \smash{\(\vec{x}_j^\intercal \vec{y}\)} becomes, which means that if feature \(j\) for instance is the length of a person, then it will enter the path earlier if our measurements are in meters rather than centimeters. This is naturally not desireable in general. To deal with this issue, we need to \emph{normalize} the features, which is the topic of the next section.
 
 \section{Normalization}\label{sec:normalization}
 
@@ -785,7 +784,7 @@ For a simple example of this behavior, assume that we have a dataset that is gen
 \]
 with \(\varepsilon \sim \normal(0,1)\), identically and independently for each \(i = 1,2,\dots,n\).
 
-In other words, we have generated our features from two normally distributed variables, both with mean zero and standard deviation 2 and 4, respectively, and with no correlation between them. We have constructed our problem such that the effects on the response for the two features are equivalent, in the sense that a change of one standard deviation in either feature will result in a change of one in the response.
+In other words, we have generated our features from two normally distributed variables, both with mean zero and standard deviation 4 and 1, respectively, and with no correlation between them. We have constructed our problem such that the effects on the response for the two features are equivalent in the sense that a change of one standard deviation in either feature will result in a change of one in the response.
 
 Since the errors are generated according to the assumptions of the ordinary least squares model, we will recover the true coefficients in expectance. And when we compute the standardized coefficients from our estimates, according to
 \[
@@ -822,7 +821,7 @@ Unfortunately, there is little literature to fall back on in this case; in fact,
   \label{fig:normalized-realdata-lasso-paths}
 \end{figure}
 
-This concludes our introduction to the topics of this thesis, including some of the issues and challenges faced by methods and practices in this field. In the next section, we will introduce the papers that this thesis is based on and briefly summarize their contributions in tackling these challenges.
+This concludes our introduction to the topics of this thesis, including some of the issues and challenges faced by methods and practices in these fields. In the next section, we will introduce the papers that this thesis is based on and briefly summarize their contributions in tackling these challenges.
 
 \section{Summary of the Papers}
 

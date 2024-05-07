@@ -13,7 +13,7 @@
 % chapter title for the main part.
 \newcommand{\myTitle}{\myMainTitle: \mySubTitle}
 
-\newcommand{\myFaculty}{Lund University School of Economics and Business Administration}
+\newcommand{\myFaculty}{Lund University School of Economics and Management}
 \newcommand{\myDepartment}{Department of Statistics}
 \newcommand{\myAddress}{Box 7080\\SE--220 07 Lund\\Sweden} % Three lines maximum!
 
@@ -22,10 +22,11 @@
 \newcommand{\myOpponent}{Professor Mário A. T. Figueiredo (Instituto Superior Técnico, Lisbon, Portugal)}
 
 \newcommand{\myDefenceAnnouncement}{%
-  To be presented, with the permission of the
-  \myFaculty\xspace of Lund University, for public criticism in the Clark Kent
-  lecture hall (Kentsalen) at the \myDepartment\xspace
-  on Sunday, the 34th of December \myYear\xspace at 24:00. }
+  By due permission of the Department of Statistics,\\
+  School of Economics and Management, Lund University, Sweden.\\
+  To be defended in Karlssonsalen, Holger Crafoord Centre, Lund\\
+  on June~28, \myYear\xspace, at 10:15.
+}
 \newcommand{\myCoverFront}{%
   \noindent {\bf Cover illustration front:} The elastic net path for a dataset of diabetes patients
 }
@@ -38,40 +39,39 @@
 
 \newcommand{\myISBNprint}{978-91-8104-076-0}
 \newcommand{\myISBNpdf}{978-91-8104-077-7}
-\newcommand{\myFormSignDate}{2024-05-03}
+\newcommand{\myFormSignDate}{2024-05-05}
 % TODO: fix form sign date
 
 % total page number is computed automatically:
-\newcommand{\myPages}{\lastpageref{LastPages}}
+\newcommand{\myPages}{\pageref*{LastPages}}
 
 \newcommand{\myFormDefenceDate}{2024-06-28}
 \newcommand{\myFormKeywords}{%
-  high-dimensional statistics, sparse regression, lasso, SLOPE, optimization, screening rules, normalization}
+  high-dimensional statistics, sparse regression, lasso, ridge regression, SLOPE, optimization, screening rules, normalization}
 
 % Write a short english abstract of the thesis here, goes into the data sheet page 4. 
 \newcommand{\myAbstract}{%
-  Datasets are growing in size and complexity, especially with respect to the number of features of the problems that we study, which now often number in the millions. This has lead to a surge in interest for sparse regression models, which help make sense of these datasets by modeling them efficiently whilst still retaining a notion of explainability. Because these datasets are so large, however, they have prompted a need for effective optimization methods with which to apply them---in this thesis, we present several contributions to this area of research.
+  Datasets are growing in size and complexity, especially with respect to the number of features of the problems that we study, which now often number in the millions. This has lead to a surge in interest for sparse regression models, which help make sense of these datasets by modeling them efficiently whilst still retaining a notion of explainability. Because these datasets are so large, however, they have prompted a need for effective methods with which to apply them---in this thesis, we present several contributions to this area of research.
 
-  In papers \I--\III, we focus on screening rules for the lasso and sorted \(\ell_1\) penalized regression (SLOPE)---two sparse regression methods. Screening rules are algorithms that discard a portion of the features in the model before optimization takes place, which means that we effectively get to solve smaller problems than the original ones, yet still recover the same solutions. For the lasso, there has been a large body of work on screening rules since they were first introduced in 2010. In the case of SLOPE, however, there did not exist any screening rule until our work in paper~\I, in which we introduce the first such rule: the strong screening rule for SLOPE.
+  In papers \I--\III, we focus on screening rules for the lasso and sorted \(\ell_1\) penalized regression (SLOPE)---two sparse regression methods. Screening rules are algorithms that discard a portion of the features in the model before solving it, which means that we effectively get to tackle a smaller problem than the original ones, yet still recover the same solutions. For the lasso, there has been a large body of work on screening rules since they were first introduced in 2010. In the case of SLOPE, however, there did not exist any screening rule until our work in paper~\I, in which we introduce the first such rule: the strong screening rule for SLOPE.
 
   In paper \II, we continue our work on screening rules by introducing look-ahead screening rules for the lasso, which enable screening of features for a stretch of the lasso path, rather than just for the following step. In essence, this allows us save computation time by screening features only when it is necessary. In paper \III, we then tackle the case of using screening rules with highly correlated features, which is a setting in which previous screening rules have struggled. We propose the Hessian screening rule, which uses second-order information about the problem in order to provide less conservative screening along the lasso path. In empirical studies we show that our screening rule leads to large improvements in performance.
 
-  In paper~\IV, we introduce benchopt: a framework for benchmarking optimization methods in a transparent, reproducible, and collaborative manner. The current field of research in optimization is overflowing with new algorithms, each time proclaimed by its authors to improve upon its predecessors. It is easy to find benchmarks that directly contradict one another, which is foten the result of variations in the factors that impact the performance of the optimization methods studied. Benchopt makes it easy to construct benchmarks that transparently and objectively compare these methods to one another.
+  In paper~\IV, we introduce benchopt: a framework for benchmarking optimization methods in a transparent, reproducible, and collaborative manner. The current field of research in optimization is overflowing with new algorithms, each time proclaimed by its authors to improve upon its predecessors. It is easy to find benchmarks that directly contradict one another, which often stems for varied use of parameters, different software implementations, and hardware setups. Benchopt makes it easy to construct benchmarks that transparently and objectively compare these methods to one another.
 
   One particularly effective optimization method for the lasso is coordinate descent. Unfortunately, we cannot directly use coordinate descent for SLOPE since the problem is not separable. In paper~\V, however, we present a hybrid method which circumvents this issue by incorporating proximal gradient descent steps to tackle the separability issue, whilst still enjoying the effectiveness of coordinate descent.
 
-  In the final paper, paper~\VI, we study the use of normalization for the lasso when the data is made up of binary features. Normalization is necessary in regularized regression to put features on the same scale, but its effects are generally not well-understood. In our paper we show that the solutions in the lasso and ridge regression depend strongly on the class balance of the binary features and that this effect depends on the type of normalization used.
+  In the final paper, paper~\VI, we study the use of normalization for the lasso and ridge regression when the data is made up of binary features. Normalization is necessary in regularized regression to put features on the same scale, but its effects are generally not well-understood. In our paper we show that the solutions in the lasso and ridge regression depend strongly on the class balance of the binary features and that this effect depends on the type of normalization used.
 }%
 
 % --- Shortcut thesis commands for paper references and titles ---
 % Included papers - only need to type this once
-% \newcommand{\PaperIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-% \newcommand{\PaperIIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-% \newcommand{\PaperIIIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-% \newcommand{\PaperIVauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-% \newcommand{\PaperVauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-% \newcommand{\PaperVIauthor}{\textbf{F. Lastname}, C. Coauthor, \ldots}
-%
+\newcommand{\PaperIauthor}{Johan Larsson, Małgorzata Bogdan, and Jonas Wallin}
+\newcommand{\PaperIIauthor}{Johan Larsson}
+\newcommand{\PaperIIIauthor}{Johan Larsson and Jonas Wallin}
+\newcommand{\PaperIVauthor}{Thomas Moreau, Mathurin Massias, Alexandre Gramfort, Pierre Ablin, Pierre-Antoine Bannier, Benjamin Charlier, Mathieu Dagréou, Tom Dupré la Tour, Ghislain Durif, Cassio F. Dantas, Quentin Klopfenstein, Johan Larsson, En Lai, Tanguy Lefort, Benoit Malézieux, Badr Moufad, Binh T. Nguyen, Alain Rakotomamonjy, Zaccharie Ramzi, Joseph Salmon, and Samuel Vaiter}
+\newcommand{\PaperVauthor}{Johan Larsson, Quentin Klopfenstein, Mathurin Massias, and Jonas Wallin}
+\newcommand{\PaperVIauthor}{Johan Larsson and Jonas Wallin}
 % \newcommand{\PaperIref}{Journal for Superheroes, pp. 1--10}
 % \newcommand{\PaperIIref}{Journal for Bankers, pp. 2--30}
 % \newcommand{\PaperIIIref}{Journal for Superheroes, pp. 1--10}
@@ -119,6 +119,9 @@
 
 \pagestyle{empty}
 
+\includepdf[]{covers/front.pdf}
+\cleardoublepage
+
 \input{tex/frontmatter.tex}
 
 % Quote page
@@ -162,7 +165,67 @@
 
 \chap{Acknowledgements}
 
-\newpage
+% \epigraph{\itshape
+%   And all the fat, skinny people
+%
+%   And all the tall, short people
+%
+%   And all the nobody people
+%
+%   And all the somebody people
+%
+%   I never thought I'd need so many people
+% }{
+%   ---David Bowie
+% }
+
+\epigraph{\itshape
+  % We've got five years, stuck on my eyes
+  %
+  % Five years, what a surprise
+
+  We've got five years, my brain hurts a lot
+
+  Five years, that's all we've got
+}{
+  ---David Bowie
+}
+
+% \epigraph{\itshape
+%   The best thing about being a statistician is you get to play in everybody else's backyard.
+% }{
+%   ---John Tukey
+% }
+
+\noindent It is a perpetual source of amazement to me how anyone could let me loose for five years to do research about more or less whatever I like---and pay me for it. The flip side of this, unfortunately, is that it has only served to exacerbate the impostor syndrome that has kept me company throughout the years.
+
+That's not to say that doing a PhD is \emph{easy}.
+
+It was not particularly easy.
+
+But it \emph{was} made so much easier by all the help I received along the way.
+
+First of all, I want to thank my supervisor Jonas Wallin who has been encouraging and supportive throughout all of my PhD. He has always found time to help out, even when swamped with work of his own, and always shown interest in my ideas even when they were terrible, yet never hesitated to tell me so. I am grateful to him for looking beyond my unorthodox background when accepting me into the program and sorry for my knack for scheduling vacation time during important submission deadlines.
+
+On the same note, I also want to thank my co-supervisor Małgorzata Bogdan for her support throughout the PhD and her patience for my ignorant questions about high-dimensional statistics and SLOPE, which she in fact introduced me to. I especially want to thank her and her husband Krzystof for hosting me in Wrocław and hope I get the pleasure to come back some time in the future.
+
+The Department of Statistics has (with the exception of that time when the school tried to shut us down) been a great place to work. I have appreciated the seemingly universal open-doors policy that its members have subscribed to and the flat organization that have made it easy to participate in the department's activities and voice one's opinions. I believe the latter fact is testament to the leadership style that the department heads during my time, the two Krzystofs: Nowicki and Podgórski, have had.
+
+I want to thank the administrative staff for keeping the ship afloat and for always being helpful and friendly. And I also want to thank the other members of the department for creating a stimulating research environment, friendly lunch-room enviroment, and for the many interesting discussions and fun kick-offs that we have had over the years.
+
+Doing a PhD is solitary, sometimes lonely, work, yet would be much lonelier without the other PhD students at the department: Henrik, Yvette, Ivan, Hanqing, and Mattias. They have been supportive and helpful, reading manuscripts and giving feedback on my work. But mostly I  want to thank them for their friendship and for the many lunches, fikas, hikes, and after-work drinks we have shared. I hope we get to become colleagues again in the future.
+
+Above and beyond all, however, I want to thank my family. My parents, Kerstin and Torbjörn, for all the love and support throughout my life irrespective of the choices I have made. And Henrik and Emma for being there, always. Tove, for following me through thick and thin, being supportive and understanding, and for enduring the bouts of frustration and stress that come with the territory of fast-approaching deadlines---including the one that inches ever closer as I write this text. I am sorry for leaving you hanging as I've gone to conferences half-way across the world, but grateful that I could. I am blessed to have you by my side.
+And finally, Hugo, for being the light of my life.
+
+\bigskip
+
+\begin{flushright}
+  \noindent \emph{Johan Larsson} \\
+  \noindent \emph{May 5, 2024}\\
+\end{flushright}
+
+% \newpage
 
 \chap{Abstract}
 
@@ -170,15 +233,15 @@
 
 \chap{Popular Science Summary}
 
-In this thesis we study the field of big data, where the sheer volume and complexity of information can be overwhelming. The focus is on sparse regression models, a type of statistical model that helps make sense of large datasets by simplifying them in the form of a sparse  representation.
+In this thesis we study the field of big data, where the sheer volume and complexity of information can be overwhelming. We focus on sparse regression models, a type of statistical model that helps make sense of large datasets by simplifying them in the form of a sparse  representation.
 
-The first three papers of the thesis concentrate on screening rules for two types of sparse regression methods: the lasso and sorted \(\ell_1\) penalized regression (SLOPE). Screening rules are like filters that remove some of the less important features of the data before your computer is tasked with processing it. This makes the problem smaller and easier to solve, yet still gives the same results. We introduce the first-ever screening rule for SLOPE and develop look-ahead screening rules for the lasso, which save additional computation time when you do not know how simple you want your model to be. Finally, we also tackle the challenge of using screening rules when data features are highly correlated, proposing a new rule that improves performance in this situation.
+The first three papers of the thesis concentrate on screening rules for two types of sparse regression methods: the lasso and sorted \(\ell_1\) penalized regression (SLOPE). Screening rules are like filters that remove some of the less important features of the data before your computer is tasked with processing it. This makes the problem smaller and easier to solve, yet still provides the same results. We introduce the first-ever screening rule for SLOPE and develop look-ahead screening rules for the lasso, which save additional computation time when you want to solve several lasso models at once. Finally, we also tackle the challenge of using screening rules when data features are highly correlated, proposing a new rule that improves performance in this situation.
 
 The fourth paper introduces benchopt, a tool for comparing different optimization methods. With so many new algorithms being developed, it is hard to know which one is best. Benchopt provides a transparent and objective way to compare these methods.
 
 The fifth paper presents a new optimization method for the lasso, a popular sparse regression model. In the method, we combine two existing methods to overcome a limitation of the lasso, making it more effective.
 
-The final paper explores the impact of normalization---a process that puts all features on the same scale---on the lasso when dealing with binary features. We find that the balance of the binary features (the balance between ones and zeros) and the type of normalization used can significantly affect the results.
+The final paper explores the impact of normalization---a process that attempts to put varying features of the data on the same scale---on the lasso when dealing with binary features. We find that the balance of the binary features (the ratio between ones and zeros) and the type of normalization used can significantly affect the results.
 
 \chap{List of Publications}\label{sec:paperlist}
 
@@ -199,7 +262,7 @@ This thesis is based on the following publications.
         \publication{22nd European Young Statisticians Meeting -- Proceedings.} 22nd European Young
         Statisticians Meeting. Ed. by Andreas Makridis, Fotios S. Milienos, Panagiotis
         Papastamoulis, Christina Parpoula, and Athanasios Rakitzis. Athens, Greece:
-        Panteion university of social and political sciences, pp. 61–65. \isbn{978-960-
+        Panteion University of Social and Political Sciences, pp. 61–65. \isbn{978-960-
           7943-23-1}
         % \item[\III] \fullcite{larsson2022b}
   \item[\III]\papertitle{\PaperIIItitle}\papersep
@@ -212,7 +275,7 @@ This thesis is based on the following publications.
         Johan Larsson, Quentin Klopfenstein, Mathurin Massias, and Jonas Wallin (Apr. 25--27, 2023). In: \publication{Proceedings of the 26th International Conference on Artificial Intelligence and Statistics.} AISTATS 2023. Ed. by Francisco Ruiz, Jennifer Dy, and Jan-Willem van de Meent. Vol. 206.
         Proceedings of Machine Learning Research. Valencia, Spain: PMLR, pp. 4802--4821
   \item[\VI] \papertitle{\PaperVItitle}\papersep
-        %TODO: fill out paper details
+        Johan Larsson and Jonas Wallin (May 5, 2024). \publication{Preprint.}
 \end{description}
 
 \noindent {\small All papers are reproduced with permission of their respective publishers.}
@@ -229,6 +292,7 @@ This thesis is based on the following publications.
 \printbibliography[heading=subbibliography]
 
 \chap{Papers}
+\thispagestyle{empty}
 
 \cleardoublepage
 
@@ -289,6 +353,7 @@ This thesis is based on the following publications.
 \cleardoublepage
 
 \thispagestyle{empty}
+\phantomsection
 \PaperSeparator{3}
 \addcontentsline{toc}{section}{\protect\numberline{\III} {\PaperIIItitle}}
 \markright{\III}
@@ -306,6 +371,7 @@ This thesis is based on the following publications.
 \cleardoublepage
 
 \thispagestyle{empty}
+\phantomsection
 \PaperSeparator{4}
 \addcontentsline{toc}{section}{\protect\numberline{\IV} {\PaperIVtitle}}
 \markright{\IV}
@@ -324,6 +390,7 @@ This thesis is based on the following publications.
 \cleardoublepage
 
 \thispagestyle{empty}
+\phantomsection
 \PaperSeparator{5}
 \addcontentsline{toc}{section}{\protect\numberline{\V} {\PaperVtitle}}
 \markright{\V}
@@ -341,6 +408,7 @@ This thesis is based on the following publications.
 \cleardoublepage
 
 \thispagestyle{empty}
+\phantomsection
 \PaperSeparator{6}
 \addcontentsline{toc}{section}{\protect\numberline{\VI} {\PaperVItitle}}
 \markright{\VI}
@@ -354,5 +422,7 @@ This thesis is based on the following publications.
   viewport=71 55 541 712,
   pagecommand={\thispagestyle{fancy}},
 ]{papers/paper6.pdf}
+
+\includepdf[]{covers/back.pdf}
 
 \end{document}
