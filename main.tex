@@ -3,14 +3,10 @@
 \input{tex/preamble.tex}
 \input{tex/macros.tex}
 
-% Re-usable information (title page, datasheet)
 \newcommand{\myName}{Johan Larsson}
 \newcommand{\myYear}{2024}
 \newcommand{\myMainTitle}{Optimization and Algorithms in Sparse Regression}
 \newcommand{\mySubTitle}{Screening Rules, Coordinate Descent, and Normalization}
-
-% Compact combination of combining title and subtitle, used in datasheet and as
-% chapter title for the main part.
 \newcommand{\myTitle}{\myMainTitle: \mySubTitle}
 
 \newcommand{\myFaculty}{Lund University School of Economics and Management}
@@ -35,15 +31,12 @@
 \newcommand{\myFundingInformation}{%
   {\bf Funding information:} This thesis received no external funding.}
 
-% \newcommand{\mySeries}{\ISSN: $<$ISSN number$>$}
-
 \newcommand{\myISBNprint}{978-91-8104-076-0}
 \newcommand{\myISBNpdf}{978-91-8104-077-7}
 \newcommand{\myFormSignDate}{2024-05-05}
-% TODO: fix form sign date
 
-% total page number is computed automatically:
-\newcommand{\myPages}{\pageref*{LastPages}}
+% \newcommand{\myPages}{\pageref*{LastPages}} % automatic page number
+\newcommand{\myPages}{227}
 
 \newcommand{\myFormDefenceDate}{2024-06-28}
 \newcommand{\myFormKeywords}{%
@@ -62,22 +55,14 @@
   One particularly effective optimization method for the lasso is coordinate descent. Unfortunately, we cannot directly use coordinate descent for SLOPE since the problem is not separable. In paper~\V, however, we present a hybrid method which circumvents this issue by incorporating proximal gradient descent steps to tackle the separability issue, whilst still enjoying the effectiveness of coordinate descent.
 
   In the final paper, paper~\VI, we study the use of normalization for the lasso and ridge regression when the data is made up of binary features. Normalization is necessary in regularized regression to put features on the same scale, but its effects are generally not well-understood. In our paper we show that the solutions in the lasso and ridge regression depend strongly on the class balance of the binary features and that this effect depends on the type of normalization used.
-}%
+}
 
-% --- Shortcut thesis commands for paper references and titles ---
-% Included papers - only need to type this once
 \newcommand{\PaperIauthor}{Johan Larsson, Małgorzata Bogdan, and Jonas Wallin}
 \newcommand{\PaperIIauthor}{Johan Larsson}
 \newcommand{\PaperIIIauthor}{Johan Larsson and Jonas Wallin}
 \newcommand{\PaperIVauthor}{Thomas Moreau, Mathurin Massias, Alexandre Gramfort, Pierre Ablin, Pierre-Antoine Bannier, Benjamin Charlier, Mathieu Dagréou, Tom Dupré la Tour, Ghislain Durif, Cassio F. Dantas, Quentin Klopfenstein, Johan Larsson, En Lai, Tanguy Lefort, Benoit Malézieux, Badr Moufad, Binh T. Nguyen, Alain Rakotomamonjy, Zaccharie Ramzi, Joseph Salmon, and Samuel Vaiter}
 \newcommand{\PaperVauthor}{Johan Larsson, Quentin Klopfenstein, Mathurin Massias, and Jonas Wallin}
 \newcommand{\PaperVIauthor}{Johan Larsson and Jonas Wallin}
-% \newcommand{\PaperIref}{Journal for Superheroes, pp. 1--10}
-% \newcommand{\PaperIIref}{Journal for Bankers, pp. 2--30}
-% \newcommand{\PaperIIIref}{Journal for Superheroes, pp. 1--10}
-% \newcommand{\PaperIVref}{Journal for Superheroes, pp. 1--10}
-% \newcommand{\PaperVref}{Journal for Superheroes, pp. 1--10}
-% \newcommand{\PaperVIref}{Journal for Superheroes, pp. 1--10}
 
 \newcommand{\PaperItitle}{The Strong Screening Rule for SLOPE}
 \newcommand{\PaperIItitle}{Look-Ahead Screening Rules for the Lasso}
@@ -105,17 +90,7 @@
   \end{tikzpicture}
 }
 
-% Not included papers, in case you want to list them
-%\newcommand{\PaperNotIncIauthor}{C. Coauthor, \textbf{X. Someone}}
-%\newcommand{\PaperNotIncIref}{Journal for \ldots}
-%\newcommand{\PaperNotIncItitle}{Boring matter}
-% --- END reusable thesis commands ---
-
 \begin{document}
-
-%%%%%%%%%%%%% First pages with thesis title etc %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% First six pages are contained in a separate file. Normally you should not
-% need to edit it.
 
 \pagestyle{empty}
 
@@ -123,8 +98,6 @@
 \cleardoublepage
 
 \input{tex/frontmatter.tex}
-
-% Quote page
 
 \newpage
 \thispagestyle{empty} % No page number on quote page
@@ -135,67 +108,31 @@
 \null
 \vspace{20ex}
 
-
 \epigraph{\itshape
   There’s a point when you go with what you’ve got. Or you don’t go.
 }{
   ---Joan Didion
 }
 
-\cleardoublepage
-
-\pagestyle{fancy}
-
 % Table of Contents
-\setcounter{page}{1} % Page Roman 1 of the frontmatter
+\cleardoublepage
+\pagestyle{fancy}
+\setcounter{page}{1}
 \setcounter{tocdepth}{1}
 
 {\hypersetup{hidelinks}\tableofcontents}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% List of publications %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Have a long list and want to start on the left page? Here, have a special
-% chapter heading for that!
-%\addcontentsline{toc}{part}{Part 1: Summary}
-%\renewcommand{\chapterheadstartvskip}{}
-%{\let\cleardoublepage\relax \let\chapterheadstartvskip\nop 
-
 \newpage
-
 \chap{Acknowledgements}
 
-% \epigraph{\itshape
-%   And all the fat, skinny people
-%
-%   And all the tall, short people
-%
-%   And all the nobody people
-%
-%   And all the somebody people
-%
-%   I never thought I'd need so many people
-% }{
-%   ---David Bowie
-% }
-
 \epigraph{\itshape
-  % We've got five years, stuck on my eyes
-  %
-  % Five years, what a surprise
-
   We've got five years, my brain hurts a lot
 
   Five years, that's all we've got
 }{
   ---David Bowie
 }
-
-% \epigraph{\itshape
-%   The best thing about being a statistician is you get to play in everybody else's backyard.
-% }{
-%   ---John Tukey
-% }
 
 \noindent It is a perpetual source of amazement to me how anyone could let me loose for five years to do research about more or less whatever I like---and pay me for it. The flip side of this, unfortunately, is that it has only served to exacerbate the impostor syndrome that has kept me company throughout the years.
 
@@ -225,8 +162,6 @@ And finally, Hugo, for being the light of my life.
   \noindent \emph{May 5, 2024}\\
 \end{flushright}
 
-% \newpage
-
 \chap{Abstract}
 
 \myAbstract
@@ -247,16 +182,10 @@ The final paper explores the impact of normalization---a process that attempts t
 
 This thesis is based on the following publications.
 
-% \I	  & {\bf \PaperItitle}\\[2mm]
-% 	  & \PaperIauthor\\
-%           & \PaperIref\\[6mm] 
-
 \begin{description}[leftmargin=!,labelwidth=0.7cm]
-  % \item[\I] \fullcite{larsson2020b}
   \item[\I] \papertitle{\PaperItitle}\papersep
         Johan Larsson, Małgorzata Bogdan, and Jonas Wallin (Dec. 6--12, 2020). In:
         \publication{Advances in Neural Information Processing Systems 33.} 34th Conference on Neural Information Processing Systems (NeurIPS 2020). Ed. by Hugo Larochelle et al. Vol. 33. Virtual: Curran Associates, Inc., pp. 14592--14603. \isbn{978-1-71382-954-6}
-        % \item[\II] \fullcite{larsson2021}
   \item[\II] \papertitle{\PaperIItitle}\papersep
         Johan Larsson (Sept. 6, 2021). In:
         \publication{22nd European Young Statisticians Meeting -- Proceedings.} 22nd European Young
@@ -264,13 +193,10 @@ This thesis is based on the following publications.
         Papastamoulis, Christina Parpoula, and Athanasios Rakitzis. Athens, Greece:
         Panteion University of Social and Political Sciences, pp. 61–65. \isbn{978-960-
           7943-23-1}
-        % \item[\III] \fullcite{larsson2022b}
   \item[\III]\papertitle{\PaperIIItitle}\papersep
         Johan Larsson and Jonas Wallin (Nov. 28--Dec. 9, 2022). In: \publication{Advances in Neural Information Processing Systems 35.} 36th Conference on Neural Information Processing Systems (NeurIPS 2022). Ed. by Sanmi Koyejo, Sidahmed Mohamed, Alekh Agarwal, Danielle Belgrave, Kyunghyun Cho, and Alice Oh. Vol. 35. New Orleans, USA: Curran Associates, Inc., pp. 15823–15835. \isbn{978-1-71387-108-8}
-        % \item[\IV] \fullcite{moreau2022a}
   \item[\IV] \papertitle{\PaperIVtitle}\papersep
         Thomas Moreau, Mathurin Massias, Alexandre Gramfort, Pierre Ablin, Pierre-Antoine Bannier, Benjamin Charlier, Mathieu Dagréou, Tom Dupré la Tour, Ghislain Durif, Cassio F. Dantas, Quentin Klopfenstein, Johan Larsson, En Lai, Tanguy Lefort, Benoit Malézieux, Badr Moufad, Binh T. Nguyen, Alain Rakotomamonjy, Zaccharie Ramzi, Joseph Salmon, and Samuel Vaiter (Nov. 28--Dec. 9, 2022). In: \publication{Advances in Neural Information Processing Systems 35.} 36th Conference on Neural Information Processing Systems (NeurIPS 2022). Ed. by Sanmi Koyejo, Sidahmed Mohamed, Alekh Agarwal, Danielle Belgrave, Kyunghyun Cho, and Alice Oh. Vol. 35. New Orleans, USA: Curran Associates, Inc., pp. 25404–25421. \isbn{978-1-71387-108-8}
-        % \item[\V] \fullcite{larsson2023}
   \item[\V] \papertitle{\PaperVtitle}\papersep
         Johan Larsson, Quentin Klopfenstein, Mathurin Massias, and Jonas Wallin (Apr. 25--27, 2023). In: \publication{Proceedings of the 26th International Conference on Artificial Intelligence and Statistics.} AISTATS 2023. Ed. by Francisco Ruiz, Jennifer Dy, and Jan-Willem van de Meent. Vol. 206.
         Proceedings of Machine Learning Research. Valencia, Spain: PMLR, pp. 4802--4821
@@ -280,12 +206,8 @@ This thesis is based on the following publications.
 
 \noindent {\small All papers are reproduced with permission of their respective publishers.}
 
-% Page numbers arabic 
 \mainmatter
-% Reset table counters to not count the publications table
-\setcounter{table}{0}
-% Reset page counters, this is where it all starts!
-\setcounter{page}{1}
+\setcounter{page}{1} % Reset page counters, this is where it all starts!
 
 \input{tex/introduction.tex}
 
@@ -302,10 +224,6 @@ This thesis is based on the following publications.
 \addcontentsline{toc}{section}{\protect\numberline{\I} {\PaperItitle}}
 \markright{\I}
 \cleardoublepage
-
-% \begin{tikzpicture}[remember picture, overlay]
-%   \node[fill=black, text=white, font=\bfseries\fontsize{50}{55}\selectfont, anchor=east, minimum height=1.5cm, minimum width=2.5cm, text width=1.5cm, align=left] at ($(current page.north east) + (0,-0.2\paperheight)$) {\I};
-% \end{tikzpicture}
 
 \includepdf[
   pages=-,
@@ -423,6 +341,6 @@ This thesis is based on the following publications.
   pagecommand={\thispagestyle{fancy}},
 ]{papers/paper6.pdf}
 
-\includepdf[]{covers/back.pdf}
+\includepdf[pagecommand={\thispagestyle{empty}}]{covers/back.pdf}
 
 \end{document}

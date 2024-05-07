@@ -1,17 +1,5 @@
 \chap{Introduction}
 
-% \begin{flushright}
-%   \textit{Everything should be made as simple as possible, but not simpler.}\\
-%   {---Albert Einstein}
-% \end{flushright}
-% As you know from teaching introductory statistics, 30 is infinity. -- Andrew Gelman
-% The best thing about being a statistician is that you get to play in everyone's backyard. --- John Tukey
-
-% \epigraph{\itshape
-%   As you know from teaching introductory statistics, 30 is infinity.
-% }{
-%   ---Andrew Gelman
-% }
 \epigraph{\itshape
   If we have data, let’s look at data. If all we have are opinions, let’s go with mine.
 }{
@@ -291,7 +279,6 @@ One of the most salient features of SLOPE is that it clusters coefficients~\pare
 
 But as we mentioned previously, SLOPE is actually a generalization of lasso and thus contains it as a special case~(\Cref{fig:slope-balls-lasso}), which is attained by setting all of the elements of the penalization weight vector \(\vec{\lambda}\) to the same value. On the opposite end, setting only the first element to a non-zero value and the remaining ones to zero yields the infinity norm~(\Cref{fig:slope-balls-inf}).
 
-% TODO: consider splitting this into a 2-by-2 grid instead.
 \begin{figure}[htpb]
   \centering
   \subcaptionbox{%
@@ -390,7 +377,6 @@ Regardless, however, OLS regression can be solved directly and with accuracy at 
   \caption{%
     Three different kinds of functions. We show the objective value \(f(\beta)\) and the gradient \(\nabla f(\beta)\) for each. In each case, our objective is to find the minimum of the function. Only the first and last are convex (the complete line segment between two points on the function lies above the function) and have a global minimum.
   }
-  % \label{fig:1d-convexity}
 \end{figure}
 
 All the problems that we have covered so far: ordinary least-squares regression, the lasso, the elastic net, and SLOPE are all convex, which is the class of problems this thesis focuses on. Being convex, however, does not necessarily mean that the problem is easy to solve. The lasso, \Cref{pb:lasso}, for instance, is a convex problem, but the involvement of the inequality constraint means that a direct solution is not readily available.
