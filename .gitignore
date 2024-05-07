@@ -303,6 +303,7 @@ indent.log
 
 *.bbl-SAVE-ERROR
 *.blg-SAVE-ERROR
+*.bcf-SAVE-ERROR
 *johan-*.pdf
 main*.pdf
 
